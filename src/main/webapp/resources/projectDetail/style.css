@@ -1,0 +1,929 @@
+@charset "UTF-8";
+
+p{
+    text-align: center;
+}
+
+u{
+    text-decoration: none;
+    box-shadow: inset 0 -9px 0 hsla(2, 100%, 93%, .8);
+    padding: .15rem 0;
+}
+h2{
+    text-align: center;
+}
+
+strong{
+    color: #3d3d3d;
+    font-family: sans-serif;
+}
+
+.black-check{
+    opacity: 0.5;
+}
+
+.project-page{
+    background: #fff;
+    color: #3d3d3d;
+    font-family: Noto Sans KR, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Oxygen, Open Sans, Helvetica Neue;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    line-height: 24px;
+}
+
+.project-top-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    background-color: rgb(255, 255, 255);
+}
+
+.project-first-layer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 1032px;
+    margin: 0px auto;
+}
+
+.project-top-header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 214px;
+    padding-bottom: 0px;
+    order: 1;
+
+}
+
+.project-header-bundle{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-header-bundle-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgb(239, 239, 239);
+    border-radius: 2px;
+    color: rgb(117, 117, 117);
+    background-color: rgb(250, 250, 250);
+    padding: 0.6rem;
+}
+
+.project-title{
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin: 1.5rem 0px 1rem;
+    color: black;
+}
+
+
+.project-second-layer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 3rem;
+    margin: 0px 200px 0px 200px;
+}
+
+.project-top-left{
+    display: flex;
+}
+.project-title-img-box{
+    position: relative;
+    display: block;
+    overflow-x: visible;
+    width: 594px;
+    height: 632px;
+    margin: 0px;
+}
+
+.project-title-img-box-layer{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+.project-title-img{
+    display: inline-flex;
+    overflow: hidden;
+    width: 100%;
+    height: 594px;
+    background-repeat: round;
+    margin: 0px;
+    padding: 0px;
+}
+
+.project-title-img-box-mark{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 594px;
+    height: 8px;
+    margin-top: 24px;
+    gap: 10px;
+}
+
+.img-box-mark-items{
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.img-mark{
+    width: 8px;
+    height: 8px;
+    background: rgb(13, 13, 13);
+}
+
+.img-left-button{
+    align-self: center;
+    margin: 0px 15px 18px 0px;
+}
+
+.img-right-button{
+    align-self: center;
+    margin: 0px 0px 18px 15px;
+}
+
+
+
+.project-top-right{
+    order: 3;
+    width: 352px;
+    margin: 0px 0px 0px 35px;
+}
+
+
+.project-funding-current{
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    width: 100%;
+    margin: 0px 0px 8px;
+    padding: 0px;
+    gap: 20px 0px;
+}
+
+.funding-text{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.funding-current-items{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: 2.75rem;
+    letter-spacing: 0.5px;
+    gap: 10px;
+}
+
+.funding-current-number{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.funding-item{
+    font-size: 1rem;
+}
+
+.funding-current-percent{
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+
+.funding-from-intro{
+    margin: 0px 0px 1rem;
+}
+
+.funding-from-intro-box{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(244, 244, 244);
+    padding: 20px 0px 10px;
+    gap: 8px;
+}
+
+.funding-from-intro-items{
+    display: flex;
+    align-items: baseline;
+    margin: 0px;
+    gap: 20px;
+}
+
+.funding-from-intro-text{
+    width: 56px;
+    font-weight: 700;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    color: rgb(61, 61, 61);
+}
+
+.funding-from-intro-item{
+    display: flex;
+    margin: 0px;
+}
+.text-red{
+    display: flex;
+    align-items: center;
+    width: 45;
+    height: 20px;
+    background-color: rgb(253, 244, 243);
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 10px;
+    color: rgb(255, 87, 87);
+    margin-left: 6px;
+    padding: 2px 6px;
+}
+
+
+.funding-title-button-box{
+    display: block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.funding-title-button-layer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    gap: 10px;
+}
+
+.funding-title-likes-button{
+    padding: 0.5rem 0px;
+}
+
+.funding-title-likes-button-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.funding-title-likes-button-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.likes-button-count{
+    display: block;
+    text-align: center;
+    font-size: 9px;
+    line-height: 9px;
+    color: rgb(61, 61, 61);
+    margin-top: 5px;
+
+}
+
+.funding-title-link-button{
+    padding: 0.5rem 0px;
+}
+
+.funding-title-link-button-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.funding-title-link-button-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.link-button-count{
+    display: block;
+    text-align: center;
+    font-size: 9px;
+    line-height: 9px;
+    color: rgb(61, 61, 61);
+    margin-top: 5px;
+
+}
+
+.funding-title-project-funding-button{
+    display: flex;
+    flex-grow: 1;
+    order: 3;
+}
+
+.funding-title-project-funding-button-item{
+    display: inline-block;
+    align-content: center;
+    outline: none;
+    border: none;
+    border-radius: 0.285714rem;
+    text-transform: none;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(250, 100, 98);
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    width: 100%;
+    height: 52px;
+}
+
+.funding-title-project-funding-button-item:hover{
+    cursor: pointer;
+    background-color: rgb(251, 70, 67, 1);
+}
+
+.project-nav-container{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.project-nav-bundle{
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
+    padding: 0px 1rem;
+}
+
+.project-nav-box{
+    width: 1040px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.project-nav-items{
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+    white-space: nowrap;
+    align-items: stretch;
+    overflow: auto;
+    width: auto;
+    height: 100%;
+    margin: 0px 1rem;
+}
+
+.project-nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 0px;
+    margin-right: 17px;
+    cursor: pointer;
+}
+
+.update-count{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: -0.5rem -0.1rem 0px 0.2rem;
+}
+
+.select{
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
+    padding-bottom: calc(-3px + 0.5rem);
+}
+
+
+
+.project-main-container{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.project-main-box{
+    position: relative;
+    width: 1160px;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.project-main-layer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 1040px;
+    gap: 38px;
+    margin: 0px auto;
+}
+
+
+
+.project-main-left-layer{
+    flex: 1 1 650px;
+    order: 1;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+
+.project-main-left-box{
+    width: 100%;
+    min-height: 500px;
+    padding: 0px 15px;
+}
+
+.project-main-left-badge-bundle{
+    position: sticky;
+    top: 56px;
+    z-index: 2;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    background: #ffffff;
+}
+
+.project-main-left-badge-items{
+    display: flex;
+    overflow: auto hidden;
+    box-sizing: border-box;
+    list-style: none;
+    width: 620px;
+    height: 64px;
+    padding: 16px 0px 8px;
+    margin: 0px;
+    gap: 10px;
+}
+
+.project-main-left-badge-item{
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 23px;
+    border: 1px solid rgb(240, 240, 240);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    color: rgb(61, 61, 61);
+    white-space: nowrap;
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.current-badge{
+    border: none;
+    color: rgb(255, 255, 255);
+    background: rgb(61, 61, 61);
+}
+
+.project-main-left-content{
+    position: relative;
+    width: 620px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    transition: box-shadow 0.2s ease-in-out;
+    padding: 32px 0px 0px;
+}
+
+.project-main-left-content.purpose-content{
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 32px 0px;
+}
+
+.project-main-left-content-intro-title{
+    display: flex;
+    align-items: center;
+    color: rgb(13, 13, 13);
+    font-weight: 700;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    margin-bottom: 16px;
+}
+
+.project-main-left-content-intro-content{
+    font-size: 16px;
+    line-height: 28px;
+    color: #3d3d3d;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    padding: 0px;
+    margin: 0px;
+}
+
+.spring-arang-intro{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+.spring-arang-chusuck{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+.hwaguaja-2{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+.hwaguaja-3{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+.yangeng{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+.gift-box{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+
+
+.project-main-left-content-budget{
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 32px 0px;
+}
+
+.project-main-left-content-schedule{
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 32px 0px;
+}
+
+.project-main-left-content-gift-intro{
+    font-size: 16px;
+    line-height: 28px;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    padding: 32px 0px;
+}
+
+
+
+
+
+
+
+.project-main-right-layer{
+    display: flex;
+    order: 2;
+    width: 100%;
+    max-width: 352px;
+    margin: 0px;
+    padding-top: 25px;
+    align-self: stretch;
+}
+
+.project-main-right-box{
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.project-main-right-creater-intro{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    white-space: normal;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(239, 239, 239);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+    transition: box-shadow 0.2s ease-in-out;
+    padding: 20px 16px;
+}
+
+.project-main-right-creater-intro-title{
+    display: block;
+    font-weight: bolder;
+    margin: 0px;
+    padding: 5px 0px 20px;
+}
+
+.project-main-right-creater-profile-box{
+    display: flex;
+    align-items: center;
+}
+
+.project-main-right-creater-profile-items{
+    color: #fa6462;
+    background: transparent;
+}
+
+.project-main-right-creater-profile-item{
+    display: inline-block;
+    background-size: cover;
+    background-position: 50% 38%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: rgb(208, 208, 208) 0px 0px 1px 0px inset, rgb(208, 208, 208) 0px 0px 1px 0px;
+    margin-right: 1rem;
+    margin-top: 5px;
+}
+
+.project-main-right-creater-profile-text{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project-main-right-creater-name{
+    color: rgb(61, 61, 61);
+    font-weight: bolder;
+}
+
+
+.project-main-right-creater-profile-self-intro-box{
+    display: block;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 13px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    line-height: 22px !important;
+    padding-top: 18px;
+}
+
+.project-main-right-creater-profile-follow-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project-main-right-creater-profile-follow-button{
+    display: flex;
+    width: 150px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.project-main-right-creater-profile-follow-button-items{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100% !important;
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    outline: 0;
+    border: 0;
+    color: rgb(0, 0, 0);
+}
+
+.project-main-right-creater-profile-follow-button-items-frame{
+    display: flex;
+    align-items: center;
+    line-height: 14px;
+    gap: 5px;
+}
+
+.project-main-right-creater-profile-follow-button-item{
+    opacity: 0.8;
+}
+.project-main-right-creater-profile-follow-button-item-text{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.project-main-right-funding-package{
+    position: sticky;
+    top: 80px;
+    transition: height 0.1s;
+}
+
+.project-main-right-funding-package-bundle{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    background: transparent;
+    /* padding: 24px 0px 0px; */
+    gap: 15px;
+}
+
+.project-main-right-funding-package-bundle::-webkit-scrollbar {
+    display: none;
+}
+
+/* .project-main-right-funding-package-bundle:hover{
+   overflow: scroll;
+
+} */
+
+.project-main-right-funding-package-bundle-title{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    margin-bottom: 0.5rem;
+}
+
+.project-main-right-funding-package-box{
+    width: 100%;
+    transition: height 0.2s, box-shadow 0.2s, border 0.2s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(239, 239, 239);
+    border-bottom: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+}
+
+.project-main-right-funding-package-section{
+    position: relative;
+    overflow-x: hidden;
+    transition: 0.4s ease-out;
+    opacity: 1;
+    height: auto;
+    left: 0%;
+    padding: 20px;
+    white-space: normal;
+}
+
+.project-main-right-funding-package-main-section-items{
+    display: flex;
+    flex-direction: column;
+    color: rgb(61, 61, 61);
+    margin: 0px 0px 8px;
+    gap: 5px;
+}
+
+.project-main-right-funding-package-main-section-item-price-box{
+    display: flex;
+    align-items: center;
+}
+
+.project-main-right-funding-package-main-section-item-price{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+    letter-spacing: -0.025em;
+    gap: 10px;
+}
+
+.project-main-right-funding-package-main-section-item-content-box{
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+}
+
+
+.project-main-right-funding-package-category-box{
+    position: relative;
+    transition: height 0.1s ease-out;
+    /*overflow: hidden;*/
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(239, 239, 239);
+    border-bottom: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+}
+
+.project-main-right-funding-package-current-amount-box{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: rgb(109, 109, 109);
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.project-main-right-funding-package-current-choose-amount{
+    display: flex;
+    align-items: baseline;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    gap: 10px;
+    opacity: 0.9;
+}
+
+
+
+.project-main-right-funding-package-current-have-amount{
+    color: rgb(255, 87, 87);
+    background-color: rgb(255, 238, 238);
+    border-radius: 2px;
+    border: 1px solid rgb(255, 188, 188);
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    text-align: right;
+    padding: 5px 8px;
+}
+
+
+.project-main-right-funding-package-main-section-ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.project-main-right-funding-package-main-section-li{
+    position: relative;
+    list-style: none;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    padding: 0px 0px 0px 10px;
+}
+
+.list-mark{
+    position: absolute;
+    font-weight: bold;
+    left: 0px;
+    top: -3px;
+}
+
+
+
+
+
+
+
+
+

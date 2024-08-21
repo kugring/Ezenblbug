@@ -1,0 +1,338 @@
+body{
+    margin: 0;
+    font-family: Pretendard;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+/* ////////////////////////////////////////////////메인 페이지//////////////////////////////////////////////// */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    width: 1190px;
+    background: rgb(255, 255, 255);
+    padding: 50px 0px 0px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 44px;
+    width: 100%;
+    height: 100%;
+}
+
+.main-left-box{
+    width: 850px;
+    margin: 0px 80px 0px 0px;
+}
+
+.carousel-container{
+    position: relative;
+    width: 766px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    transition-property: transform;
+    cursor: pointer;
+}
+
+.next-button-box{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:15px;
+    z-index: 2;
+}
+.page-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 100px 100px 100px 100px / 100px 100px 100px 100px;
+    opacity: 0.5;
+    font-size: 12px;
+}
+.arrow-box{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.img-button-circle{
+    opacity: 0.5;
+}
+
+.left-box-category-box{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    overflow-x: hidden;
+    min-height: 92px;
+    margin: 28px 0px;
+    gap: 0 30px;
+}
+.category-box-items{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.category-box-img{
+    background-color: #f2f1f1;
+    border-radius: 15px;
+}
+.left-first-box{
+    width: 100%;
+    height: 100%;
+}
+.left-box-fist-box-title{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: rgb(28, 28, 28);
+    line-height: 29px;
+    letter-spacing: -0.025em;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+.left-box-fist-box-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    gap: 10px 5px;
+}
+.left-box-fist-box-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 194px;
+    height: 320px;
+}
+.fist-box-card-img{
+    position: relative;
+    width: 140px;
+    border: solid 1px black;
+    transition: transform 0.4s;
+}
+
+.fist-box-card-img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.project-likes{
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    bottom: 15px;
+    right: -30px;
+    cursor: pointer;
+}
+
+.black-empty-heart{
+    display: flex;
+}
+
+.pink-heart{
+    display: flex;
+}
+
+.card-intruduction-company{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    white-space: nowrap;
+    width: 100%;
+    padding: 0px 0px 2px;
+    font-size: 11px;
+    letter-spacing: -0.005em;
+    line-height: 16px;
+    color: rgb(109, 109, 109);
+
+}
+.card-intruduction-title{
+    overflow: hidden;
+    max-height: initial;
+    word-break: keep-all;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    line-height: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.card-intruduction-dalseonglyul{
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -0.015em;
+    line-height: 28px;
+    color: red;
+    padding: 0px;
+}
+
+
+
+/* ////////////////////////////////////////////main-right//////////////////////////////////////////// */
+
+.main-right-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    gap:20px;
+}
+
+.right-box-title-bundle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 12px;
+    font-weight: 400;
+    gap: 6px;
+}
+
+.right-box-title-first-bundle{
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.title-first-bundle-item-left{
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.title-first-bundle-item-right{
+    font-size: 15px;
+
+}
+
+.main-right-hit-box{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.hit-box-bundle{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+}
+
+.hit-img-items{
+    width: 108px;
+    height: 100%;
+    overflow:hidden;
+}
+.hit-img-item{
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+}
+
+.hit-img-item:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.hit-number{
+    display:flex;
+    justify-content: center;
+    width: 43px;
+    font-weight: 700;
+}
+.red{
+    color: #db0202;
+}
+.hit-text-box{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    font-size: 12px;
+    gap: 4px;
+}
+
+.hit-text-box-title{
+    overflow: hidden;
+    word-break: keep-all;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.hit-text-box-percentage{
+    font-size: 13px;
+    color: red;
+    font-weight: 500;
+}
+
+.main-right-box-badge{
+    display: flex;
+    width: 233px;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 8px;
+    text-align: center;
+    border-radius: 22px;
+    margin-top: 20px;
+}
+.main-right-box-badge:hover{
+    cursor: pointer;
+    background-color: #edecec;
+}

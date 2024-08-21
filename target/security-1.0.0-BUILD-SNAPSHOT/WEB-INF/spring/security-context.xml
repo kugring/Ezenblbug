@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 스프링 시큐리티 설정을 위한 태그 기본설정을 자동으로 한다. 스프링시큐리티 표현식을 사용한다. -->
+	<security:http auto-config="true" use-expressions="true">
+	
+		<!-- 정적 리소스 경로에 대한 접근 허용 -->
+		<security:intercept-url pattern="/resources/**" access="permitAll" />
+		<security:intercept-url pattern="/id-check/**" access="permitAll" />
+		<security:intercept-url pattern="/nickname-check/**" access="permitAll" />
+		<security:intercept-url pattern="/certification-email-send/**" access="permitAll" />
+		<security:intercept-url pattern="/certification-email-check/**" access="permitAll" />
+
+		<!-- login 페이지에 접근 가능한 사람은 로그인 하지 않은 사람만 가능하게 설정 -->
+		<security:intercept-url pattern="/sign-in"
+			access="isAnonymous()" />
+
+		<!-- join 페이지에 접근 가능한 사람은 로그인 하지 않은 사람만 가능하게 설정 -->
+		<security:intercept-url pattern="/sign-up" access="permitAll" />
+
+		<!-- joinOk페이지에 접근 가능한 사람은 로그인하지 않은 사람만 접근이 가능하다. -->
+		<security:intercept-url pattern="/sign-up" access="isAnonymous()" />
+
+
+
+		<!-- /admin으로 시작하는 페이지에 접근 가능한 사람은 관리자 권한이 있는 사람만 가능하게 설정 -->
+		<security:intercept-url pattern="/admin/**"
+			access="hasAuthority('ADMIN')" />
+
+		<!-- 모든 페이지에 대해 로그인한 사람만 접근 가능하게 설정 -->
+		<security:intercept-url pattern="/**"
+			access="isAuthenticated()" />
+
+		<!-- /admin으로 시작하는 페이지에 접근 가능한 사람은 관리자 역할이 있는 사람만 가능하게 설정 -->
+		<!-- <security:intercept-url pattern="/admin/**" access="hasRole("ADMIN")/> -->
+
+		<!-- 로그아웃 처리를 할 url을 정의한다. /logout은 스프링시큐리티에서 제공해준다. 로그아웃 성공시 어디로 리다렉트할지 설정한다. -->
+		<security:logout logout-url="/logout" logout-success-url="/sign-in?session=logout"/>
+
+		<!-- 권한이 없는 사람이 url에 접근했을 때 리다이렉트 될 url을 정의한다. -->
+		<security:access-denied-handler error-page="/access-denied"/>
+
+		<!-- 세션을 자동으로 관리해주는 설정을 정의한다. invalid-session-url은 세션이 유효하지 않을 때 리다이렉트 될 url을 정의한다. -->
+<!--		<security:session-management invalid-session-url="/sign-in?session=invalid">-->
+		<security:session-management invalid-session-url="/sign-in?session=invalid">
+			<!-- 중복 로그인을 허용할 개수와 처리를 설정한다. expired-url은 중복 로그인 발생시 리다이렉트 될 url을 정의한다. 먼저 로그인 한 사람이 팅겨 나간다. -->
+			<security:concurrency-control max-sessions="1" expired-url="/sign-in?session=expired"/>
+		</security:session-management>
+
+		<!-- 로그인에 관련된 처리를 설정한다. -->
+		<security:form-login 
+			login-page="/sign-in"
+			login-processing-url="/loginProcess"
+			default-target-url="/main"
+			authentication-failure-url="/sign-in?message=fail"
+			always-use-default-target="true"
+			username-parameter="username"
+			password-parameter="password"
+		/>
+		<!-- login-page => 속성은 사용자가 제공하는 로그인 페이지입니다. -->
+		<!-- login-processing-url => 로그인 처리하는 url을 정의한다. -->
+		<!-- default-target-url => 로그인 성공시 리다이렉트될 url을 정의한다. -->
+		<!-- authentication-failure-url => 로그인에 실패하는 경우에 리다이렉트될 url을 정의한다. -->
+		<!-- username-parameter => login-processing-url에 id값을 요청할 파라미터 이름을 정의한다. -->
+		<!-- password-parameter => login-processing-url에 password값을 요청할 파라미터 이름을 정의한다. -->
+		<!-- always-use-default-target =>  -->
+		
+
+		<!-- CSRF 공격 검증을 하지 않겠다라는 설정! (react) -->
+		<security:csrf disabled="true"/>
+
+	</security:http>
+	
+	<!-- 스프링 시큐리티가 제공하는 비밀번호 암호화 클래스이다. -->
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	<!-- 스프링 시큐리티가 로그인을 처리할때 사용할 user service 클래스이다. -->
+	<bean id="userDetailService" class="com.zentlbug.ezen.service.UserDetailService"/>
+	
+	<!-- 스프링 시큐리티가 동작하기 위한 의존성을 주입한다. -->
+	<security:authentication-manager>
+		<!-- 스프링 시큐리티가 인증을 처리할때 사용하는 클래스를 정의한다. -->
+		<security:authentication-provider user-service-ref="userDetailService">
+			<!-- 스프링 시큐리티가 인증을 처리할때 사용할 암호화 클래스를 정의한다. -->
+			<security:password-encoder ref="passwordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>

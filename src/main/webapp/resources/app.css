@@ -1,0 +1,926 @@
+body {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+
+.primary-button-lg {
+    border-radius: 6px;
+    padding: 8px 24px;
+
+    box-sizing: border-box;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(58, 87, 232, 1);
+
+    color: rgba(255, 255, 255, 1);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    cursor: pointer;
+}
+
+.disable-button-lg {
+    border-radius: 6px;
+    padding: 8px 24px;
+
+    box-sizing: border-box;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(138, 146, 166, 1);
+
+    color: rgba(255, 255, 255, 1);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    cursor: default;
+}
+
+.primary-button-lg:hover {
+    opacity: 0.95;
+}
+
+.text-link-lg {
+    box-sizing: border-box;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(113, 113, 113, 1);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    cursor: pointer;
+}
+
+.text-link-lg:hover {
+    color: rgba(40, 40, 40, 1);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.kakao-sign-in-button {
+    width: 48px;
+    height: 48px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-image: url(assets/kakao-sign-in.png);
+
+    cursor: pointer;
+}
+
+.naver-sign-in-button {
+    width: 48px;
+    height: 48px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-image: url(assets/naver-sign-in.png);
+
+    cursor: pointer;
+}
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.input-box-title-box {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-box-title {
+    color: rgba(138, 146, 166, 1);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+    cursor: default;
+}
+
+.input-box-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.input-box-body {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+    border: 1px solid rgba(240, 240, 240, 1);
+    border-radius: 6px;
+}
+
+.input-box-input {
+    flex: 1;
+    height: 26px;
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 1) !important;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 175%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input-box-input::placeholder {
+    color: rgba(138, 146, 166, 1);
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 175%;
+}
+
+.input-box-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    width: 110px;
+    height: 44px;
+    background-color: rgba(58, 87, 232, 0.2);
+
+    color: rgba(45, 66, 178, 1);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    cursor: pointer;
+}
+
+.input-box-button:hover {
+    background-color: rgba(58, 87, 232, 0.4);
+}
+
+
+.input-box-button-disable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    width: 110px;
+    height: 44px;
+    background-color: rgba(240, 240, 240, 1);
+
+    color: rgba(138, 146, 166, 1);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+
+    cursor: pointer;
+}
+
+.input-box-message {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(58, 87, 238, 1);
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input-box-message-error {
+    color: rgba(255, 84, 64, 1);
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#loading {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading .spinner {
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 0;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(58, 87, 238, 1);
+    border-bottom-color: rgba(58, 87, 238, 1);
+    animation: spinner .8s ease infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "UTF-8";
+
+
+.left-arrow{
+    background-image: url("./assets/left_arrow.png");
+}
+.right-arrow{
+    background-image: url("./assets/right_arrow.png");
+}
+.link{
+    background-image: url("./assets/link.png");
+}
+.light{
+    background-image: url("./assets/light.png");
+}
+.board-x{
+    background-image: url("./assets/board_x.png");
+}
+.bag-x{
+    background-image: url("./assets/bag_x.png");
+}
+.pink-heart{
+    background-image: url("./assets/pink_heart.png");
+}
+.taro-card{
+    background-image: url("./assets/taro_card.jfif");
+}
+.book{
+    background-image: url("./assets/book.jpg");
+}
+.black-empty-heart{
+    background-image: url("./assets/black_empty_heaert.png");
+}
+.kuromi-bag{
+    background-image: url("./assets/kuromi_bag.png");
+}
+.black-down-arrow{
+    background-image: url("./assets/black_down_arrow.png");
+}
+.black-bold-plus{
+    background-image: url("./assets/black_bold_plus.png");
+}
+.black-plus{
+    background-image: url("./assets/black_plus.png");
+}
+.black-x{
+    background-image: url("./assets/black_x.png");
+}
+.black-check{
+    background-image: url("./assets/black_check.png");
+}
+.goods{
+    background-image: url("./assets/charactor_goods.svg");
+}
+.else{
+    background-image: url("./assets/accessories.svg");
+}
+.diary{
+    background-image: url("./assets/stationary.svg");
+}
+.comic{
+    background-image: url("./assets/comics.svg");
+}
+.bag-img{
+    background-image: url("./assets/main_hit_bundle_img.png");
+}
+.gaonasi{
+    background-image: url("./assets/gaonasi.jpg");
+}
+.food{
+    background-image: url("./assets/food.jpg");
+}
+.color-box{
+    background-image: url("./assets/store.jpg");
+}
+.game-pad{
+    background-image: url("./assets/game_pad.png");
+}
+.mark{
+    background-image: url("./assets/mark.jpg");
+}
+.taro{
+    background-image: url("./assets/taro.png");
+}
+.cody{
+    background-image: url("./assets/cody.jpg");
+}
+.fox{
+    background-image: url("./assets/fox.jpg");
+}
+.facebook{
+    background-image: url("./assets/facebook.png");
+}
+.instagram{
+    background-image: url("./assets/instagram.png");
+}
+.square-n{
+    background-image: url("./assets/square_n.png");
+}
+.twitter-black-shape{
+    background-image: url("./assets/twitter_black_shape.png");
+}
+.google-play{
+    background-image: url("./assets/google_play.png");
+}
+.black-bell{
+    background-image: url("./assets/black_bell.png");
+}
+.apple{
+    background-image: url("./assets/apple.png");
+}
+.empty-heart{
+    background-image: url("./assets/empty_heart.png");
+}
+.white-right-arrow{
+    background-image: url("./assets/black_left_arrow.png");
+    transform: rotateY( 180deg );
+}
+.white-left-arrow{
+    background-image: url("./assets/black_left_arrow.png");
+}
+.white-default-profile{
+    background-image: url("./assets/white_default_profile.png");
+}
+.black-speech-bubble{
+    background-image: url("./assets/black_speech_bubble.png");
+}
+
+.black-menu{
+    background-image: url("./assets/black_menu.png");
+}
+.empty-black-reading-glass{
+    background-image: url("./assets/empty_black_reading_glass.png");
+}
+
+
+
+
+/* /////////////////////////////////////////////프로젝트 속 이미지 파일 자료///////////////////////////////////////////// */
+
+.spring-arang-intro{
+    background-image: url("./assets/spring_arang_intro.png");
+}
+
+.spring-arang-chusuck{
+    background-image: url("./assets/spring_arang_chusuck.png");
+}
+
+.hwaguaja{
+    background-image: url("./assets/hwaguaja.jpg");
+}
+
+.hwaguaja-2{
+    background-image: url("./assets/hwaguaja_2.jpg");
+}
+
+.hwaguaja-3{
+    background-image: url("./assets/hwaguaja_3.png");
+}
+
+.yangeng{
+    background-image: url("./assets/yangeng.jpg");
+}
+
+.gift-box{
+    background-image: url("./assets/gift_box.jpg");
+}
+
+
+
+/* 아래는 아이콘 크기, 설정에 대한 css */
+
+.icon-8{
+    width: 8px;
+    height: 8px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-10{
+    width: 10px;
+    height: 10px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-14{
+    width: 14px;
+    height: 14px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.icon-12{
+    width: 12px;
+    height: 12px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-16{
+    width: 16px;
+    height: 16px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-18{
+    width: 18px;
+    height: 18px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-20{
+    width: 20px;
+    height: 20px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-22{
+    width: 22px;
+    height: 22px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-24{
+    width: 24px;
+    height: 24px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-28{
+    width: 28px;
+    height: 28px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-30{
+    width: 30px;
+    height: 30px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-32{
+    width: 32px;
+    height: 32px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-35{
+    width: 35px;
+    height: 35px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-40{
+    width: 40px;
+    height: 40px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-45{
+    width: 45px;
+    height: 45px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-48{
+    width: 48px;
+    height: 48px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-50{
+    width: 50px;
+    height: 50px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-52{
+    width: 52px;
+    height: 52px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-54{
+    width: 54px;
+    height: 54px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-55{
+    width: 55px;
+    height: 55px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-60{
+    width: 60px;
+    height: 60px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.icon-65{
+    width: 65px;
+    height: 65px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.icon-100{
+    width: 150px;
+    height: 150px;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-style: none;
+}
+
+.op-1{
+    opacity: 0.1;
+}
+.op-2{
+    opacity: 0.2;
+}
+.op-3{
+    opacity: 0.3;
+}
+.op-4{
+    opacity: 0.4;
+}
+.op-5{
+    opacity: 0.5;
+}
+.op-6{
+    opacity: 0.6;
+}
+.op-7{
+    opacity: 0.7;
+}
+.op-8{
+    opacity: 0.8;
+}
+
+
+
+/* 아래는 버튼 및 호버 관련된 css 입니다. */
+
+.cursor:hover{
+    cursor: pointer;
+}
+.line-cursor:hover{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.color-button:hover{
+    cursor: pointer;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-delay: 0.04s;
+    transition-timing-function: ease-in;
+    font-weight: 600;
+}
+
+.title-marker{
+    display: block;
+    width: 2px;
+    height: 14px;
+    background: rgb(61, 61, 61);
+    margin-right: 9px;
+    scroll-margin-top: 124px; /* 여백 크기 설정 */
+
+}
+
+/*.title-marker{*/
+/*    border-left: 2px solid rgb(61, 61, 61);*/
+/*    margin-right: 9px;*/
+/*}*/
+
+
+.divider{
+    border-top:1px solid rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+.dot-divider{
+    border-top:2px dotted rgba(0,0,0,0.1);
+    width: 100%;
+}
+.emphasis{
+    font-weight: bolder;
+}
+
+.word-badge{
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 30px;
+    padding: 6px 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    color:rgba(0,0,0,0.5)
+}
+
+.word-badge:hover{
+    background-color: rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.gray-slice-bar {
+    width: 38px;
+    border-radius: 50px;
+    background-color: #d5d5d5;
+    height: 4.5px;
+}
+
+.black-button {
+    border-radius: 46px;
+    width: 95px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,1);
+
+    color: rgba(255,255,255,1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+
+    cursor: pointer;
+}
+
+.black-button:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.black-large-full-button{
+    border-radius: 46px;
+
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,1);
+
+    color: rgba(255,255,255,1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+
+    cursor: pointer;
+}
+
+.black-large-full-button:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.disable-button{
+    border-radius: 46px;
+    width: 95px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,0.4);
+
+    color: rgba(255,255,255,1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+
+    cursor: not-allowed;
+}
+
+.white-button{
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 46px;
+    width: 93px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255,255,255,1);
+
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+
+    cursor: pointer;
+}
+
+.white-button:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+
+
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(./woff2/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-display: swap;
+    src: local('Pretendard ExtraBold'), url(./woff2/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(./woff2/Pretendard-Bold.woff2) format('woff2'), url(./woff/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-display: swap;
+    src: local('Pretendard SemiBold'), url(./woff2/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard Medium'), url(./woff2/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(./woff2/Pretendard-Regular.woff2) format('woff2'), url(./woff/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-display: swap;
+    src: local('Pretendard Light'), url(./woff2/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-display: swap;
+    src: local('Pretendard ExtraLight'), url(./woff2/Pretendard-ExtraLight.woff2) format('woff2'), url(./woff/Pretendard-ExtraLight.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 100;
+    font-display: swap;
+    src: local('Pretendard Thin'), url(./woff2/Pretendard-Thin.woff2) format('woff2'), url(./woff/Pretendard-Thin.woff) format('woff');
+}
+
+body {
+    margin: 0;
+    font-family:Pretendard;
+    white-space: nowrap;
+}
