@@ -1,4 +1,123 @@
-// jQuery를 사용하여 모든 project-main-left-badge-item 요소에 클릭 이벤트 리스너를 추가합니다.
+
+
+
+
+
+
+$(document).ready(function() {
+    const $carouselInner = $('.carousel-inner');
+    const $carouselItems = $('.carousel-item');
+    const totalItems = $carouselItems.length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        $carouselInner.css('transform', `translateX(${-currentIndex * 100}%)`);
+    }
+
+    $('.carousel-control-next').click(function() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    });
+
+    $('.carousel-control-prev').click(function() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 로딩시 조회수를 카운트함
+loadingViewCount();
+
+function loadingViewCount(){
+
+    // 현재 URL에서 /search/ 이후의 부분을 가져옴
+    let currentURL = window.location.href;
+    let projectPattern = /\/project\/([^/]+)/; // /search/ 이후의 단어 패턴
+
+    // URL 경로만 추출 (query string이나 hash 제외)
+    let currentPath = currentURL.split('?')[0].split('#')[0];
+
+    // 해당 url의 첫번째 값으로 저장된 프로젝트 id값을 가져온다.
+    let projectId = decodeURIComponent(currentPath.match(projectPattern)[1]);
+
+    // 로컬 스토리지에 데이터가 없다면 조회수를 증가시킴
+    const data = getItemWithExpiry(`project-${projectId}`);
+    if(data == null){
+        increaseViewCount(projectId)
+        // 5초 동안 유효한 데이터를 저장
+        setItemWithExpiry(`project-${projectId}`, 'viewCount', 5000);
+    }
+}
+
+function increaseViewCount(projectId){
+    $.ajax({
+        url: `/project/${projectId}/increase-view-count`, // 요청을 보낼 URL
+        type: 'POST', // 요청의 타입
+        contentType: 'application/json', // 요청 본문의 미디어 타입
+        data: JSON.stringify({}),
+        success: function (result) {
+            if (result === 1){
+
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error:', jqXHR, textStatus, errorThrown);
+        }
+    });
+}
+
+function setItemWithExpiry(key, value, ttl) {
+    const now = new Date();
+
+    console.log("아니 이거 저장은 함?")
+    // 'item' 객체 생성
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl, // 현재 시간 + TTL (Time To Live)
+    }
+
+    // 'item' 객체를 JSON 문자열로 변환하여 저장
+    localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getItemWithExpiry(key) {
+    const itemStr = localStorage.getItem(key);
+
+    // 항목이 존재하지 않을 경우 null 반환
+    if (!itemStr) {
+        return null;
+    }
+
+    // JSON 문자열을 객체로 변환
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    // 만료 시간이 지나면 localStorage에서 항목 삭제 및 null 반환
+    if (now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+        return null;
+    }
+
+    // 만료되지 않은 경우 값 반환
+    return item.value;
+}
+
+
+
+
 $(document).ready(function () {
     $('.project-main-left-badge-item').on('click', function () {
         TitleScroll(this); // 클릭된 요소를 파라미터로 전달

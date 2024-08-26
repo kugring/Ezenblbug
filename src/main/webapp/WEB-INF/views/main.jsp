@@ -4,10 +4,10 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-    <title>[ 메인 ]- Ezentlbug</title>
+    <title>[ 메인 ]- Ezenblbug</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resources/assets/zenblbug_logo.png" type="image/png">
-    <link href="../resources/main/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../resources/app.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/main/style.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${path}/resources/main/main.js"></script>
 
@@ -83,119 +83,62 @@
                     <div class="category-box-img goods icon-65"></div>
                     <div class="category-box-text">캐릭터.굿즈</div>
                 </div>
-
             </div>
 
-            <div class="left-box-fist-box">
+            <div class="attention-container">
 
-                <div class="left-box-fist-box-title">주목할 만한 프로젝트</div>
-
+                <div class="attention-title">주목할 만한 프로젝트</div>
                 <!-- /////////////////////////나중에 foreach 사용///////////////////////// -->
-                <div class="left-box-fist-box-items">
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
+                <div class="attention-card-box">
+                    <div class="attention-card">
+                        <div class="attention-card-img-box">
+                            <a href="project/1">
+                                <img class="attention-card-img" src="https://img.tumblbug.com/eyJidWNrZXQiOiJ0dW1ibGJ1Zy1wcm9qZWN0LWNvdmVyLWltYWdlcyIsImtleSI6IjZlMDE3ZjE2MGQ0NTk2ODMxZWVkYmEyZDhkZWUzYjgyNGEyNGZjZGYvNzJlZmIyMDAwNTAxZWQ1MjQxYzhlZTRjNWM5MWE3YjY2YTM0ZThlMC81ZTkwM2ZiNWYzYWNhMzc3NGM5ZTBmYzBiMmQ4NzVmYzg3OTA0M2MwL2JiMWNmMmQyLTUxZjUtNDg2MS05M2FhLTlhMzQ3NDQ1M2IwOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0NjUsImhlaWdodCI6NDY1LCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=" alt=""/>
+                            </a>
+                            <div class="empty-heart project-like"></div>
                         </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
+                        <div class="attention-card-body">
+                            <div class="attention-card-company line-cursor">(주)대교</div>
+                            <a style="text-decoration: none" href="project/1">
+                                <div class="attention-card-title">지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 &lt;가오나시&gt;</div>
+                            </a>
+                                <div class="attention-card-progress-rate">979% 달성</div>
+                        </div>
+                        <input name="project-id" type="hidden" value="1">
+                    </div>
+                    <div class="attention-card">
+                        <div class="attention-card-img-box">
+                            <img class="attention-card-img" src="https://img.tumblbug.com/eyJidWNrZXQiOiJ0dW1ibGJ1Zy1wcm9qZWN0LWNvdmVyLWltYWdlcyIsImtleSI6IjYwNjY0Y2JjNjkyNjE4MmUxOGEwYjA4OGJjNTVhYmZkNTYzMWZhNDEvN2VkMjY0MDIxYTkxMmRjMGIxOTFlYmUwZjU2MjY0ZjhiZTdmODMxNi83NjU3MWRiNTAyNjlkMTJhNzMwYThmMzc1YjlmODk0ODgyOWQwNzFiLzc4MjVhMzBkLWM4YWQtNDRhMy05ZTAwLWFiMzBkYThiYzY0NC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0NjUsImhlaWdodCI6NDY1LCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=" alt=""/>
+                            <div class="empty-heart project-like"></div>
+                        </div>
+                        <div class="attention-card-body">
+                            <div class="attention-card-company line-cursor">(주)대교</div>
+                            <div class="attention-card-title">지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 &lt;가오나시&gt;</div>
+                            <div class="attention-card-progress-rate">979% 달성</div>
                         </div>
                     </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
+                    <div class="attention-card">
+                        <div class="attention-card-img-box">
+                            <img class="attention-card-img" src="https://img.tumblbug.com/eyJidWNrZXQiOiJ0dW1ibGJ1Zy1wcm9qZWN0LWNvdmVyLWltYWdlcyIsImtleSI6IjZlMDE3ZjE2MGQ0NTk2ODMxZWVkYmEyZDhkZWUzYjgyNGEyNGZjZGYvZGM3MWMxMDZhNDRkNDhhZTFlZGEyNDJjNGUxYTkxZTE3N2E0NjI5YS9jOWRiNDRiNmI2MjU3OTIzMzQzOGY2NDU4NjBiZGEyYWY3NzJiZmZjLzUwMGY0ZGUwLTE1OWUtNDZkZS05MmQwLWJiOGNkZTk1ZDZlMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0NjUsImhlaWdodCI6NDY1LCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=" alt=""/>
+                            <div class="empty-heart project-like"></div>
                         </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
+                        <div class="attention-card-body">
+                            <div class="attention-card-company line-cursor">(주)대교</div>
+                            <div class="attention-card-title">지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 &lt;가오나시&gt;</div>
+                            <div class="attention-card-progress-rate">979% 달성</div>
                         </div>
                     </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
+                    <div class="attention-card">
+                        <div class="attention-card-img-box">
+                            <img class="attention-card-img" src="https://img.tumblbug.com/eyJidWNrZXQiOiJ0dW1ibGJ1Zy1wcm9qZWN0LWNvdmVyLWltYWdlcyIsImtleSI6IjAwZTAyODBjZmNkMzc4MzlkNzBjY2U2M2VhM2M4OTM2MGVmNTlhZjUvOTgxYTYyOWVmZTc2ODE4MjgzMTE4NjRmMzI3NDgwMDM4YmQ4ODgxNi9kZjgxZjMwOTUxN2I5ZWY1Y2JkNWYzMjE4YTQ2ZDAxMWU2YTVkYjg0L2EwNjhkOTc5LTM1NzAtNDYyMy1iZTNhLWM4Njk1YmJhZmNjNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0NjUsImhlaWdodCI6NDY1LCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=" alt=""/>
+                            <div class="empty-heart project-like"></div>
                         </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
+                        <div class="attention-card-body">
+                            <div class="attention-card-company line-cursor">(주)대교</div>
+                            <div class="attention-card-title">지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 지브리 인형 &lt;가오나시&gt;</div>
+                            <div class="attention-card-progress-rate">979% 달성</div>
                         </div>
                     </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
-                        </div>
-                    </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
-                        </div>
-                    </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
-                        </div>
-                    </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
-                        </div>
-                    </div>
-
-                    <div class="left-box-fist-box-card">
-                        <div class="fist-box-card-img gaonasi icon-100">
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="left-box-fist-box-card-intruduction">
-                            <div class="card-intruduction-company line-cursor">(주)대교</div>
-                            <div class="card-intruduction-title">지브리 인형
-                                <가오나시>
-                            </div>
-                            <div class="card-intruduction-dalseonglyul">979% 달성</div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

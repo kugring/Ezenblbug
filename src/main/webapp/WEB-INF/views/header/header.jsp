@@ -4,12 +4,15 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-    <link href="../resources/app.css" rel="stylesheet" type="text/css" />
-    <link href="../resources/header/style.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/header/style.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${path}/resources/header/header.js"></script>
 </head>
 <body>
+
+<jsp:include page="/WEB-INF/views/search.jsp"/>
 
 <div class="header">
     <div class="header-container">
@@ -21,7 +24,7 @@
                 </div>
                 <div class="header-right-items">
 
-                    <div class="header-items project-item" onclick="location.href='/project-upload'">프로젝트 올리기</div>
+                    <div class="header-items project-item" onclick="location.href='project/upload'">프로젝트 올리기</div>
 
                     <div class="header-items path-item">
                         <div class="empty-heart icon-28"></div>
@@ -56,15 +59,16 @@
                     <div class="menu-items coming-soon-menu">공개예정</div>
                     <div class="menu-items digital-menu">디지털에셋</div>
                 </div>
-                <div class="search-box">
-                    <input type="text" placeholder="검색어를 입력해주세요" class="search-input"/>
-                    <div class="empty-black-reading-glass icon-22 cursor"></div>
+                <div class="header-search-box">
+                    <input type="text" placeholder="검색어를 입력해주세요" class="header-search-input"/>
+                    <div class="search-icon icon-20 cursor"></div>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
 
 </body>
 </html>

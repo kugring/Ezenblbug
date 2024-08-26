@@ -2,7 +2,7 @@ $(function () {
 
 ///////////////////////////////이동//////////////////////////////
     $('.title').on('click', function () {
-        location.href="/ezn/tumblbug/main.do"
+        location.href="/main"
     });
 
 
@@ -23,12 +23,11 @@ $(function () {
         location.href="/ezn/tumblbug/coming_soon.do"
     });
 
-    $('.search-box').on('click', function () {
-        location.href="/ezn/tumblbug/search.do"
+    $('.header-search-box').on('click', function () {
+        $(".search-container").css("display","flex")
+        $(".search-input").focus()
+        document.body.style.overflow = 'hidden'; // 스크롤 막기
     });
-
-
-
 
 ///////////////////////////////기능//////////////////////////////
 
@@ -48,8 +47,5 @@ $(function () {
             $('.profile-item').css('display', 'none');
             $('.login-item').css('display', 'flex');
         }
-
     });
-
-
 });

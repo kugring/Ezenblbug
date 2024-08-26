@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>[ 회원가입 ]- Ezentlbug</title>
+    <title>[ 회원가입 ]- Ezenblbug</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resources/assets/zenblbug_logo.png" type="image/png">
     <link href="${path}/resources/signUp/style.css" type="text/css" rel="stylesheet"/>
     <link href="${path}/resources/app.css" type="text/css" rel="stylesheet"/>
@@ -142,7 +142,7 @@
                     </div>
                     <div class='sign-up-content-button-box'>
                         <div class="primary-button-lg full-width" onClick="signUp()">회원가입</div>
-                        <div class='text-link-lg full-width' onClick="window.location.href = '/sign-in'">로그인</div>
+                        <div class='text-link-lg full-width' onClick="window.location.href = 'sign-in'">로그인</div>
                     </div>
                 </div>
             </div>
@@ -183,19 +183,19 @@
     const idPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordPattern = /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,}$/;
-    const nicknamePattern = /^[a-zA-Z가-힣\d@$!%*?&]{2,7}$/;
+    const nicknamePattern = /^[a-zA-Z가-힣\d@$!%*?&]{2,8}$/;
     const phoneNumberPattern = /^010-\d{4}-\d{4}$/;
     const certificationPattern = /^\d{4}$/;
 
     function onIdChangeHandler(element) {
-        let idDuplicatebutton = $("#id-duplicate-check");
+        let idDuplicateButton = $("#id-duplicate-check");
         let idValue = element.value;
 
         let idPattenCheck = idPattern.test(idValue)
 
 
-        idDuplicatebutton.toggleClass("id-check-button", idPattenCheck);
-        idDuplicatebutton.toggleClass("id-check-disable-button", !idPattenCheck);
+        idDuplicateButton.toggleClass("id-check-button", idPattenCheck);
+        idDuplicateButton.toggleClass("id-check-disable-button", !idPattenCheck);
 
         if (idPattenCheck) {
             setTrue("isIdPatternCheck");
@@ -242,13 +242,9 @@
     }
 
     function onNicknameChangeHandler(element) {
-        let nicknameDuplicateButton = $("#nickname-duplicate-check");
         let nicknameValue = element.value;
 
         let nicknamePatternCheck = nicknamePattern.test(nicknameValue);
-
-        nicknameDuplicateButton.toggleClass("nickname-check-button", nicknamePatternCheck);
-        nicknameDuplicateButton.toggleClass("nickname-check-disable-button", !nicknamePatternCheck);
 
         if (nicknamePatternCheck) {
             nicknameDuplicateCheck();

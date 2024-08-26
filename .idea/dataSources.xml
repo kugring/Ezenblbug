@@ -7,7 +7,7 @@
       <imported>true</imported>
       <remarks>spring
 
-C:/Users/gram/eclipse-workspace/zentlbug_1/src/main/webapp/WEB-INF/spring/root-context.xml</remarks>
+C:/Users/gram/eclipse-workspace/zenblbug_1/src/main/webapp/WEB-INF/spring/root-context.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/zenblbug_project</jdbc-url>
       <jdbc-additional-properties>

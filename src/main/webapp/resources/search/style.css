@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+
+.search-container{
+    position: absolute;
+    z-index: 2;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.search-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1024px;
+    height: 56px;
+}
+
+.search-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    flex: 1;
+
+    gap: 13px;
+    height: 26px;
+}
+
+#searchForm{
+    margin: 0 !important;
+}
+
+.search-input{
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    flex: 1;
+    padding: 4px 0 0 0;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+}
+
+.search-input::placeholder {
+    color: #999; /* placeholder 텍스트 색상 */
+    font-size: 18px; /* placeholder 텍스트 크기 */
+    opacity: 0.8; /* placeholder 텍스트의 투명도 */
+    font-weight: 400;
+}
+
+.search-submit{
+    display:none;
+    color: inherit;
+    font: inherit;
+    fill: rgb(206, 206, 206);
+    border-radius: 50% 50%;
+    margin: 0;
+}
+
+.close-button{
+    padding: 1em;
+    cursor: pointer;
+    transform: translateX(25%);
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    background: rgb(240, 240, 240);
+}
+
+
+
+.main-box{
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    padding-top: 20px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    overflow: hidden auto;
+}
+
+.popular-search-bundle{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.23rem;
+    width: 100%;
+    gap: 16px;
+}
+
+.popular-search-title-items{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.popular-title{
+    color: rgb(61, 61, 61);
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.popular-title-date{
+    font: 400 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(158, 158, 158);
+    transition: 0.3s ease-in-out;
+    user-select: none;
+    padding-left: 10px;
+}
+
+.popular-title-date:hover{
+    color: black;
+}
+
+.popular-search-text-ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    justify-content: space-between;
+    list-style: none;
+    gap: 16px 20px;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.popular-search-text-li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    min-height: 22px;
+
+}
+
+.popular-search-text-items{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+}
+
+.popular-search-number{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 28px;
+    height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.popular-search-text{
+    flex: 1 1 0%;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.relation-word-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.relation-word-wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.relation-word-title{
+    color: rgb(61, 61, 61);
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.relation-word-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 8px;
+    border-radius: 4px;
+    max-width: 240px;
+    background-color: rgba(240, 240, 240, 0.5);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.recent-word-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recent-word-title{
+    color: rgb(61, 61, 61);
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.recent-word-wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.recent-word-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 8px;
+    border-radius: 4px;
+    max-width: 240px;
+    background-color: rgba(240, 240, 240, 0.5);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    gap: 6px;
+
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.recent-word-title{
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.recent-word-title-text {
+}
+
+.recent-word-all-delete{
+    font: 400 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(109, 109, 109);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.empty-recent-word{
+    padding: 7px 8px;
+    color: rgb(158, 158, 158);
+    font: 400 12px / 20px "Noto Sans KR", sans-serif;
+}

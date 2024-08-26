@@ -1,0 +1,372 @@
+body{
+    position: relative;
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+    background: rgb(255, 255, 255);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    color: #3d3d3d;
+    font-family: Noto Sans KR, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Oxygen, Open Sans, Helvetica Neue;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    line-height: 24px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(245, 245, 245);
+    padding: 0px 0px 50px;
+}
+
+.main-top{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+.top-bundle{
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 100%;
+}
+
+.top-box{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.top-items{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button-box{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding-left: 0px;
+    padding-right: 50px;
+}
+
+.dalseonglyul-button{
+    position: relative;
+    display: flex;
+    height: 34px;
+    box-sizing: border-box;
+    line-height: 34px;
+    border-radius: 3px;
+    border: 1px solid rgb(230, 230, 230);
+    background: rgb(255, 255, 255);
+    color: rgb(72, 72, 72);
+    padding: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.dalseonglyul-button-text-box{
+    position: relative;
+    outline: 0;
+    border: 0px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    color: rgb(85, 85, 85);
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0px 27px 0px 8px;
+    cursor: pointer;
+}
+
+.dalseonglyul-button-text{
+    position: relative;
+    display: inline;
+    font-size: 1.07rem;
+}
+
+.black-down-arrow-box{
+    position: absolute !important;
+    display: block;
+    right: 7px;
+    top: 50%;
+    width: 16px;
+    border: 0px;
+    background: 0px center;
+    outline: none;
+    line-height: 0;
+    font-size: 8px;
+    transform: translateY(-50%);
+    margin: 1px 0px 0px;
+    padding: 0px;
+}
+
+
+
+
+.main-container{
+    position: relative;
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.main-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: Noto Sans KR, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Oxygen, Open Sans, Helvetica Neue;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    color: rgb(51, 51, 51);
+}
+
+.total-count-items{
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.08px;
+    width: 100%;
+    color: rgb(61, 61, 61);
+    margin: 0px auto;
+    padding: 16px 20px 32px 0px;
+}
+
+.total-count{
+    color: rgb(255, 87, 87);
+}
+
+.search-main-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0px -10px;
+    gap: 50px 0px;
+}
+
+.content-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 25%;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px 10px;
+
+}
+
+.project-box{
+    display: block;
+}
+
+.project-img-items{
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+}
+
+.project-img{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.2s;
+    background: center center / cover no-repeat;
+}
+
+.project-img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.project-likes{
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.black-empty-heart{
+    display: flex;
+}
+
+.pink-heart{
+    display: flex;
+}
+
+.project-intro{
+    overflow: hidden;
+    color: rgb(61, 61, 61);
+    padding: 16px 0px 0px;
+    margin-bottom: 14px;
+}
+
+.project-team{
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    padding: 0px 0px 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+}
+
+.project-team-span{
+    color: rgb(61, 61, 61);
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.project-team-span:hover{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.project-title{
+    overflow: hidden;
+    min-height: auto;
+    margin: 0px 0px 8px;
+    font-weight: bold;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    white-space: break-spaces;
+    cursor: pointer;
+}
+
+
+.project-text{
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    text-overflow: ellipsis;
+    width: 93%;
+    color: rgb(158, 158, 158);
+    font-size: 13px;
+    line-height: 21px;
+    letter-spacing: 0cap;
+    white-space: normal;
+}
+
+.project-number-intro{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+.project-percent{
+    color: rgb(255, 87, 87);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.project-funding-amount{
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: rgb(61, 61, 61);
+}
+
+.project-Dday{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: rgb(109, 109, 109);
+    margin-left: auto;
+}
+
+.project-red-bar{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 3px;
+    margin: 6px 0px 0px;
+}
+
+.project-red-bar-content{
+    content: "";
+    width: 98928%;
+    display: block;
+    height: 100%;
+    background: rgb(255, 87, 87);
+}
+
+
+
+/* ////////////////////////////////////////달성률 옵션 레이어//////////////////////////////////////// */
+
+.page-layer{
+    position: absolute;
+    z-index: 1;
+    top: 42px;
+    left: 0;
+    display: none;
+    background: #fff;
+    color: #3d3d3d;
+    font-family: Noto Sans KR, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Oxygen, Open Sans, Helvetica Neue;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    line-height: 24px;
+}
+
+.dalseonglyul-option-items{
+    background: rgb(255, 255, 255);
+    position: relative;
+    z-index: 1;
+    transform: none;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+}
+
+.dalseonglyul-option-item{
+    border: 0px;
+    font-size: 1rem;
+    height: 34px;
+    line-height: 34px;
+}
+
+.dalseonglyul-option-item:hover{
+    cursor: pointer;
+    background-color: rgb(242, 242, 242);
+}
+
+.option-all{
+    font-weight: bold;
+    white-space: nowrap;
+    min-width: 130px;
+    color: rgb(250, 101, 99);
+    padding: 0px 16px 0px 12px;
+}
+
+.option-percent{
+    white-space: nowrap;
+    font-weight: normal;
+    min-width: 130px;
+    color: inherit;
+    padding: 0px 16px 0px 12px;
+}
+

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>[ 로그인 ]- Ezentlbug</title>
+<title>[ 로그인 ]- Ezenblbug</title>
 <link rel="icon" href="${pageContext.request.contextPath}/resources/assets/title_logo.png" type="image/png">
 <link href="${path}/resources/signIn/style.css" type="text/css" rel="stylesheet" />
 <link href="${path}/resources/app.css" type="text/css" rel="stylesheet" />
@@ -68,7 +68,7 @@
         document.getElementById("sign-in-button").click();
     });
     document.getElementById("sign-up-page-move").addEventListener("click", function() {
-        window.location.href = "/sign-up";
+        window.location.href = "sign-up"; // '/'를 붙이면 경로가 'auth'가 붙인 채로 전송되기 떄문에 /를 붙이면 안된다.
     });
 
     function getQueryParameter(name) {
@@ -87,7 +87,6 @@
 
     function clearMessage(){
         document.querySelector(".input-box-message-error").innerHTML = '&nbsp;';
-        console.log("생강은 코딩이다")
     }
 </script>
 </html>

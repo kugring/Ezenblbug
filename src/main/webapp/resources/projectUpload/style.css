@@ -1,6 +1,9 @@
 .container {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     flex-grow: 1;
     background: rgb(255, 255, 255);
@@ -56,7 +59,7 @@
     padding: 80px 0;
 }
 
-.card-list{
+.swiper-card-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -64,12 +67,12 @@
     gap: 12px;
 }
 
-.card-box.active{
+.swiper-card-box.active {
     transform: translateY(-5%);
 }
 
 
-.card-box {
+.swiper-card-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,29 +86,32 @@
 
     cursor: pointer;
 }
-.card-img {
+
+.swiper-card-img {
 
 
     width: 240px;
     height: 152px;
     overflow: hidden; /* 이미지가 부모 요소를 넘지 않도록 설정 */
 
-    border-radius: 12px 12px 0 0 ;
+    border-radius: 12px 12px 0 0;
 }
-.card-img img {
+
+.swiper-card-img img {
     width: 240px;
     max-width: 100%; /* 부모 요소의 너비를 초과하지 않도록 설정 */
     height: auto; /* 비율 유지하면서 높이 자동 조절 */
 }
 
-.card-content{
+.swiper-card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 24px;
 }
-.card-tag {
+
+.swiper-card-tag {
     border-radius: 4px;
     margin: 20px 0px 0px;
     padding: 0px 6px;
@@ -114,7 +120,7 @@
     background-color: rgb(240, 240, 240);
 }
 
-.card-title {
+.swiper-card-title {
     width: 100%;
     margin: 6px 0px 0px;
     padding: 0px;
@@ -123,7 +129,7 @@
     white-space: normal; /* 공백 문자가 그대로 유지되며 자동 줄바꿈 */
 }
 
-.card-text {
+.swiper-card-text {
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -133,10 +139,575 @@
 
 }
 
-.card-completion {
+.swiper-card-completion {
     margin: 8px 0px 0px;
     padding: 0px;
     font: 700 16px / 24px "Noto Sans KR", sans-serif;
     color: rgb(248, 100, 83);
     -webkit-box-pack: end;
+}
+
+.reason-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 880px;
+    height: 500px;
+
+    gap: 60px 0;
+}
+
+.reason-box {
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.reason-title-text {
+    width: 880px;
+    height: 72px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.reason-item-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 0px;
+    width: 780px;
+}
+
+.reason-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33.33%;
+    gap: 4px;
+}
+
+.reason-item-title {
+    font: 500 16px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(109, 109, 109);
+}
+
+.reason-item-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.reason-item-front {
+    color: rgb(248, 100, 83);
+    font: 700 32px / 44px "Noto Sans KR", sans-serif;
+}
+
+.reason-item-text {
+    font: 700 32px / 44px "Noto Sans KR", sans-serif;
+}
+
+.reason-background-img {
+    scale: 1.1;
+
+    position: absolute;
+    right: -56%;
+    top: 25%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    animation: reveal 6s ease-in-out infinite;
+}
+
+.reason-background-img::after {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 50%; /* 그라데이션 높이 조정 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+    /* 상단에서부터 하단까지 흐려지는 효과 */
+    pointer-events: none; /* 배경 이미지와의 상호작용 방지 */
+}
+
+
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0); /* 요소가 왼쪽에서 오른쪽으로 가려짐 */
+    }
+    37.5% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0); /* 3초 후에 요소가 완전히 드러남 */
+    }
+    80% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0); /* 요소가 5초 동안 유지됨 */
+    }
+    100% {
+        opacity: 0;
+        clip-path: inset(0 0 0 100%); /* 요소가 다시 가려짐 */
+    }
+}
+
+.funding-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin-top: 340px;
+}
+
+.funding-title-text {
+    width: 880px;
+    height: 72px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.funding-card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.funding-card-box {
+    position: relative;
+}
+
+.funding-card-box.move-down {
+    transform: translateY(10%);
+}
+
+.funding-card-img {
+    width: 224px;
+    height: 380px;
+    padding: 36px 28px;
+
+    border-radius: 12px;
+    background-position: 50%;
+    background-size: cover;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.funding-card-content {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    width: 224px;
+    height: 380px;
+    padding: 36px 28px;
+
+    opacity: 0;
+
+    border-radius: 12px;
+    transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+}
+
+.funding-card-content:hover {
+    opacity: 1;
+}
+
+.funding-card-title {
+    font: 700 16px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.funding-card-text {
+    width: 100%;
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: #ffffff;
+    white-space: normal; /* 공백 문자가 그대로 유지되며 자동 줄바꿈 */
+
+}
+
+.function-container {
+    margin-top: 240px;
+
+    display: flex;
+    flex-direction: column;
+    width: 880px;
+
+    gap: 60px;
+}
+
+.function-title-text {
+    width: 880px;
+    height: 72px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.function-item-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 68px 120px;
+}
+
+.function-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33.33%;
+    gap: 24px;
+}
+
+.function-item-img {
+    width: 380px;
+    height: 200px;
+    vertical-align: top;
+
+    background-position: 50%;
+    background-size: 100%;
+}
+
+.function-item-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.function-item-title {
+    font: 700 16px / 24px "Noto Sans KR", sans-serif;
+}
+
+.function-item-text {
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(13, 13, 13);
+    white-space: pre-wrap;
+}
+
+
+.progress-container {
+    margin-top: 240px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 60px;
+}
+
+.progress-title-text {
+    text-align: center;
+    width: 880px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.progress-item-box {
+    display: flex;
+    width: 880px;
+    flex-wrap: wrap;
+    gap: 84px 110px;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 22px;
+
+    width: 220px;
+    height: 206px;
+}
+
+.progress-img {
+    width: 160px;
+    height: 160px;
+
+    background-size: 100%;
+    background-position: 50%;
+}
+
+.progress-detailed-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 44px;
+    padding: 0 14px;
+    font: 700 16px / 24px "Noto Sans KR", sans-serif;
+    border-radius: 4px;
+    color: rgb(109, 109, 109);
+    background-color: rgb(240, 240, 240);
+}
+
+.sns-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    width: 100vw;
+
+    margin: 200px 0;
+
+    gap: 86px;
+
+    background-color: rgb(240, 240, 240);
+}
+
+.sns-content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 32px 0;
+
+    gap: 12px;
+}
+
+.sns-title {
+    font: 700 18px / 28px "Noto Sans KR", sans-serif;
+}
+
+.sns-content-text {
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(109, 109, 109);
+}
+
+.sns-chanel-add {
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 168px;
+    height: 32px;
+    background-color: rgb(255, 232, 18);
+    border-radius: 30px;
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+}
+
+
+.roller-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    gap: 60px;
+}
+
+.roller-badge-box {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.roller-title-text {
+    text-align: center;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+
+}
+
+.roller-top-badge-list {
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    transform: translateX(0);
+    transition: transform 20s linear;
+
+    gap: 8px;
+}
+
+.roller-bottom-badge-list {
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    transform: translateX(-50%);
+    transition: transform 20s linear;
+
+    gap: 8px;
+}
+
+.roller-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+
+    padding: 8px 22px 8px 18px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 999px;
+    background-color: rgb(248, 248, 248);
+}
+
+.exhibition-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 180px 0 0 0;
+    gap: 12px;
+
+    width: 916px;
+    height: 470px;
+}
+
+.exhibition-title {
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.exhibition-text {
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(109, 109, 109);
+}
+
+.exhibition-img {
+    position: absolute;
+    right: 0;
+
+    width: 693px;
+    height: 432px;
+}
+
+.exhibition-move-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 142px;
+    height: 44px;
+    margin-top: 28px;
+    font: 500 14px / 22px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 252px;
+
+    background-color: rgb(61, 61, 61);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+    background-image: url(https://d1ohqa58xvigdz.cloudfront.net/pricing/banner-bg-pc.png);
+}
+
+.banner-title {
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.QnA-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 140px 0;
+    width: 100vw;
+}
+
+.QnA-title {
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+
+    margin-bottom: 48px;
+}
+
+.QnA-box {
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid rgb(228, 228, 228);
+}
+
+.QnA-box:last-of-type{
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.Q-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 880px;
+    padding: 20px 16px;
+}
+
+.Q-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.Q-bullet {
+    color: rgb(248, 100, 83);
+    font: 700 18px / 28px "Noto Sans KR", sans-serif;
+}
+
+.Question-text {
+    font: 700 16px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.toggle-icon {
+    width: 16px;
+    height: 16px;
+
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out; /* 부드러운 전환 */
+}
+
+.toggle-icon.rotate-180 {
+    transform: rotate(180deg); /* 180도 회전 */
+}
+
+.A-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 880px;
+    height: 0;
+    padding: 0 16px;
+    overflow: hidden;
+
+}
+
+.A-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
+
+.A-bullet {
+    color: rgb(109, 109, 109);
+    font: 700 18px / 28px "Noto Sans KR", sans-serif;
+}
+
+.Answer-text {
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.Answer-text a{
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+    color: rgb(248, 100, 83);
+    text-decoration: none;
 }

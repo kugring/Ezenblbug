@@ -320,7 +320,7 @@ body {
     background-image: url("./assets/bag_x.png");
 }
 .pink-heart{
-    background-image: url("./assets/pink_heart.png");
+    background-image: url("./assets/like_ok_icon.png");
 }
 .taro-card{
     background-image: url("./assets/taro_card.jfif");
@@ -328,8 +328,8 @@ body {
 .book{
     background-image: url("./assets/book.jpg");
 }
-.black-empty-heart{
-    background-image: url("./assets/black_empty_heaert.png");
+.empty-heart{
+    background-image: url("./assets/like_icon.png");
 }
 .kuromi-bag{
     background-image: url("./assets/kuromi_bag.png");
@@ -409,9 +409,6 @@ body {
 .apple{
     background-image: url("./assets/apple.png");
 }
-.empty-heart{
-    background-image: url("./assets/empty_heart.png");
-}
 .white-right-arrow{
     background-image: url("./assets/black_left_arrow.png");
     transform: rotateY( 180deg );
@@ -429,8 +426,8 @@ body {
 .black-menu{
     background-image: url("./assets/black_menu.png");
 }
-.empty-black-reading-glass{
-    background-image: url("./assets/empty_black_reading_glass.png");
+.search-icon{
+    background-image: url("./assets/search.png");
 }
 
 
@@ -720,10 +717,10 @@ body {
 /*}*/
 
 
-.divider{
-    border-top:1px solid rgba(0,0,0,0.2);
-    width: 100%;
-}
+/*.divider{*/
+/*    border-top:1px solid rgba(0,0,0,0.2);*/
+/*    width: 100%;*/
+/*}*/
 
 .dot-divider{
     border-top:2px dotted rgba(0,0,0,0.1);

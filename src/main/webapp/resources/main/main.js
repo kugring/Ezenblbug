@@ -18,19 +18,42 @@ $('.fist-box-card-img').on('click', function () {
 
 ///////////////////////////////기능//////////////////////////////
 
+$(function() {
 //좋아요 하트 변경
-$('.project-likes').on('click', function (obj) {
+    $('.project-like').on('click', function () {
+        onHeartChange(this)
+    });
 
-    let hasEmptyHeart = $(obj.target).hasClass("black-empty-heart");
-    if (hasEmptyHeart) {
-        $(obj.target).removeClass("black-empty-heart");
-        $(obj.target).addClass("pink-heart");
-    } else {
-        $(obj.target).removeClass("pink-heart");
-        $(obj.target).addClass("black-empty-heart");
+    function onHeartChange(element) {
+        $(element).toggleClass("pink-heart empty-heart");
+
+        let $card = $(element).closest('.attention-card')
+
+        let projectId = $card.find("input[name='project-id']").val();
+
+        $.ajax({
+            url: `project/${projectId}/favorite`, // 요청을 보낼 URL
+            type: 'PUT', // 요청의 타입
+            contentType: 'application/json', // 요청 본문의 미디어 타입
+            data: JSON.stringify({}),
+            success: function (result) {
+                console.log(result)
+                // 좋아요를 등록하는 경우
+                $(element).toggleClass("pink-heart", result === 0);
+                // 좋아요를 제거하는 경우
+                $(element).toggleClass("empty-heart", result !== 0);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error('Error:', jqXHR, textStatus, errorThrown);
+            }
+        });
+
     }
-
 });
+
+
+
+
 $(function() {
     // 오른쪽 화살표 버튼 클릭을 트리거하는 함수
     function triggerRightArrowClick() {
@@ -55,7 +78,6 @@ function moveSlide(step) {
     currentSlide = currentSlideIndex
     $(".page-number").html(currentSlideIndex + " / " + slides.length)
 
-    console.log(currentSlide)
 
     const nextSlideIndex = step === 1 ? 0 : slides.length-1;
     const $nextSlideElement = $(slides[nextSlideIndex]).clone();

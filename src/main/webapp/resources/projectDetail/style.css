@@ -1,28 +1,33 @@
 @charset "UTF-8";
+body {
+    padding: 0;
+    margin: 0;
+}
 
-p{
+p {
     text-align: center;
 }
 
-u{
+u {
     text-decoration: none;
     box-shadow: inset 0 -9px 0 hsla(2, 100%, 93%, .8);
     padding: .15rem 0;
 }
-h2{
+
+h2 {
     text-align: center;
 }
 
-strong{
+strong {
     color: #3d3d3d;
     font-family: sans-serif;
 }
 
-.black-check{
+.black-check {
     opacity: 0.5;
 }
 
-.project-page{
+.project-page {
     background: #fff;
     color: #3d3d3d;
     font-family: Noto Sans KR, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Oxygen, Open Sans, Helvetica Neue;
@@ -32,15 +37,17 @@ strong{
     line-height: 24px;
 }
 
-.project-top-container{
+.project-top-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     border-bottom: 1px solid rgb(228, 228, 228);
     background-color: rgb(255, 255, 255);
 }
 
-.project-first-layer{
+.project-first-layer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -48,7 +55,7 @@ strong{
     margin: 0px auto;
 }
 
-.project-top-header{
+.project-top-header {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -58,7 +65,7 @@ strong{
 
 }
 
-.project-header-bundle{
+.project-header-bundle {
     justify-content: center;
     display: flex;
     text-align: center;
@@ -66,7 +73,7 @@ strong{
     align-items: center;
 }
 
-.project-header-bundle-category{
+.project-header-bundle-category {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +88,7 @@ strong{
     padding: 0.6rem;
 }
 
-.project-title{
+.project-title {
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.5;
@@ -90,30 +97,46 @@ strong{
 }
 
 
-.project-second-layer{
+.project-second-layer {
+    position: relative;
+
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
     width: 100%;
     padding-bottom: 3rem;
-    margin: 0px 200px 0px 200px;
+    gap: 50px;
 }
 
-.project-top-left{
+.project-detail-carousel-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 600px;
+}
+
+.carousel-item {
     display: flex;
 }
-.project-title-img-box{
+
+.carousel-img-box {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
     position: relative;
-    display: block;
     overflow-x: visible;
     width: 594px;
     height: 632px;
     margin: 0px;
 }
 
-.project-title-img-box-layer{
-    position: relative;
+.project-title-img-box-layer {
     overflow: hidden;
     z-index: 1;
     list-style: none;
@@ -122,7 +145,7 @@ strong{
     padding: 0px;
 }
 
-.project-title-img{
+.project-title-img {
     display: inline-flex;
     overflow: hidden;
     width: 100%;
@@ -132,7 +155,7 @@ strong{
     padding: 0px;
 }
 
-.project-title-img-box-mark{
+.project-title-img-box-mark {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -143,7 +166,7 @@ strong{
     gap: 10px;
 }
 
-.img-box-mark-items{
+.img-box-mark-items {
     display: block;
     width: 6px;
     height: 6px;
@@ -151,32 +174,34 @@ strong{
     border-radius: 50%;
 }
 
-.img-mark{
+.img-mark {
     width: 8px;
     height: 8px;
     background: rgb(13, 13, 13);
 }
 
-.img-left-button{
-    align-self: center;
-    margin: 0px 15px 18px 0px;
+.carousel-control-prev {
+    position: absolute;
+    right: 100%;
+    padding: 11px;
 }
 
-.img-right-button{
+.carousel-control-next {
+    position: absolute;
+    left: 100%;
     align-self: center;
-    margin: 0px 0px 18px 15px;
+    padding: 11px;
 }
 
 
-
-.project-top-right{
+.project-top-right {
     order: 3;
     width: 352px;
     margin: 0px 0px 0px 35px;
 }
 
 
-.project-funding-current{
+.project-funding-current {
     display: flex;
     flex-direction: column;
     min-height: 280px;
@@ -186,12 +211,12 @@ strong{
     gap: 20px 0px;
 }
 
-.funding-text{
+.funding-text {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
 
-.funding-current-items{
+.funding-current-items {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -200,28 +225,28 @@ strong{
     gap: 10px;
 }
 
-.funding-current-number{
+.funding-current-number {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 5px;
 }
 
-.funding-item{
+.funding-item {
     font-size: 1rem;
 }
 
-.funding-current-percent{
+.funding-current-percent {
     font-size: 1.1rem;
     font-weight: bolder;
 }
 
 
-.funding-from-intro{
+.funding-from-intro {
     margin: 0px 0px 1rem;
 }
 
-.funding-from-intro-box{
+.funding-from-intro-box {
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgb(244, 244, 244);
@@ -229,14 +254,14 @@ strong{
     gap: 8px;
 }
 
-.funding-from-intro-items{
+.funding-from-intro-items {
     display: flex;
     align-items: baseline;
     margin: 0px;
     gap: 20px;
 }
 
-.funding-from-intro-text{
+.funding-from-intro-text {
     width: 56px;
     font-weight: 700;
     font-size: 12px !important;
@@ -244,11 +269,12 @@ strong{
     color: rgb(61, 61, 61);
 }
 
-.funding-from-intro-item{
+.funding-from-intro-item {
     display: flex;
     margin: 0px;
 }
-.text-red{
+
+.text-red {
     display: flex;
     align-items: center;
     width: 45;
@@ -263,13 +289,13 @@ strong{
 }
 
 
-.funding-title-button-box{
+.funding-title-button-box {
     display: block;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
 
-.funding-title-button-layer{
+.funding-title-button-layer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,11 +304,11 @@ strong{
     gap: 10px;
 }
 
-.funding-title-likes-button{
+.funding-title-likes-button {
     padding: 0.5rem 0px;
 }
 
-.funding-title-likes-button-items{
+.funding-title-likes-button-items {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,7 +320,7 @@ strong{
     cursor: pointer;
 }
 
-.funding-title-likes-button-item{
+.funding-title-likes-button-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,7 +329,7 @@ strong{
     font-size: 15px;
 }
 
-.likes-button-count{
+.likes-button-count {
     display: block;
     text-align: center;
     font-size: 9px;
@@ -313,11 +339,11 @@ strong{
 
 }
 
-.funding-title-link-button{
+.funding-title-link-button {
     padding: 0.5rem 0px;
 }
 
-.funding-title-link-button-items{
+.funding-title-link-button-items {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -329,7 +355,7 @@ strong{
     cursor: pointer;
 }
 
-.funding-title-link-button-item{
+.funding-title-link-button-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -338,7 +364,7 @@ strong{
     font-size: 15px;
 }
 
-.link-button-count{
+.link-button-count {
     display: block;
     text-align: center;
     font-size: 9px;
@@ -348,13 +374,13 @@ strong{
 
 }
 
-.funding-title-project-funding-button{
+.funding-title-project-funding-button {
     display: flex;
     flex-grow: 1;
     order: 3;
 }
 
-.funding-title-project-funding-button-item{
+.funding-title-project-funding-button-item {
     display: inline-block;
     align-content: center;
     outline: none;
@@ -373,18 +399,18 @@ strong{
     height: 52px;
 }
 
-.funding-title-project-funding-button-item:hover{
+.funding-title-project-funding-button-item:hover {
     cursor: pointer;
     background-color: rgb(251, 70, 67, 1);
 }
 
-.project-nav-container{
+.project-nav-container {
     position: sticky;
     top: 0;
     z-index: 2;
 }
 
-.project-nav-bundle{
+.project-nav-bundle {
     z-index: 10;
     position: relative;
     display: flex;
@@ -397,7 +423,7 @@ strong{
     padding: 0px 1rem;
 }
 
-.project-nav-box{
+.project-nav-box {
     width: 1040px;
     height: 100%;
     overflow: hidden;
@@ -405,7 +431,7 @@ strong{
     padding: 0px;
 }
 
-.project-nav-items{
+.project-nav-items {
     display: flex;
     justify-content: flex-start;
     float: left;
@@ -417,7 +443,7 @@ strong{
     margin: 0px 1rem;
 }
 
-.project-nav-item{
+.project-nav-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,27 +458,26 @@ strong{
     cursor: pointer;
 }
 
-.update-count{
+.update-count {
     font-size: 0.8rem;
     font-weight: bold;
     margin: -0.5rem -0.1rem 0px 0.2rem;
 }
 
-.select{
+.select {
     color: rgb(0, 0, 0);
     border-bottom: 3px solid rgb(0, 0, 0);
     padding-bottom: calc(-3px + 0.5rem);
 }
 
 
-
-.project-main-container{
+.project-main-container {
     background-color: rgb(255, 255, 255);
     width: 100%;
     padding-bottom: 0px;
 }
 
-.project-main-box{
+.project-main-box {
     position: relative;
     width: 1160px;
     height: auto;
@@ -460,7 +485,7 @@ strong{
     padding: 0px;
 }
 
-.project-main-layer{
+.project-main-layer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -471,8 +496,7 @@ strong{
 }
 
 
-
-.project-main-left-layer{
+.project-main-left-layer {
     flex: 1 1 650px;
     order: 1;
     width: 100%;
@@ -480,13 +504,13 @@ strong{
 }
 
 
-.project-main-left-box{
+.project-main-left-box {
     width: 100%;
     min-height: 500px;
     padding: 0px 15px;
 }
 
-.project-main-left-badge-bundle{
+.project-main-left-badge-bundle {
     position: sticky;
     top: 56px;
     z-index: 2;
@@ -497,7 +521,7 @@ strong{
     background: #ffffff;
 }
 
-.project-main-left-badge-items{
+.project-main-left-badge-items {
     display: flex;
     overflow: auto hidden;
     box-sizing: border-box;
@@ -509,7 +533,7 @@ strong{
     gap: 10px;
 }
 
-.project-main-left-badge-item{
+.project-main-left-badge-item {
     display: inline-flex;
     align-items: center;
     height: 32px;
@@ -524,13 +548,13 @@ strong{
     cursor: pointer;
 }
 
-.current-badge{
+.current-badge {
     border: none;
     color: rgb(255, 255, 255);
     background: rgb(61, 61, 61);
 }
 
-.project-main-left-content{
+.project-main-left-content {
     position: relative;
     width: 620px;
     background-color: rgb(255, 255, 255);
@@ -539,12 +563,12 @@ strong{
     padding: 32px 0px 0px;
 }
 
-.project-main-left-content.purpose-content{
+.project-main-left-content.purpose-content {
     border-bottom: 1px solid rgb(230, 230, 230);
     padding: 32px 0px;
 }
 
-.project-main-left-content-intro-title{
+.project-main-left-content-intro-title {
     display: flex;
     align-items: center;
     color: rgb(13, 13, 13);
@@ -555,7 +579,7 @@ strong{
     margin-bottom: 16px;
 }
 
-.project-main-left-content-intro-content{
+.project-main-left-content-intro-content {
     font-size: 16px;
     line-height: 28px;
     color: #3d3d3d;
@@ -565,60 +589,60 @@ strong{
     margin: 0px;
 }
 
-.spring-arang-intro{
+.spring-arang-intro {
     width: 100%;
     height: 100%;
     margin-top: 20px;
     background: center center / cover no-repeat;
 }
 
-.spring-arang-chusuck{
+.spring-arang-chusuck {
     width: 100%;
     height: 100%;
     margin-top: 20px;
     background: center center / cover no-repeat;
 }
 
-.hwaguaja-2{
+.hwaguaja-2 {
     width: 100%;
     height: 100%;
     margin-top: 20px;
     background: center center / cover no-repeat;
 }
 
-.hwaguaja-3{
+.hwaguaja-3 {
     width: 100%;
     height: 100%;
     margin-top: 20px;
     background: center center / cover no-repeat;
 }
 
-.yangeng{
-    width: 100%;
-    height: 100%;
-    margin-top: 20px;
-    background: center center / cover no-repeat;
-}
-.gift-box{
+.yangeng {
     width: 100%;
     height: 100%;
     margin-top: 20px;
     background: center center / cover no-repeat;
 }
 
+.gift-box {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
 
 
-.project-main-left-content-budget{
+.project-main-left-content-budget {
     border-bottom: 1px solid rgb(230, 230, 230);
     padding: 32px 0px;
 }
 
-.project-main-left-content-schedule{
+.project-main-left-content-schedule {
     border-bottom: 1px solid rgb(230, 230, 230);
     padding: 32px 0px;
 }
 
-.project-main-left-content-gift-intro{
+.project-main-left-content-gift-intro {
     font-size: 16px;
     line-height: 28px;
     box-sizing: border-box;
@@ -627,12 +651,7 @@ strong{
 }
 
 
-
-
-
-
-
-.project-main-right-layer{
+.project-main-right-layer {
     display: flex;
     order: 2;
     width: 100%;
@@ -642,13 +661,13 @@ strong{
     align-self: stretch;
 }
 
-.project-main-right-box{
+.project-main-right-box {
     width: 100%;
     height: 100%;
     min-height: 500px;
 }
 
-.project-main-right-creater-intro{
+.project-main-right-creater-intro {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -661,24 +680,24 @@ strong{
     padding: 20px 16px;
 }
 
-.project-main-right-creater-intro-title{
+.project-main-right-creater-intro-title {
     display: block;
     font-weight: bolder;
     margin: 0px;
     padding: 5px 0px 20px;
 }
 
-.project-main-right-creater-profile-box{
+.project-main-right-creater-profile-box {
     display: flex;
     align-items: center;
 }
 
-.project-main-right-creater-profile-items{
+.project-main-right-creater-profile-items {
     color: #fa6462;
     background: transparent;
 }
 
-.project-main-right-creater-profile-item{
+.project-main-right-creater-profile-item {
     display: inline-block;
     background-size: cover;
     background-position: 50% 38%;
@@ -690,19 +709,19 @@ strong{
     margin-top: 5px;
 }
 
-.project-main-right-creater-profile-text{
+.project-main-right-creater-profile-text {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.project-main-right-creater-name{
+.project-main-right-creater-name {
     color: rgb(61, 61, 61);
     font-weight: bolder;
 }
 
 
-.project-main-right-creater-profile-self-intro-box{
+.project-main-right-creater-profile-self-intro-box {
     display: block;
     font-weight: 400;
     color: rgb(109, 109, 109);
@@ -712,21 +731,21 @@ strong{
     padding-top: 18px;
 }
 
-.project-main-right-creater-profile-follow-box{
+.project-main-right-creater-profile-follow-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
 }
 
-.project-main-right-creater-profile-follow-button{
+.project-main-right-creater-profile-follow-button {
     display: flex;
     width: 150px;
     margin-right: 8px;
     cursor: pointer;
 }
 
-.project-main-right-creater-profile-follow-button-items{
+.project-main-right-creater-profile-follow-button-items {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -740,31 +759,30 @@ strong{
     color: rgb(0, 0, 0);
 }
 
-.project-main-right-creater-profile-follow-button-items-frame{
+.project-main-right-creater-profile-follow-button-items-frame {
     display: flex;
     align-items: center;
     line-height: 14px;
     gap: 5px;
 }
 
-.project-main-right-creater-profile-follow-button-item{
+.project-main-right-creater-profile-follow-button-item {
     opacity: 0.8;
 }
-.project-main-right-creater-profile-follow-button-item-text{
+
+.project-main-right-creater-profile-follow-button-item-text {
     display: flex;
     align-items: center;
 }
 
 
-
-
-.project-main-right-funding-package{
+.project-main-right-funding-package {
     position: sticky;
     top: 80px;
     transition: height 0.1s;
 }
 
-.project-main-right-funding-package-bundle{
+.project-main-right-funding-package-bundle {
 
     display: flex;
     flex-direction: column;
@@ -785,7 +803,7 @@ strong{
 
 } */
 
-.project-main-right-funding-package-bundle-title{
+.project-main-right-funding-package-bundle-title {
     display: block;
     font-size: 14px;
     font-weight: bold;
@@ -795,7 +813,7 @@ strong{
     margin-bottom: 0.5rem;
 }
 
-.project-main-right-funding-package-box{
+.project-main-right-funding-package-box {
     width: 100%;
     transition: height 0.2s, box-shadow 0.2s, border 0.2s ease-in-out;
     background-color: rgb(255, 255, 255);
@@ -806,7 +824,7 @@ strong{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
 }
 
-.project-main-right-funding-package-section{
+.project-main-right-funding-package-section {
     position: relative;
     overflow-x: hidden;
     transition: 0.4s ease-out;
@@ -817,7 +835,7 @@ strong{
     white-space: normal;
 }
 
-.project-main-right-funding-package-main-section-items{
+.project-main-right-funding-package-main-section-items {
     display: flex;
     flex-direction: column;
     color: rgb(61, 61, 61);
@@ -825,12 +843,12 @@ strong{
     gap: 5px;
 }
 
-.project-main-right-funding-package-main-section-item-price-box{
+.project-main-right-funding-package-main-section-item-price-box {
     display: flex;
     align-items: center;
 }
 
-.project-main-right-funding-package-main-section-item-price{
+.project-main-right-funding-package-main-section-item-price {
     display: flex;
     align-items: center;
     font-size: 24px;
@@ -840,14 +858,14 @@ strong{
     gap: 10px;
 }
 
-.project-main-right-funding-package-main-section-item-content-box{
+.project-main-right-funding-package-main-section-item-content-box {
     font-size: 13px;
     line-height: 20px;
     letter-spacing: -0.015em;
 }
 
 
-.project-main-right-funding-package-category-box{
+.project-main-right-funding-package-category-box {
     position: relative;
     transition: height 0.1s ease-out;
     /*overflow: hidden;*/
@@ -860,7 +878,7 @@ strong{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
 }
 
-.project-main-right-funding-package-current-amount-box{
+.project-main-right-funding-package-current-amount-box {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -872,7 +890,7 @@ strong{
     padding: 0px;
 }
 
-.project-main-right-funding-package-current-choose-amount{
+.project-main-right-funding-package-current-choose-amount {
     display: flex;
     align-items: baseline;
     font-size: 13px;
@@ -884,8 +902,7 @@ strong{
 }
 
 
-
-.project-main-right-funding-package-current-have-amount{
+.project-main-right-funding-package-current-have-amount {
     color: rgb(255, 87, 87);
     background-color: rgb(255, 238, 238);
     border-radius: 2px;
@@ -898,12 +915,12 @@ strong{
 }
 
 
-.project-main-right-funding-package-main-section-ul{
+.project-main-right-funding-package-main-section-ul {
     padding: 0px;
     margin: 0px;
 }
 
-.project-main-right-funding-package-main-section-li{
+.project-main-right-funding-package-main-section-li {
     position: relative;
     list-style: none;
     font-size: 12px;
@@ -912,7 +929,7 @@ strong{
     padding: 0px 0px 0px 10px;
 }
 
-.list-mark{
+.list-mark {
     position: absolute;
     font-weight: bold;
     left: 0px;

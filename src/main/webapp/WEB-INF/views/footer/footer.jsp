@@ -4,8 +4,8 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-    <link href="./../resources/app.css" rel="stylesheet" type="text/css" />
-    <link href="./../resources/footer/style.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/footer/style.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <%--    <script src="${path}/resources/footer/footer.js"></script>--%>
 </head>

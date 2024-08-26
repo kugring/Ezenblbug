@@ -4,13 +4,12 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-    <title>[ 프로젝트 ]- Ezentlbug</title>
+    <title>[ 프로젝트 ]- Ezenblbug</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resources/assets/zenblbug_logo.png" type="image/png">
     <link href="../resources/projectDetail/style.css" rel="stylesheet" type="text/css"/>
     <link href="../resources/app.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${path}/resources/projectDetail/script.js"></script>
-
 </head>
 <body>
 
@@ -28,25 +27,27 @@
             </div>
         </div>
         <div class="project-second-layer">
-            <div class="img-left-button">
-                <div class="left-arrow icon-32"></div>
-            </div>
-            <div class="project-top-left">
-                <div class="project-title-img-box">
-                    <div class="project-title-img-box-layer">
-                        <div class="project-title-img hwaguaja"></div>
-                        <div class="project-title-img-box-mark">
-                            <div class="img-box-mark-items img-mark"></div>
-                            <div class="img-box-mark-items"></div>
-                            <div class="img-box-mark-items"></div>
-                            <div class="img-box-mark-items"></div>
-                            <div class="img-box-mark-items"></div>
+            <div class="project-detail-carousel-container">
+                <div class="carousel-control-prev img-left-button">
+                    <div class="left-arrow icon-32"></div>
+                </div>
+                <div class="project-top-left carousel-item">
+                    <div class="carousel-img-box">
+                        <div class="project-title-img-box-layer">
+                            <div class="project-title-img hwaguaja"></div>
+                            <div class="project-title-img-box-mark">
+                                <div class="img-box-mark-items img-mark"></div>
+                                <div class="img-box-mark-items"></div>
+                                <div class="img-box-mark-items"></div>
+                                <div class="img-box-mark-items"></div>
+                                <div class="img-box-mark-items"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="img-right-button">
-                <div class="right-arrow icon-32"></div>
+                <div class="carousel-control-next img-right-button">
+                    <div class="right-arrow icon-32"></div>
+                </div>
             </div>
             <aside class="project-top-right">
                 <div class="project-funding-current">
