@@ -9,7 +9,15 @@ public interface UserMapper {
 
 	@Select("SELECT * FROM user WHERE user_id=#{userId}")
 	@Results({
-			@Result(property = "userId", column = "user_id")
+			@Result(property = "userId", column = "user_id"),
+			@Result(property = "email", column = "email"),
+			@Result(property = "nickname", column = "nickname"),
+			@Result(property = "profileImage", column = "profile_image"),
+			@Result(property = "selfIntro", column = "self_intro"),
+			@Result(property = "address", column = "address"),
+			@Result(property = "addressDetail", column = "address_detail"),
+			@Result(property = "phoneNumber", column = "phone_number")
+
 	})
 	UserVO findByUserId(String userId);
 	

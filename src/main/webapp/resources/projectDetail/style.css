@@ -1,12 +1,16 @@
 @charset "UTF-8";
 body {
+    position: relative;
+    display:flex;
+    flex-direction:column;
     padding: 0;
     margin: 0;
 }
 
-p {
+p{
     text-align: center;
 }
+
 
 u {
     text-decoration: none;
@@ -26,6 +30,24 @@ strong {
 .black-check {
     opacity: 0.5;
 }
+
+.storyContent img {
+    width: 100%;
+    margin-top: 20px;
+    background: center center / cover no-repeat;
+}
+
+.project-main-left-contents svg{
+    width: 12px;
+    height: 12px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+
 
 .project-page {
     background: #fff;
@@ -88,6 +110,7 @@ strong {
     padding: 0.6rem;
 }
 
+
 .project-title {
     font-weight: 700;
     font-size: 2.5rem;
@@ -99,11 +122,9 @@ strong {
 
 .project-second-layer {
     position: relative;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
     width: 100%;
     padding-bottom: 3rem;
     gap: 50px;
@@ -111,53 +132,50 @@ strong {
 
 .project-detail-carousel-container {
     position: relative;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-
     width: 100%;
     max-width: 600px;
 }
 
 .carousel-item {
     display: flex;
+    flex-direction: column;
 }
 
 .carousel-img-box {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-
-    position: relative;
-    overflow-x: visible;
+    flex-direction: row;
+    overflow: hidden;
     width: 594px;
-    height: 632px;
+    height: 594px;
     margin: 0px;
 }
 
 .project-title-img-box-layer {
-    overflow: hidden;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
     list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px;
+}
+
+.img-items{
+    width: 594px;
+    height: 594px;
 }
 
 .project-title-img {
-    display: inline-flex;
-    overflow: hidden;
-    width: 100%;
+    background-position: 100%;
+    background-size: 100%;
+    /*background-repeat: round; */
+    width: 594px;
     height: 594px;
-    background-repeat: round;
     margin: 0px;
     padding: 0px;
 }
 
 .project-title-img-box-mark {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 594px;
@@ -183,7 +201,9 @@ strong {
 .carousel-control-prev {
     position: absolute;
     right: 100%;
+    align-self: center;
     padding: 11px;
+    cursor: pointer;
 }
 
 .carousel-control-next {
@@ -191,6 +211,7 @@ strong {
     left: 100%;
     align-self: center;
     padding: 11px;
+    cursor: pointer;
 }
 
 
@@ -259,6 +280,13 @@ strong {
     align-items: baseline;
     margin: 0px;
     gap: 20px;
+}
+
+.goal-price{
+    display: flex;
+    align-items: baseline;
+    margin: 0px;
+    gap: 10px;
 }
 
 .funding-from-intro-text {
@@ -481,6 +509,7 @@ strong {
     position: relative;
     width: 1160px;
     height: auto;
+    white-space: normal;
     margin: 0px auto;
     padding: 0px;
 }
@@ -497,6 +526,7 @@ strong {
 
 
 .project-main-left-layer {
+    display: flex;
     flex: 1 1 650px;
     order: 1;
     width: 100%;
@@ -697,6 +727,7 @@ strong {
     background: transparent;
 }
 
+
 .project-main-right-creater-profile-item {
     display: inline-block;
     background-size: cover;
@@ -822,6 +853,7 @@ strong {
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+    cursor: pointer;
 }
 
 .project-main-right-funding-package-section {
@@ -876,6 +908,7 @@ strong {
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+    cursor:pointer;
 }
 
 .project-main-right-funding-package-current-amount-box {
@@ -937,8 +970,211 @@ strong {
 }
 
 
+/*                                   선물선택 hidden                                    */
 
 
+.project-main-right-funding{
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid rgb(28, 28, 28);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 4px 0px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content-box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.content-items{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 2px;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(248, 248, 248);
+    padding: 16px;
+    white-space: normal;
+    gap: 10px;
+}
+
+.package-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.package-content-text{
+    font: 400 13px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.package-content-ul{
+    position: relative;
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.package-content-li-text{
+    position: relative;
+    padding-left: 14px;
+    padding-right: 48px;
+}
+
+.package-content-li-dot{
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    width: 15px;
+    height: 15px;
+    margin-right: 2px;
+}
+
+.package-content-count-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 75px;
+}
+
+.package-content-count{
+    display: inline-flex;
+    height: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgb(228, 228, 228);
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.select-count-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 38px;
+    outline: none;
+    background: transparent;
+    border: 0px;
+    font-weight:600;
+    padding: 0px;
+}
+
+.count-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 38px;
+    background: transparent;
+    border: 0px;
+    padding: 0px;
+    outline: none;
+
+}
+
+.minus{
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.plus{
+    cursor: pointer;
+}
+
+.package-content-price{
+    font: 700 19px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(248, 100, 83);
+}
+
+.select-cancle{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    outline: 0;
+    padding: 0px;
+    cursor: pointer;
+}
+
+
+
+.select-button-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.gift-select{
+    width: 100%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    white-space: nowrap;
+    border-radius: 1px;
+    outline: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    letter-spacing: -.02em;
+    line-height: 27px;
+    border: 1px solid rgb(248, 100, 83);
+    background-color: rgb(255, 255, 255);
+    color: rgb(248, 100, 83);
+    margin: 0px;
+}
+
+.gift-select:hover{
+    background-color: rgb(255 247 247);
+}
+
+
+.funding-select{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    white-space: nowrap;
+    border-radius: 1px;
+    border: 0px;
+    outline: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    background-color: rgb(248, 100, 83);
+    color: rgb(255, 255, 255);
+    padding: 0px 24px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.funding-select:hover{
+    color: rgb(255 173 173);
+}
+
+
+.bold{
+    font: 700 16px / 24px "Noto Sans KR", sans-serif;
+}
+
+.black-bold-plus{
+    cursor: pointer;
+}
 
 
 

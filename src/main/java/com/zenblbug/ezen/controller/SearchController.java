@@ -16,7 +16,7 @@ public class SearchController {
     @Autowired
     SearchService searchService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String search() {
         return "search";
     }
@@ -34,7 +34,7 @@ public class SearchController {
         // 데이터 주입
         SearchVO searchVO = new SearchVO();
         searchVO.setSearchWord(searchWord);
-        searchVO.setRelationSearch(preSearchWord);
+        searchVO.setRelationWord(preSearchWord);
 
         // 검색된 프로젝트 리스트
         model.addAttribute("projectList", searchService.getSearchProjectList(searchVO));

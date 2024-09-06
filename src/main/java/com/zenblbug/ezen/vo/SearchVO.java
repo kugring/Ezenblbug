@@ -3,7 +3,7 @@ package com.zenblbug.ezen.vo;
 public class SearchVO {
     private int searchId;
     private String searchWord;
-    private String relationSearch;
+    private String relationWord;
     private int relationCheck;
 
     public int getSearchId() {
@@ -22,13 +22,7 @@ public class SearchVO {
         this.searchWord = searchWord;
     }
 
-    public String getRelationSearch() {
-        return relationSearch;
-    }
 
-    public void setRelationSearch(String relationSearch) {
-        this.relationSearch = relationSearch;
-    }
 
     public int getRelationCheck() {
         return relationCheck;
@@ -36,5 +30,13 @@ public class SearchVO {
 
     public void setRelationCheck(int relationCheck) {
         this.relationCheck = relationCheck;
+    }
+
+    public String getRelationWord() {
+        return relationWord;
+    }
+
+    public void setRelationWord(String relationWord) {
+        this.relationWord = relationWord;
     }
 }

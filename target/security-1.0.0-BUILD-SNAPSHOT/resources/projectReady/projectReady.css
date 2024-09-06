@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+button{
+    cursor: pointer;
+}
+
+body{
+    margin: 0;
+    font-family: Pretendard;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ////////////////////////////////////////////////메인 페이지//////////////////////////////////////////////// */
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.img-box{
+    display: block;
+    flex-shrink: 0;
+    width: 438px;
+    height: 100%;
+    background: rgb(1, 129, 220);
+}
+
+.editor-badge-image{
+    width: 100%;
+    height: 100%;
+    background-position-x: center;
+    background-size: cover;
+
+    background-image: url("https://tumblbug-assets.s3-ap-northeast-1.amazonaws.com/static_assets/editor-start-image-02.jpg");
+}
+
+.main-box{
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.progress-project-box{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 9px;
+    padding-top: 24px;
+    transform: translateX(-50px);
+}
+.progress-project-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(248, 100, 83);
+    font-weight: 500;
+    gap: 6px;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.progress-project-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border: 0.8px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px, rgba(0, 0, 0, 0.03) 0px 0.8px 0px;
+}
+
+.progress-project-card-img{
+    width: 40px;
+    height: 40px;
+    background-position: 50%;
+    background-size: 100%;
+}
+
+.progress-project-card-title{
+    width: 120px;
+    overflow: hidden;         /* 넘치는 부분 숨기기 */
+    white-space: nowrap;      /* 텍스트 줄바꿈 방지 */
+    text-overflow: ellipsis;  /* 넘치는 부분에 ... 표시 */
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.progress-project-card-button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 98px;
+    padding: 0px 12px;
+    color: rgb(61, 61, 61);
+    font-weight: 400;
+    font-size: 11px !important;
+    white-space: nowrap;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    border-radius: 1px;
+    outline: none;
+    box-sizing: border-box;
+    background: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.progress-project-card-button svg{
+    width: 9px;
+    height: 9px;
+}
+
+.progress-project-message svg{
+    width: 12px;
+    height: 12px;
+    fill: rgb(248, 100, 83);
+}
+
+.main-layer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    padding: 40px 0px 63px;
+    gap: 64px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+    box-sizing: content-box;
+}
+
+.title-bundle{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-title{
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+
+.main-title-intro{
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    margin-bottom: 0;
+}
+
+.badge-items{
+    user-select: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    gap: 10px;
+}
+
+.badge-item{
+    list-style: none;
+}
+
+.badge{
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 52px;
+    height: 36px;
+    background: rgb(255, 255, 255);
+    padding: 0px 24px;
+    cursor: pointer;
+}
+
+
+.select{
+    background: rgb(248, 100, 83);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(248, 100, 83);
+}
+
+
+.input-one-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.input-one-padding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 11px 18px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+}
+
+.input-one {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    resize: none;
+
+    text-align: start;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-one-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-one-message {
+    color: rgb(244, 69, 68);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-one-count-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 20px;
+    color: rgb(158, 158, 158);
+
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.project-short-intro-box{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    text-align: right;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.textarea{
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid rgb(229, 229, 229);
+    outline: none;
+    width: 100%;
+    height: 104px;
+    padding: 12px 14px;
+}
+
+.textarea-number{
+    font-size: 12px;
+    line-height: 19px;
+    color: rgb(158, 158, 158);
+    margin-bottom: 32px;
+}
+
+.next-button-items{
+    border-top: 1px solid rgb(239, 239, 239);
+    text-align: right;
+    padding-top: 16px;
+}
+
+
+.next-button{
+    border-style: none;
+    background-color: rgb(255, 87, 87);
+    font-weight: 600;
+    color: white;
+    width: 80px;
+    height: 40px;
+}
+
+.next-button:hover{
+    color: rgb(255 160 149);
+}
+

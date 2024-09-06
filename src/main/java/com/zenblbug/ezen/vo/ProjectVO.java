@@ -1,5 +1,14 @@
 package com.zenblbug.ezen.vo;
 
+
+import javax.xml.datatype.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ProjectVO {
 
     private int projectId;
@@ -9,12 +18,11 @@ public class ProjectVO {
     private String projectSummary;
     private String category;
     private String categoryDetail;
+    private String timeline;
     private String startTimeline;
     private String projectThumbnail;
 
-
     private String goalBudget;
-    private String timeline;
     private String projectStatus;
     private int benCount;
     private int projectSwitch;
@@ -22,6 +30,64 @@ public class ProjectVO {
     private int favoriteCount;
     private int deliveryNum;
     private String account;
+    private UserVO userVO;
+    private int totalDonation;
+    private List<BackersPackageVO> backersPackageVOList;
+    private List<SearchTagVO> searchTagVOList;
+    private List<ProductVO> productVOList;
+    private List<ThumbnailVO> thumbnailVOList;
+
+    private ProjectPlanVO projectPlanVO;
+
+
+    public String getStartTimelineYYYY(){
+        return this.startTimeline.split(" ")[0];
+    }
+
+    public String getTimelineYYYY(){
+        return this.timeline.split(" ")[0];
+    }
+
+
+
+    public int getGoalBudgetNum() {
+        return Integer.parseInt(this.goalBudget);
+    }
+
+    public long getDaysDifference() {
+        // 날짜 형식 정의 (예: "yyyy-MM-dd HH:mm:ss")
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        try {
+            // String을 Date로 변환
+            Date timelineDate = formatter.parse(timeline);
+            Date startTimelineDate = formatter.parse(startTimeline);
+
+            // 두 날짜 간의 차이를 계산 (밀리초 단위로 계산 후 일 단위로 변환)
+            long diffInMillies = timelineDate.getTime() - startTimelineDate.getTime();
+            return diffInMillies / (1000 * 60 * 60 * 24);  // 밀리초를 일로 변환
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0; // 예외 발생 시 기본값 반환
+        }
+    }
+
+
+
+    public String getStartTimelineDate(){
+        return this.startTimeline.split(" ")[0].replace("-", "/").substring(2);
+    }
+    public String getTimelineDate(){
+        return this.timeline.split(" ")[0].replace("-", "/").substring(2);
+    }
+
+    public UserVO getUserVO() {
+        return userVO;
+    }
+
+    public void setUserVO(UserVO userVO) {
+        this.userVO = userVO;
+    }
 
     public int getProjectId() {
         return projectId;
@@ -143,12 +209,12 @@ public class ProjectVO {
         this.startTimeline = startTimeline;
     }
 
-    public String getProjectThumbnail() {
-        return projectThumbnail;
+    public List<ThumbnailVO> getThumbnailVOList() {
+        return thumbnailVOList;
     }
 
-    public void setProjectThumbnail(String projectThumbnail) {
-        this.projectThumbnail = projectThumbnail;
+    public void setThumbnailVOList(List<ThumbnailVO> thumbnailVOList) {
+        this.thumbnailVOList = thumbnailVOList;
     }
 
     public int getDeliveryNum() {
@@ -165,5 +231,53 @@ public class ProjectVO {
 
     public void setAccount(String account) {
         this.account = account;
+    }
+
+    public ProjectPlanVO getProjectPlanVO() {
+        return projectPlanVO;
+    }
+
+    public void setProjectPlanVO(ProjectPlanVO projectPlanVO) {
+        this.projectPlanVO = projectPlanVO;
+    }
+
+    public List<BackersPackageVO> getBackersPackageVOList() {
+        return backersPackageVOList;
+    }
+
+    public void setBackersPackageVOList(List<BackersPackageVO> backersPackageVOList) {
+        this.backersPackageVOList = backersPackageVOList;
+    }
+
+    public List<SearchTagVO> getSearchTagVOList() {
+        return searchTagVOList;
+    }
+
+    public void setSearchTagVOList(List<SearchTagVO> searchTagVOList) {
+        this.searchTagVOList = searchTagVOList;
+    }
+
+    public List<ProductVO> getProductVOList() {
+        return productVOList;
+    }
+
+    public void setProductVOList(List<ProductVO> productVOList) {
+        this.productVOList = productVOList;
+    }
+
+    public String getProjectThumbnail() {
+        return projectThumbnail;
+    }
+
+    public void setProjectThumbnail(String projectThumbnail) {
+        this.projectThumbnail = projectThumbnail;
+    }
+
+    public int getTotalDonation() {
+        return totalDonation;
+    }
+
+    public void setTotalDonation(int totalDonation) {
+        this.totalDonation = totalDonation;
     }
 }

@@ -26,7 +26,7 @@ public class SearchServiceImplement implements SearchService {
         if(vo.getSearchWord().equals("resources")){return null;}
 
         // 이전 검색어가 있는 경우 -> (ture)
-        vo.setRelationCheck(vo.getRelationSearch() != null ? 1 : 0);
+        vo.setRelationCheck(vo.getRelationWord() != null ? 1 : 0);
 
         // 검색어 로그를 저장
         int saveResult = searchLogMapper.saveSearchLog(vo);

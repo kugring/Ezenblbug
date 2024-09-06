@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css" />
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css"/>
     <link href="${path}/resources/searchResult/style.css" rel="stylesheet"
-          type="text/css" />
+          type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -30,11 +30,14 @@
                                 <div class="dalseonglyul-option-items">
                                     <div class="dalseonglyul-option-item option-all">전체보기</div>
                                     <div class="dalseonglyul-option-item option-percent">75%
-                                        이하</div>
+                                        이하
+                                    </div>
                                     <div class="dalseonglyul-option-item option-percent">75%
-                                        ~ 100%</div>
+                                        ~ 100%
+                                    </div>
                                     <div class="dalseonglyul-option-item option-percent">100%
-                                        이상</div>
+                                        이상
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -51,610 +54,40 @@
                 <span class="total-count">569</span> 개의 프로젝트가 있습니다.
             </div>
             <div class="search-main-content">
+                <c:forEach var="vo" items="${projectList}">
+                    <div class="content-items">
+                        <div class="project-box">
 
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
+                            <div class="project-img-items">
+                                <a href="/project/${vo.getProjectId()}">
+                                    <div class="project-img kuromi-bag" style="background-image: url('${vo.getProjectThumbnail()}')">
+                                    </div>
+                                </a>
+                                <div class="project-likes black-empty-heart icon-18"></div>
+                            </div>
+                            <div class="project-intro-items">
+                                <dl class="project-intro">
+<%--                                    <dd class="project-team">--%>
+<%--                                        <span class="project-team-span">OvB 어버버</span>--%>
+<%--                                    </dd>--%>
+                                    <dt class="project-title">${vo.getProjectTitle()}</dt>
+                                    <dd class="project-text">${vo.getProjectSummary()}</dd>
+                                </dl>
+                                <div class="project-number-intro">
+                                    <div>
+                                        <span class="project-percent">140%</span> <span
+                                            class="project-funding-amount">680,000원</span>
+                                    </div>
+                                    <span class="project-Dday">5일 남음</span>
                                 </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
+                                <div class="project-red-bar">
+                                    <div class="project-red-bar-content"></div>
                                 </div>
-                                <span class="project-Dday">5일 남음</span>
                             </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                            <!-- <div class="project-likes pink-heart icon-18"></div> -->
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                            <!-- <div class="project-likes pink-heart icon-18"></div> -->
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="content-items">
-                    <div class="project-box">
-
-                        <div class="project-img-items">
-                            <div class="project-img kuromi-bag"></div>
-                            <div class="project-likes black-empty-heart icon-18"></div>
-                        </div>
-                        <div class="project-intro-items">
-                            <dl class="project-intro">
-                                <dd class="project-team">
-                                    <span class="project-team-span">OvB 어버버</span>
-                                </dd>
-                                <dt class="project-title">오프에 진심인 덕후가 만든 [콘서트 가방]</dt>
-                                <dd class="project-text">콘서트 필수템 수납 기능부터 가꾸까지! 그 어디에도 없던,
-                                    덕후들의 오프를 혁명할 가방</dd>
-                            </dl>
-                            <div class="project-number-intro">
-                                <div>
-                                    <span class="project-percent">98928%</span> <span
-                                        class="project-funding-amount">494,643,625원</span>
-                                </div>
-                                <span class="project-Dday">5일 남음</span>
-                            </div>
-                            <div class="project-red-bar">
-                                <div class="project-red-bar-content"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
 
         </div>
@@ -662,7 +95,7 @@
 
 </div>
 
-<jsp:include page="/WEB-INF/views/footer/footer.jsp" />
+<jsp:include page="/WEB-INF/views/footer/footer.jsp"/>
 
 </body>
 </html>

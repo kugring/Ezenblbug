@@ -1,0 +1,3863 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: visible;
+    background: rgb(252, 252, 252);
+}
+
+input::placeholder {
+    opacity: 0.4; /* 불투명도 (1 = 불투명) */
+}
+
+textarea::placeholder {
+    opacity: 0.4; /* 불투명도 (1 = 불투명) */
+}
+
+#project-create-page {
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+.preview-wrapper {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    background-color: #ffffff;
+}
+
+.preview-wrapper > svg {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.preview-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1080px;
+}
+
+.preview-button-box {
+    display: flex;
+    width: 252px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.preview-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    gap: 8px;
+    color: #969696;
+    background-color: white;
+    border: 1px solid rgb(228, 228, 228);
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    cursor: pointer;
+}
+.project-create-save-button::before {
+    content: "저장";
+}
+.project-create-save-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgb(248, 100, 83);
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.project-create-save-button.disable{
+    background: rgb(240, 240, 240);
+    cursor: default;
+    color: rgb(61, 61, 61);
+    opacity: 0.5;
+}
+.project-create-save-button.disable::before {
+    content: "";
+}
+
+.preview-box > svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 9px;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 44px;
+    padding: 39px 0px 21px;
+    font-weight: 700;
+    font-size: 32px !important;
+    line-height: 44px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.header-title-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 1080px;
+}
+
+.header-menu-wrapper {
+    position: sticky;
+    top: 64px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+
+    box-shadow: rgba(0, 0, 0, 0.04) 0 1px 8px, rgba(0, 0, 0, 0.02) 0 1px 0px;
+}
+
+.header-menu-box {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 1080px;
+    height: 60px;
+
+    gap: 32px;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: rgb(13, 13, 13);
+    font-weight: 500;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    cursor: pointer;
+}
+
+.header-menu.select {
+    font-weight: bold;
+    border-bottom: 2px solid #F86453;
+}
+
+.header-menu:hover {
+    opacity: 0.7;
+    color: rgb(13, 13, 13);
+}
+
+.input-alarm-count {
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+    margin-left: 4px;
+    padding: 0px 4px;
+    background: rgb(233, 233, 233);
+    font-weight: normal;
+    font-size: 10px;
+}
+
+
+.rate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 1080px;
+    padding: 36px 0 58px 0;
+    gap: 99px;
+    margin: 0 auto;
+}
+
+.rate-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.rate-explain-box {
+    width: 351px;
+    height: 1517px;
+}
+
+.basic-PlatformFee-Box-Left {
+    width: 140px;
+}
+
+.rate-explain-title {
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.rate-explain-title > svg {
+    width: 13px;
+    height: 13px;
+    fill: #F86453;
+}
+
+.rate-explain-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.rate-explain-img-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ratePlan-Advertisement {
+    position: relative;
+    width: 321px;
+    height: 92px;
+    padding: 0px 15px;
+    margin-top: 28px;
+    background-color: #FDF4F3;
+}
+
+.ratePlan-Advertisement-img {
+    position: absolute;
+    bottom: 0;
+    width: 321px;
+    height: 86.85px;
+}
+
+.ratePlan-Experience {
+    display: flex;
+    justify-content: center;
+    width: 351px;
+    height: 58px;
+    background-color: #F8F8F8;
+}
+
+.ratePlan-Experience > img {
+    width: 312px;
+    height: 58px;
+}
+
+
+/******************************오른쪽 요금제 박스****************************/
+.rate-select-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 630px;
+    height: 1530px;
+}
+
+.rate-item.select {
+    width: 566px;
+    padding: 24px 32px 28px;
+    background-color: #FFFFFF;
+    border: 1px solid #F86453;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.rate-item {
+    width: 566px;
+    padding: 24px 32px 28px;
+    background-color: #FFFFFF;
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-radius: 4px;
+}
+
+
+.basic-PlatformFee-Name {
+    width: 140px;
+    height: 36px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+}
+
+.platformFee-Name {
+    width: 140px;
+    height: 36px;
+    font: 700 24px / 36px "Noto Sans KR", sans-serif;
+    color: #F86453;
+}
+
+.paltformFee-Audit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 12px;
+    margin-bottom: 4px;
+    padding: 4px 6px;
+    width: 55px;
+    height: 20px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+.basic-PlatformFee-Charge {
+    display: flex;
+    width: 140px;
+    height: 22px;
+    margin-top: 8px;
+    gap: 5px;
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.basic-PlatformFee-Charge > span {
+    width: 25.29px;
+    height: 18.29px;
+    color: #F86453;
+}
+
+.basic-PlatformFee-Payment {
+    width: 140px;
+    height: 20px;
+    font: 400 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+
+.rate-select-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 16px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 1px;
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.rate-select-button.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 16px;
+    background-color: rgb(248, 100, 83);
+    border: 1px solid rgb(248, 100, 83);
+    border-radius: 1px;
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.rate-select-button.select::before {
+    content: "선택완료"; /* 요소의 뒤에 추가되는 텍스트 */
+}
+
+.rate-select-button::before {
+    content: "선택하기"; /* 요소의 뒤에 추가되는 텍스트 */
+}
+
+.basic-PlatformFee-Complete-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: #FFFFFF;
+}
+
+.basic-PlatformFee-Complete-Button-svg {
+    color: #db0202;
+    width: 12px;
+    height: 12px;
+}
+
+
+.rate-select-button-svg {
+    width: 12px;
+    height: 12px;
+}
+
+.rate-select-button-svg.select path {
+    fill: #FFFFFF !important;
+}
+
+.rate-select-button-svg path {
+    fill: #3D3D3D !important;
+}
+
+/*********************오른쪽 결제 정보 박스*****************/
+.basic-PlatformFee-Box {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    align-items: start;
+}
+
+.basic-PlatformFee-box-right {
+    width: 332px;
+}
+
+.basic-PlatformFee-Info-Skill {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 1.7em;
+    word-break: keep-all;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.basic-PlatformFee-Info-Skill > span {
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.check-Punding {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 332px;
+    height: 24px;
+    margin-bottom: 4px;
+    color: rgb(13, 13, 13);
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+}
+
+.check-Punding-Svgwidth > svg {
+    width: 14px;
+    height: 14px;
+}
+
+.advertising-Products {
+    display: flex;
+    gap: 6px;
+    width: 332px;
+    height: 44px;
+    margin-bottom: 4px;
+}
+
+.advertising-Products-Name {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 59.9px;
+    height: 44px;
+    color: rgb(13, 13, 13);
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.advertising-Products-Line {
+    width: 245px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.advertising-Products-Line-color {
+    width: 90%;
+    height: 1px;
+    background-color: rgb(228, 228, 228);
+}
+
+.advertising-Type {
+    width: 332px;
+}
+
+.advertising-Type-Agency {
+    display: flex;
+    gap: 6px;
+    width: 332px;
+    height: 24px;
+    margin-bottom: 4px;
+
+}
+
+.advertising-Type-Agency-position {
+    display: flex;
+    align-items: center;
+}
+
+.advertising-Type-Agency-Name {
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+    color: rgb(13, 13, 13);
+    margin-bottom: 4px;
+}
+
+.advertising-charge {
+    display: flex;
+    font-size: 13px;
+    line-height: 22px;
+    color: rgb(109, 109, 109);
+    margin: 4px 0;
+}
+
+.platformFee-Select-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: black;
+}
+
+.basic-service {
+    margin: 0px 0px 8px;
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+    color: rgb(248, 100, 83);
+}
+
+.PlatformFee-Explanation {
+    color: rgb(158, 158, 158);
+    font: 500 12px / 20px "Noto Sans KR", sans-serif;
+    word-break: keep-all;
+    margin-top: 0em;
+}
+
+
+.info-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding: 36px 0 58px 0;
+    margin: 0 auto
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.project-Category-left {
+    width: 351px;
+    height: 108px;
+}
+
+.project-Category-Title {
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.project-Category-Title > svg {
+    width: 13px;
+    height: 13px;
+    fill: rgb(248, 100, 83);
+    font-size: 13px;
+}
+
+.project-Category-Explanation {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-summary-content {
+    width: 630px;
+    height: 134px;
+}
+
+.project-Category-right {
+    display: flex;
+    justify-content: space-between;
+    width: 630px;
+    height: 122px;
+}
+
+.project-Category-Subtitle {
+    display: flex;
+    width: 307px;
+    height: 18px;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 8px;
+    color: rgb(61, 61, 61);
+
+}
+
+.project-Category-subSelect-Box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 269px;
+    height: 40px;
+    padding: 0px 18px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.project-Category-detail-subSelect-Box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 269px;
+    height: 40px;
+    padding: 0px 18px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.project-Category-subSelect {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 260px;
+
+    border: none;
+    outline: none;
+
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.category-option-box {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll; /* y축 스크롤은 유지 */
+    overflow-x: hidden; /* x축 스크롤바는 숨김 */
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.category-option-box.select {
+    display: flex;
+}
+
+.category-option-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.category-option-item:hover {
+    background: rgb(252, 252, 252);
+}
+
+
+.category-detail-option-box {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: visible; /* y축 스크롤은 유지 */
+    overflow-x: hidden; /* x축 스크롤바는 숨김 */
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.category-detail-option-box.select {
+    display: flex;
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.1) 0px 1px 0px;
+}
+
+
+.category-detail-option-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.category-detail-option-item:hover {
+    background: rgb(252, 252, 252);
+}
+
+
+.svg-Arrow-width {
+    width: 10px;
+    height: 10px;
+}
+
+/**************************프로젝트 제목****************************/
+.project-Title {
+
+}
+
+.project-Title-Right {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-Title-Box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 630px;
+    margin-bottom: 10px;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.project-Title-Box-Cursor {
+    display: flex;
+    align-self: start;
+    cursor: pointer;
+}
+
+.project-Title-Box-Cursor-Position {
+}
+
+.project-Title-SvgPosition > svg {
+    width: 16px;
+    height: 16px;
+    fill: rgb(255, 87, 87);
+}
+
+.project-Long-Title-Info {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    width: 556px;
+    height: 0px;
+    margin-top: 10px;
+    padding: 0px 46px 0px 26px;
+    opacity: 0;
+    background: rgb(255, 255, 255);
+    transition: opacity 0.3s ease, height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-Long-Title-Info > img {
+    width: 344px
+
+}
+
+.project-Long-Title-Question {
+    width: 212px;
+    height: 107px;
+}
+
+.project-long-subject-input-box {
+    margin-bottom: 32px;
+}
+
+.long-title-img {
+
+}
+
+.info-representative-image-upload {
+    width: 556px !important;
+    height: 251px !important;
+}
+
+.info-exit-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 7px;
+    background: rgb(252, 252, 252);
+    cursor: pointer;
+}
+
+.info-exit-svg {
+    width: 1em;
+    height: 1em;
+}
+
+.project-Title-input {
+
+    width: 592px;
+    height: 43px;
+    background: rgb(255, 255, 255);
+    padding: 0px 18px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+}
+
+.info-summation {
+}
+
+.info-image-upload-box {
+    width: 630px;
+}
+
+.info-question-mark {
+    width: 16px;
+    height: 16px;
+}
+
+.info-question-mark > svg {
+    fill: rgb(255, 87, 87);
+}
+
+.info-question-mark-width {
+    width: 630px;
+    height: 18px;
+    margin-bottom: 10px;
+}
+
+.info-summary-textarea-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 630px;
+    height: 77px;
+    background-color: #FFFFFF;
+}
+
+.info-summary-textarea-items {
+    display: flex;
+    width: 592px;
+    height: 55px;
+    padding: 11px 0px;
+}
+
+.info-summary-textarea-item {
+    width: 588px;
+    height: 48px;
+    border: none;
+    resize: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+
+}
+
+.info-representative-image {
+}
+
+.info-representative-image-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 1080px;
+    height: auto;
+}
+
+.info-subject {
+    display: flex;
+    align-items: center;
+
+}
+
+.info-svg-star {
+    width: 13px;
+    height: 13px;
+}
+
+.info-subject-content > svg {
+    fill: rgb(248, 100, 83);
+    font-size: 13px;
+}
+
+.info-subject-content {
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-content {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-details-red {
+    color: rgb(248, 100, 83);
+    margin-left: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-details-black {
+    font-weight: 400;
+    padding-left: 18px;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-details-back {
+    position: relative;
+    background: rgb(253, 244, 243);
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 18px;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+}
+
+.info-details-svg {
+    position: absolute;
+    top: 24px;
+    left: 23px;
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+    fill: #F86D5D;
+}
+
+.info-question-mark > svg {
+    width: 16px;
+    height: 16px;
+}
+
+.info-sequence-change {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 556px;
+    height: auto;
+    margin: 10px 0px;
+    padding: 16px 46px 16px 26px;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    border-radius: 4px;
+    transition: 0.5s;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.info-image-uploader-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    background-color: #FDF4F3;
+
+}
+
+.info-image-uploader-change > svg {
+    width: 20px;
+    height: 20px;
+    fill: #F76F6F;
+}
+
+.info-up-arrow {
+    width: 8px;
+    height: 8px;
+}
+
+.info-arrow-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    background: rgba(5, 5, 5, 0.1);
+    margin-right: 4px;
+    fill: rgb(109, 109, 109);
+    cursor: pointer;
+}
+
+.info-sequence-name {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.info-exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: rgb(252, 252, 252);
+    cursor: pointer;
+
+}
+
+.info-exit > svg {
+    width: 7px;
+    height: 7px;
+}
+
+.info-upload-select {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 601px;
+    height: 82px;
+    padding: 13px;
+    margin-bottom: 25px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    transition: border 0.4s;
+
+}
+
+.info-upload-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 527px;
+    height: 20px;
+}
+
+.info-upload-image {
+    display: flex;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    margin: 0px 8px 0px 0px;
+}
+
+.info-upload-image > svg {
+    width: 12px;
+    height: 12px;
+    fill: #FB9E94;
+}
+
+.info-image-upload-color {
+    font-weight: 500;
+    margin: 0px 0px 2px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-image-upload-explanation {
+    color: rgb(158, 158, 158);
+    text-align: center;
+    margin: 0px;
+    width: 527px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-image-upload-explanation-red {
+    display: flex;
+    text-align: center;
+    font-weight: 400;
+    color: rgb(248, 100, 83);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-image-upload-explanation > span {
+    color: rgb(61, 61, 61);
+    font: 700 12px / 20px "Noto Sans KR", sans-serif;
+}
+
+#info-thumbnail-screen-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    gap: 12px;
+}
+
+.info-thumbnail-screen-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 154px;
+
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.info-thumbnail-move-btn-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 40px;
+    height: 100%;
+    padding: 12px 10px;
+
+    box-sizing: border-box;
+    background: rgb(240, 240, 240);
+}
+
+.info-thumbnail-move-btn-box svg {
+    width: 8px;
+    height: 8px;
+}
+
+.info-thumbnail-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    padding: 22px 32px;
+}
+
+.info-thumbnail-img {
+    position: relative;
+    width: 110px;
+    height: 110px;
+
+    background-size: 100%;
+    background-position: 50%;
+}
+
+.info-thumbnail-screen-item:first-of-type .info-thumbnail-img::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "대표 이미지";
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 2px 4px;
+    font-size: 9px;
+    line-height: 11px;
+    color: rgb(255, 255, 255);
+    background: rgb(254, 95, 76);
+}
+
+.info-thumbnail-edit-button-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-thumbnail-change-button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 1px;
+    font-weight: normal;
+    gap: 8px;
+    border: 1px solid rgb(240, 240, 240);
+    color: rgb(61, 61, 61);
+    background: rgb(255, 255, 255);
+    width: 73px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-thumbnail-change-button svg {
+    width: 12px !important;
+    height: 12px !important;
+    fill: rgb(248, 100, 83);
+}
+
+.info-thumbnail-change-button::after {
+    content: "변경";
+    word-break: keep-all;
+}
+
+.info-thumbnail-delete-button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 1px;
+    box-sizing: border-box;
+    font-weight: normal;
+    padding: 0px 16px;
+    border: 1px solid rgb(240, 240, 240);
+    color: rgb(61, 61, 61);
+    background: rgb(255, 255, 255);
+    width: 73px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.info-image-upload-image {
+    width: 544px;
+    height: 110px;
+    padding: 22px 32px;
+    backgorund: #FFFFFF;
+}
+
+.info-image-delete-button {
+
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 36px;
+    background: rgb(255, 255, 255);
+    margin-left: 8px;
+    border: 1px solid rgb(242, 242, 242);
+    border-radius: 4px;
+}
+
+
+.info-explain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-explain-title {
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-explain-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-warning-box {
+    background: rgb(253, 244, 243);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-warning-title {
+    gap: 6px;
+    color: rgb(248, 100, 83);
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-warning-list {
+    position: relative;
+    padding-left: 18px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-search-tag-input-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    gap: 12px;
+}
+
+.input-search-tag-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    gap: 8px;
+}
+
+.input-search-tag-padding {
+    width: 100%;
+    padding: 11px 18px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+}
+
+.input-search-tag-padding.error {
+    border: 1px solid rgb(255, 0, 0);
+
+    .input-search-tag {
+        color: red;
+    }
+}
+
+.input-search-tag-padding.disable {
+    background-color: rgba(240, 240, 240, 0.7);
+    border: 1px solid gray;
+}
+
+.input-search-tag {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    resize: none;
+
+    text-align: inherit;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-search-tag-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-search-tag-message {
+    color: rgb(244, 69, 68);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-search-tag-char-count-box {
+    display: none;
+}
+
+.input-search-tag-count-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 20px;
+    color: rgb(158, 158, 158);
+
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.info-search-tag-badge-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+}
+
+.info-search-tag-badge-item {
+    cursor: default;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(228, 228, 228);
+    font: 400 14px / 24px "Noto Sans KR", sans-serif;
+}
+
+.info-search-tag-badge-item svg {
+    cursor: pointer;
+}
+
+
+/***********************테스트 css************************/
+.custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    left: 490px;
+    background: rgb(255, 255, 255);
+    color: rgb(61, 61, 61);
+    width: 71px;
+    height: 36px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 1px;
+    margin: 0px;
+    padding: 0px 16px;
+    outline: 0px;
+    cursor: pointer; /* Pointer/hand icon */
+    font-weight: 500;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    line-height: 20px !important;
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.custom-button:hover {
+    border: 1px solid RGB(228, 228, 228);
+}
+
+.fileName {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+.funding-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding: 36px 0 58px 0;
+    margin: 0 auto;
+}
+
+.funding-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.funding-explain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.funding-explain-title {
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-explain-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-warning-box {
+    background: rgb(253, 244, 243);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-warning-title {
+    gap: 6px;
+    color: rgb(248, 100, 83);
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-warning-list {
+    position: relative;
+    padding-left: 18px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-warning-list p {
+    padding-left: 14px;
+    position: relative;
+}
+
+.funding-warning-list p::before {
+    content: "*";
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+
+.funding-goal-amount-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    padding: 32px 24px 24px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid rgb(234, 234, 234);
+    background: rgb(255, 255, 255);
+    gap: 8px;
+}
+
+.funding-goal-amount-title {
+    display: flex;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: -0.005em;
+    color: rgb(61, 61, 61);
+}
+
+.funding-goal-amount-input-padding {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 11px 18px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+
+    color: rgb(13, 13, 13);
+    font-size: 14px;
+    line-height: 24px;
+
+    gap: 12px;
+}
+
+.funding-goal-amount-input {
+
+    text-align: right;
+    padding: 0;
+    width: 100%;
+
+    border: none;
+    outline: none;
+    resize: none;
+
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-goal-amount-message {
+    color: rgb(244, 69, 68);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-gaol-fee-box {
+    display: flex;
+    flex-direction: column;
+
+    background: rgb(252, 252, 252);
+    border-radius: 4px;
+    padding: 12px 22px 25px 22px;
+    gap: 12px;
+}
+
+.funding-goal-fee-title-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.funding-goal-fee-title {
+    color: rgb(61, 61, 61);
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.funding-goal-fee-title-text {
+    font-style: normal;
+    color: rgb(248, 100, 83);
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    font-weight: bold;
+}
+
+.funding-goal-fee-detail-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3px;
+}
+
+.funding-goal-fee-detail-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.funding-goal-fee-detail-title {
+    color: rgb(158, 158, 158);
+    font-size: 11px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.funding-goal-fee-detail-num {
+    font-style: normal;
+    color: rgb(61, 61, 61);
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.funding-schedule-box {
+    width: 630px;
+
+    box-sizing: border-box;
+}
+
+.funding-schedule-item-box {
+
+}
+
+.funding-schedule-item {
+    position: relative;
+    padding: 0 0 38px 16px;
+}
+
+.funding-schedule-item:last-of-type {
+    padding: 0 0 0 16px;
+}
+
+.funding-schedule-item:last-of-type::after {
+    border: none;
+}
+
+.funding-schedule-item::before {
+    position: absolute;
+    top: 4px;
+    left: -5px;
+    z-index: 1;
+    content: "";
+    border: 3px solid rgb(0, 0, 0);
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 4px;
+    background: rgb(255 255 255);
+}
+
+.date-range-details {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.funding-schedule-item::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -1px;
+    height: 100%;
+    border-left: 1px solid rgb(228, 228, 228);
+}
+
+.funding-date-selector-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.funding-date-selector-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    color: rgb(13, 13, 13);
+    display: flex;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-date-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 315px;
+    padding: 6px 14px;
+    gap: 8px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    box-sizing: border-box;
+
+
+}
+
+.start-date, .end-date {
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.funding-date-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.funding-date-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    color: rgb(13, 13, 13);
+    display: flex;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.funding-date-text {
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    color: rgb(158, 158, 158);
+}
+
+
+.plan-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding: 36px 0 58px 0;
+    margin: 0 auto;
+}
+
+.plan-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+
+.plan-explain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan-explain-title {
+    font-weight: 700;
+    color: rgb(13, 13, 13);
+    background: transparent;
+    font-size: 16px !important;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.plan-explain-plan {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.plan-warning-box {
+    background: rgb(253, 244, 243);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.plan-warning-title {
+    gap: 6px;
+    color: rgb(248, 100, 83);
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.plan-warning-list {
+    position: relative;
+    padding-left: 18px;
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.projectPlan-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    width: 1080px;
+    height: 36px;
+}
+
+.projectPlan-bar-plan {
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.projectPlan-bar-plan > svg {
+    fill: rgb(248, 100, 83);
+}
+
+.projectPlan-bar-guide-radius {
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.projectPlan-bar-guide-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+}
+
+.projectPlan-bar-guide-content > svg {
+    fill: rgb(248, 100, 83);
+}
+
+
+.projectPlan-left-body {
+    width: 302px;
+    height: 498px;
+}
+
+.projectPlan-left-body-editor {
+    background: rgb(253, 244, 243);
+    width: 254px;
+    height: 169px;
+    padding: 20px 24px;
+    font-weight: 500;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.projectPlan-left-body-editor > p > em {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.redInfo-icon-editor-position {
+    display: flex;
+    gap: 5px;
+}
+
+.projectPlan-left-body-editor-use {
+    display: flex;
+    color: rgb(255, 87, 87);
+    margin: 0px 0px 8px;
+    font-size: 11px !important;
+    line-height: 18px !important;
+}
+
+.projectPlan-left-body-editor > p {
+    margin: 0px;
+    color: rgb(109, 109, 109);
+}
+
+.plan-editor-box {
+    display: flex;
+    flex-direction: column;
+    width: 648px;
+    padding: 0 24px;
+    border-radius: 4px;
+    border: 1px solid rgb(234, 234, 234);
+    background: rgb(255, 255, 255);
+    gap: 8px;
+}
+
+
+.projectPlan-right-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #0080ff;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(240, 240, 240);
+    width: 722px;
+}
+
+.projectPlan-right-body-list {
+    position: relative;
+    width: 100%;
+    padding: 32px 0px;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    font-weight: 700;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+
+}
+
+.projectPlan-right-body-list-arrow-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.projectPlan-right-body-list:last-child {
+    border-bottom: 0px;
+}
+
+.editor-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.projectPlan-right-body-list-chatGPT {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 166px;
+    height: 40px;
+}
+
+.project-plan-message-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.projectPlan-right-body-list-chatGPT-radius {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    width: 149px;
+    height: 38px;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 45px;
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+
+}
+
+.projectPlan-right-body-list-chatGPT-radius:hover {
+    background-color: #F2F2F2;
+}
+
+/******** Quill 에디터 작동 하는 CSS 코드 ********/
+.arrow {
+    border-radius: 100%;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.editor-container {
+    display: none;
+}
+
+.smart-editor-content-save {
+    display: none;
+}
+
+.editor-container > p {
+    font-weight: 400;
+    color: rgb(61, 61, 61);
+    font-size: 16px !important;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.ql-editor {
+    font-weight: normal;
+    min-height: 400px !important;
+}
+
+.ql-toolbar {
+    margin-top: 16px;
+}
+
+.row-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+/* redInfo-icon 설명박스*/
+.redInfo-icon-position {
+    position: relative;
+}
+
+.redInfo-icon-position {
+    position: relative;
+}
+
+.redInfo-explanation-box {
+    position: relative;
+    display: none;
+    z-index: 2;
+}
+
+.redInfo-explanation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 25px;
+    right: -18px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
+    width: 364px;
+    height: 190px;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.refInfo-explanation-title {
+    font: 700 14px / 22px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.redInfo-explanation > ul {
+    padding-left: 24px;
+    margin: 6px 0px 0px 0px;
+
+}
+
+.redInfo-explanation > ul > li {
+    font: 400 12px / 20px "Noto Sans KR", sans-serif;
+    color: rgb(61, 61, 61);
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+}
+
+.message-tail {
+    display: flex;
+    position: absolute;
+    bottom: 14px;
+    right: 0px;
+    filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.2));
+}
+
+.editor-container.show {
+    max-height: 500px; /* 에디터 컨테이너의 최대 높이 설정 */
+    opacity: 1;
+}
+
+.editor-container > p {
+    font-size: 16px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+}
+
+.icon-14 {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.icon-16 {
+    width: 16px;
+    height: 16px;
+}
+
+
+.gift-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding: 49px 0 58px 0;
+    margin: 0 auto;
+}
+
+
+.gift-wrapper-header-box {
+    position: absolute;
+    top: 228px;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.04) 0 1px 8px, rgba(0, 0, 0, 0.02) 0 1px 0px;
+}
+
+.gift-wrapper-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 1080px;
+    height: 100%;
+    gap: 18px;
+}
+
+.gift-header-item.select {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.7em;
+    fill: rgb(248, 100, 83);
+}
+
+.gift-header-item {
+    opacity: 0.3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.7em;
+}
+
+.gift-header-item.package::after {
+    content: "선물";
+    white-space: nowrap;
+}
+
+.gift-header-item.gift::after {
+    content: "아이템";
+    white-space: nowrap;
+}
+
+.gift-header-icon {
+    width: 14px;
+    height: 14px;
+}
+
+
+.gift-wrapper-package {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+.gift-wrapper-gift {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+
+.package-make-result-box {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    gap: 20px;
+}
+
+.package-make-result-title {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: rgb(13, 13, 13);
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-title::before {
+    content: "내가 만든 선물";
+}
+
+.package-make-result-count {
+    color: rgb(109, 109, 109);
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 28px;
+    gap: 8px;
+    border: 1px solid rgb(240, 240, 240);
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.package-make-result-card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.package-make-result-card-price {
+    font-weight: 700;
+    color: rgb(61, 61, 61);
+    font-size: 20px !important;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-card-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.package-make-result-card-delete svg {
+    width: 14px;
+    height: 14px;
+}
+
+.package-make-result-card-name {
+    font-weight: 400;
+    color: rgb(61, 61, 61);
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-item-name {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-information-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.package-make-result-pick-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    color: rgb(158, 158, 158);
+    font-weight: 400;
+    word-break: break-all;
+    white-space: normal;
+    font-size: 11px !important;
+    line-height: 18px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-make-result-pick-counter svg {
+    width: 11px;
+    height: 11px;
+}
+
+.package-make-result-pick-counter::after {
+    content: "0 명이 선택";
+}
+
+.package-make-result-stock-counter {
+    padding: 4px 8px;
+    background: rgb(253, 244, 243);
+    border: 1px solid rgb(255, 222, 219);
+    font-weight: 400;
+    color: rgb(248, 100, 83);
+    font-size: 11px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-custom-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    padding: 44px 48px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.package-custom-title-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+.package-custom-title::before {
+    content: "아이템 수정하기";
+    font-weight: 700;
+    color: rgb(13, 13, 13);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-custom-title svg {
+    width: 16px;
+    height: 16px;
+    fill: rgb(248, 100, 83);
+}
+
+.package-custom-title-text {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-custom-item-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 0;
+}
+
+.package-custom-item-top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.package-custom-item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+}
+
+.package-custom-item-title-text {
+    font-weight: 500;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-custom-item-title-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: rgb(248, 100, 83);
+}
+
+.package-custom-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.package-custom-gift-item-selector-input-box {
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+}
+
+.gift-item-selector-box {
+    width: 100%;
+    position: relative;
+}
+
+.gift-item-selector-padding-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 11px 18px;
+    box-sizing: border-box;
+    border-radius: 1px;
+
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(201, 201, 201);
+}
+
+.gift-item-selector-padding-box svg {
+    width: 10px;
+    height: 10px;
+}
+
+.gift-selector-input {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.gift-item-pick-box {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0; /* Initial height */
+    opacity: 0;
+    overflow: hidden;
+
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    transition: opacity 0.2s ease-in-out, max-height 0.4s ease-in-out, top 0.2s ease-in-out;
+}
+
+.gift-item-pick-box.select {
+    top: 50px;
+    max-height: 2000px; /* Set this to a value larger than the expected content height */
+    opacity: 1;
+}
+
+.gift-item-pick-list {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 20px;
+}
+
+.gift-item-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    user-select: none;
+}
+
+.gift-item-box.select {
+
+    .gift-item-checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border: none;
+
+        background-color: rgb(255, 87, 87);
+    }
+}
+
+.gift-item-box:last-of-type {
+    border-bottom: none;
+}
+
+.gift-item-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.gift-item-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+
+    background-color: #ffffff;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+
+
+.gift-item-checkbox svg {
+    width: 14px;
+    height: 14px;
+
+    fill: #ffffff;
+}
+
+.gift-item-name {
+    font-size: 14px;
+    color: rgb(61, 61, 61);
+}
+
+.gift-item-use-count {
+    font-size: 14px;
+    color: rgb(158, 158, 158);
+    font-style: normal;
+}
+
+.gift-item-current-pick-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: rgb(117, 117, 117);
+    background: rgb(249, 249, 249);
+}
+
+.gift-item-total-pick-count {
+    font-weight: 700;
+    color: rgb(61, 61, 61);
+}
+
+.gift-item-total-pick-count::after {
+    content: "개의 아이템 선택";
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(117, 117, 117);
+}
+
+.gift-item-pick-complete-button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 1px;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    background-color: rgb(248, 100, 83);
+    color: rgb(255, 255, 255);
+
+    font-weight: bold;
+    word-break: break-all;
+    white-space: normal;
+    font-size: 11px !important;
+    line-height: 18px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-item-select-card-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.gift-item-select-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 13px 15px 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(242, 242, 242)
+}
+
+.gift-card-name {
+
+    max-width: 300px;
+    word-break: break-all;
+
+
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.gift-card-button-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.gift-card-item-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgb(228, 228, 228);
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.gift-card-item-quantity{
+    width: 22px;
+    text-align: center;
+}
+
+.gift-card-item-counter svg {
+    width: 10px;
+    height: 10px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.gift-card-item-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 1px;
+    border: 1px solid rgb(230, 230, 230);
+    color: rgb(61, 61, 61);
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    cursor: pointer;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.gift-radio-input-box {
+    display: flex;
+    width: 100%;
+}
+
+.radio-input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    gap: 12px;
+
+    user-select: none;
+}
+
+
+.radio-item-box {
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px 16px;
+    gap: 24px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: rgb(61, 61, 61);
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+
+.radio-item-box.select {
+    border-color: rgb(248, 100, 83);
+
+    .radio-icon {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        border: 7px rgb(248, 100, 83) solid;
+    }
+    .radio-count-box {
+        display: flex;
+    }
+
+    .radio-icon::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        display: block;
+        background: rgb(255, 255, 255);
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        transform: translate(-3px, -3px);
+    }
+}
+
+.radio-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.radio-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgb(240, 240, 240);
+    box-sizing: border-box;
+}
+
+.radio-text {
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgb(61, 61, 61);
+}
+
+.radio-count-box {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 36px;
+    color: rgb(61, 61, 61);
+    font-size: 14px;
+    line-height: 1.7em;
+    border: 1px solid rgb(230, 230, 230);
+    background: rgb(255, 255, 255);
+}
+
+.radio-count-input {
+    display: flex;
+    width: 100%;
+    padding: 0px 0px 0px 12px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+}
+
+.radio-count-unit {
+    display: flex;
+    width: 40px;
+    height: 34px;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: rgb(109, 109, 109);
+    background: rgb(252, 252, 252);
+    border-left: 1px solid rgb(242, 242, 242);
+    border-radius: 0px 2px 2px 0px;
+}
+
+
+.gift-price-input-box {
+    width: 100%;
+}
+
+.price-input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.price-input-padding {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+
+    padding: 11px 18px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.price-input {
+    width: 100%;
+    outline: none;
+    border: none;
+
+    text-align: inherit;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.price-input-unit {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: rgb(252, 252, 252);
+    color: rgb(109, 109, 109);
+    border-left: 1px solid rgb(242, 242, 242);
+    border-radius: 0px 2px 2px 0px;
+}
+
+.price-input-message {
+    display: none;
+    color: rgb(244, 69, 68);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.price-input-message.error {
+    display: flex;
+}
+
+
+.package-custom-item-save-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 44px;
+}
+
+.package-custom-reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    padding: 0px 24px;
+
+    font-size: 12px;
+    line-height: 20px;
+    border: 1px solid rgb(240, 240, 240);
+
+    color: rgb(61, 61, 61);
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+.package-custom-save {
+    flex: 1;
+
+    font-size: 12px;
+    line-height: 20px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 44px;
+    white-space: nowrap;
+    border-radius: 1px;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    padding: 0px 24px;
+    background-color: rgb(248, 100, 83);
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gift-custom-box {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    padding: 44px 48px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.gift-custom-title-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+.gift-custom-title {
+
+    font-weight: 700;
+    color: rgb(13, 13, 13);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-custom-title svg {
+    width: 16px;
+    height: 16px;
+    fill: rgb(248, 100, 83);
+}
+
+.gift-custom-title-text {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-custom-item-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 0;
+}
+
+.gift-custom-item-top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gift-custom-item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+}
+
+.gift-explain-select-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.gift-explain-button{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    line-height: 1.7em;
+    cursor: pointer;
+    border:1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+}
+.gift-explain-button.select {
+    border-color: rgb(248, 100, 83);
+}
+
+.gift-explain-textarea-box.select {
+    display: flex;
+}
+
+.gift-explain-textarea-box{
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px 0;
+    width: 100%;
+}
+
+.gift-custom-item-title-text {
+    font-weight: 500;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-custom-item-title-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: rgb(248, 100, 83);
+}
+
+.gift-custom-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-custom-gift-item-selector-input-box {
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+}
+
+
+
+
+.gift-custom-item-save-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 44px;
+}
+
+.gift-custom-reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    padding: 0px 24px;
+
+    font-size: 12px;
+    line-height: 20px;
+    border: 1px solid rgb(240, 240, 240);
+
+    color: rgb(61, 61, 61);
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+.gift-custom-save {
+    flex: 1;
+
+    font-size: 12px;
+    line-height: 20px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 44px;
+    white-space: nowrap;
+    border-radius: 1px;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    padding: 0px 24px;
+    background-color: rgb(248, 100, 83);
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gift-make-result-box {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    gap: 20px;
+}
+
+.gift-make-result-title {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: rgb(13, 13, 13);
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-make-result-title::before {
+    content: "내가 만든 아이템";
+}
+
+.gift-make-result-count {
+    color: rgb(109, 109, 109);
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-make-result-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 28px;
+    gap: 8px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.gift-make-result-card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.gift-make-result-card-price {
+    font-weight: 700;
+    color: rgb(61, 61, 61);
+    font-size: 20px !important;
+    line-height: 28px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-make-result-card-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.gift-make-result-card-delete svg {
+    width: 14px;
+    height: 14px;
+}
+
+.gift-make-result-card-name {
+    color: rgb(61, 61, 61);
+    line-height: 24px !important;
+    display: block;
+    font-weight: 600;
+    max-width: 222px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.gift-make-result-item-name {
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+    font-weight: 400;
+    color: rgb(158, 158, 158);
+}
+
+.gift-make-result-information-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.creator-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding: 36px 0 58px 0;
+    margin: 0 auto;
+}
+
+.creator-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.creator-explain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.creator-explain-title {
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.creator-explain-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.creator-img-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 630px;
+
+    gap: 32px;
+}
+
+.creator-img {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+
+    background-position: 50%;
+    background-size: 100%;
+
+}
+
+.creator-name-input {
+    width: 630px;
+}
+
+.creator-img-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.creator-img-input-button {
+    align-self: start;
+    font-size: 12px;
+    gap: 6px;
+    line-height: 20px;
+    color: rgb(61, 61, 61);
+    border: 1px solid rgb(228, 228, 228);
+
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    border-radius: 1px;
+    box-sizing: border-box;
+    font-weight: normal;
+    padding: 0 16px;
+    background: rgb(255, 255, 255);
+}
+
+.creator-img-input-info {
+    font-size: 12px;
+    line-height: 1.7em;
+    letter-spacing: -0.01em;
+    color: rgb(158, 158, 158);
+}
+
+.creator-introduce-box {
+    width: 630px;
+}
+
+.creator-local-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 630px;
+}
+
+.selector-box {
+    position: relative;
+    width: 310px;
+}
+
+.selector-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 11px 18px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    box-sizing: border-box;
+}
+
+.selector-item.disable {
+    background: rgba(240, 240, 240, 0.7) !important;
+    border: 1px solid rgb(228, 228, 228) !important;
+    color: rgb(61, 61, 61) !important;
+}
+
+.selector-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.rotate-svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease; /* 회전 시 부드러운 애니메이션 효과 */
+}
+
+.rotate-svg.select {
+    transform: rotate(180deg); /* 체크박스가 선택되었을 때 회전 */
+}
+
+.option-box {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll; /* y축 스크롤은 유지 */
+    overflow-x: hidden; /* x축 스크롤바는 숨김 */
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.option-box.select {
+    display: flex;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.option-item:hover {
+    background: rgb(252, 252, 252);
+}
+
+
+.input-one-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.input-one-padding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 11px 18px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+}
+
+.input-one {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    resize: none;
+
+    text-align: inherit;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-one-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-one-message {
+    color: rgb(244, 69, 68);
+    font-weight: 400;
+    font-size: 12px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-one-count-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 20px;
+    color: rgb(158, 158, 158);
+
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.trust-container {
+    display: none;
+    flex-direction: column;
+    width: 1080px;
+    padding-top: 36px;
+    margin: 0 auto;
+}
+
+.trust-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1080px;
+    padding: 48px 0;
+
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.trust-wrapper:last-of-type {
+    border-bottom: none;
+}
+
+.trust-explain-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trust-explain-title {
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.trust-explain-title > svg {
+    width: 13px;
+    height: 13px;
+    fill: #F86453;
+}
+
+.trust-explain-info {
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    margin: 0px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.trust-card-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-wrap: wrap; /* 요소들이 줄바꿈 가능하도록 설정 */
+
+    width: 630px;
+    padding: 24px;
+
+    gap: 24px;
+
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.trust-card-box > *:nth-child(n+3) {
+    flex-basis: 100%; /* 3번째 요소부터는 100% 너비로 설정 */
+}
+
+.trust-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trust-card-title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+    font-size: 14px !important;
+    line-height: 22px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.trust-card-text {
+    color: rgb(109, 109, 109);
+    font-weight: 400;
+    font-size: 13px !important;
+    line-height: 22px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+
+.input-textarea {
+    display: none;
+    flex-direction: column;
+    justify-content: end;
+
+    width: 100%;
+    gap: 12px;
+
+}
+
+.trust-card-textarea {
+    border-radius: 4px;
+    height: 190px;
+
+    /*border: none;*/
+    /*outline: none;*/
+    padding: 11px 18px;
+    border: 1px solid rgb(240, 240, 240);
+
+    resize: none;
+    font-weight: 400;
+    color: rgb(61, 61, 61);
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.input-textarea-count-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.87);
+    opacity: 0.7;
+
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.trust-card-write-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    white-space: nowrap;
+    border-radius: 1px;
+    margin: 0px;
+    outline: 0px;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    color: rgb(61, 61, 61);
+    border: 1px solid rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 11px !important;
+    font-family: "Noto Sans KR", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+}
+
+
+.trust-card-textarea-buttons {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+
+    gap: 12px;
+}
+
+.trust-card-textarea-button.cancel {
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(61, 61, 61);
+    width: 88px;
+    font-weight: 500;
+    border: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 40px;
+    white-space: nowrap;
+    border-radius: 1px;
+    outline: 0px;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    background: rgb(255, 255, 255);
+}
+
+.trust-card-textarea-button.save {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 88px;
+    height: 40px;
+
+    padding: 0px 16px;
+    border-radius: 1px;
+
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    background-color: rgb(248, 100, 83);
+    cursor: pointer;
+}

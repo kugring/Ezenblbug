@@ -5,8 +5,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <link href="../resources/projectUpload/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../resources/app.css" rel="stylesheet" type="text/css"/>
+    <title>[ 프로젝트 올리기 ]- Ezenblbug</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/assets/zenblbug_logo.png" type="image/png">
+    <link href="${path}/resources/projectUpload/style.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/app.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${path}/resources/projectUpload/script.js"></script>
 
@@ -23,7 +25,7 @@
         </div>
         <div class="main-intro-sub-text">취향이 모여 세상을 바꾸는 텀블벅에서</div>
         <div class="main-button-box">
-            <button class="main-button now-start">지금 시작하기</button>
+            <button class="main-button now-start" onclick="window.location.href='ready'">지금 시작하기</button>
             <button class="main-button guide" onclick="window.location.href='https://creator.tumblbug.com/'">창작자 가이드</button>
         </div>
     </div>

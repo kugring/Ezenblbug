@@ -1,43 +1,4 @@
 
-
-
-
-
-
-$(document).ready(function() {
-    const $carouselInner = $('.carousel-inner');
-    const $carouselItems = $('.carousel-item');
-    const totalItems = $carouselItems.length;
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        $carouselInner.css('transform', `translateX(${-currentIndex * 100}%)`);
-    }
-
-    $('.carousel-control-next').click(function() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    });
-
-    $('.carousel-control-prev').click(function() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 로딩시 조회수를 카운트함
 loadingViewCount();
 
@@ -168,4 +129,109 @@ document.addEventListener("DOMContentLoaded", function () {
     targets.forEach(target => {
         observer.observe(target);
     });
+});
+
+
+//////////////////////////////////////////////아이템박스 및 캐러셀 //////////////////////////////////////////////
+
+function totalDonation(){
+    let   $selectProductBox = $(".content-items");
+
+    let totalDonationNum = 0;
+
+    let contentBoxLength = $('.content-items').length;
+
+    for(let i=0; i<contentBoxLength; i++){
+        let productPriceText = $('.content-items').eq(i).find(".package-content-price").text().trim().replace("원", "").replace(/,/g, ""); // 쉼표와 "원" 제거
+        let productPrice = parseInt(productPriceText, 10); // 가격을 정수로 변환
+        console.log("이것은 제품가격:" +productPrice);
+
+        let currentQuantityText = $('.content-items').eq(i).find(".select-count-number").text().trim();
+        let currentQuantity = parseInt(currentQuantityText, 10); // 수량을 정수로 변환
+        console.log("이것은 제품수량:" +currentQuantity);
+        // 총 기부 금액 계산
+        totalDonationNum += productPrice * currentQuantity;
+    }
+
+    console.log("합계: " + totalDonationNum);
+
+    let totalDonation = totalDonationNum.toLocaleString('ko-KR', { maximumFractionDigits: 4 });
+
+
+    $(".funding-select-text").find(".bold").text(totalDonation + "원");
+
+}
+
+
+// showDis 함수: .project-main-right-funding을 보여줌
+function showDis() {
+    let $boxInfo = $('.project-main-right-funding');
+    $boxInfo.css('display', 'flex'); // 항상 flex로 표시
+
+}
+
+
+function hideDis() {
+
+    let $contentBox = $('.select-package.content-box').find(".content-items");
+    let $selectBox = $(".project-main-right-funding.select-package");
+
+
+    if($contentBox.length < 1){
+        $selectBox.css('display', 'none');
+    } else {
+        return
+    }
+
+}
+//x눌렀을때 애만사라지게
+
+function hideBox(element) {
+    // 클릭된 요소에서 가장 가까운 .content-items 요소를 찾음
+    let $boxInfo = $(element).closest('.content-items');
+
+    // 선택된 요소만 삭제
+    $boxInfo.remove();
+
+    // 총합계를 출력하는 함수
+    totalDonation();
+
+    // display를 none으로 설정
+    hideDis(); // hideDis() 함수 호출
+}
+
+$(document).ready(function(){
+    let count = 0;
+    let maxCount = $(".img-items").length -1
+    const moveDistance = 594;
+    const dots = document.querySelectorAll('.img-box-mark-items');
+
+    $('.carousel-control-prev').on("click", function(){
+        if(count > 0){
+            count--;
+            $(".move").css("transform","translateX(" + count * - moveDistance +"px)");
+            updateDots();
+        }
+
+    });
+
+    $('.carousel-control-next').on("click", function(){
+        if(count < maxCount){
+            count++;
+            $(".move").css("transform","translateX(" + count * -moveDistance +"px)");
+            updateDots();
+        }
+    });
+
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === count) {
+                dot.classList.add('img-mark');
+            } else {
+                dot.classList.remove('img-mark');
+            }
+        });
+    }
+
 });

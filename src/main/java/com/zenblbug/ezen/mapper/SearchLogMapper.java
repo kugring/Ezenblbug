@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface SearchLogMapper {
 
-    @Insert("INSERT INTO search(search_word, relation_word, relation_check)values(#{searchWord}, #{relationSearch}, #{relationCheck})")
+    @Insert("INSERT INTO search(search_word, relation_word, relation_check)values(#{searchWord}, #{relationWord}, #{relationCheck})")
     int saveSearchLog(SearchVO vo);
 
     @Select("SELECT search_word, COUNT(*) AS count " +

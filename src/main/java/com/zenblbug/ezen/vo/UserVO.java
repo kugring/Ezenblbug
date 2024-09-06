@@ -5,14 +5,28 @@ public class UserVO {
 	private String password;
 	private String email;
 	private String nickname;
+	private String profileImage;
+	private String selfIntro;
 	private String address;
 	private String addressDetail;
 	private String phoneNumber;
 	private int agreeCheck;
 	private String role;
-	
-	
 
+
+
+	public String getProfileImage() {
+		return profileImage;
+	}
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
+	}
+	public String getSelfIntro() {
+		return selfIntro;
+	}
+	public void setSelfIntro(String selfIntro) {
+		this.selfIntro = selfIntro;
+	}
 	public String getPassword() {
 		return password;
 	}

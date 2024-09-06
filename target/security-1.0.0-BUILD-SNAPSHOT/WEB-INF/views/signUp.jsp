@@ -637,6 +637,8 @@
 
                 if (result === 1) {
                     alert("회원가입에 성공하였습니다.")
+                    // 예를 들어, 페이지 이동
+                    window.location.href = 'sign-in'
                 } else {
                     alert("회원가입에 실패하였습니다.")
                 }
