@@ -26,7 +26,6 @@ public class ProjectController {
     ProjectService projectService;
 
 
-    // 카테고리,  , 종료-시작일, 목표금액, 좋아요개수,목표금액/ 현황금액(backers)V  / 창작자-프로필(user)V/, 패키지(package)V, 제품(product)V, 첨부파일_리스트
 
     @GetMapping("{projectId}") // 디테일 프로젝트
     public String projectDetail(@PathVariable("projectId") int projectId, Model model) {
@@ -80,6 +79,68 @@ public class ProjectController {
         if (hasPermission == 0) {return -1;}
 
         return projectService.saveFunding(vo);
+    }
+
+
+    @ResponseBody
+    @PostMapping("/create/gift")
+    public int saveGift(@AuthenticationPrincipal UserDetails user,@RequestBody ProductVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.saveGift(vo);
+    }
+
+    @ResponseBody
+    @PostMapping("/delete/gift")
+    public int deleteGift(@AuthenticationPrincipal UserDetails user,@RequestBody ProductVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.deleteGift(vo);
+    }
+
+
+    @ResponseBody
+    @PostMapping("/create/package")
+    public int savePackage(@AuthenticationPrincipal UserDetails user,@RequestBody BackersPackageVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.savePackage(vo);
+    }
+
+    @ResponseBody
+    @PostMapping("/delete/package")
+    public int deletePackage(@AuthenticationPrincipal UserDetails user,@RequestBody BackersPackageVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.deletePackage(vo);
     }
 
 

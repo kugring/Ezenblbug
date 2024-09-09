@@ -104,11 +104,19 @@
                                 <a href="project/${vo.getProjectId()}"> <img
                                         class="attention-card-img" src="${vo.getProjectThumbnail()}" />
                                 </a>
-                                <div class="empty-heart project-like"></div>
+
+                                <c:choose>
+                                    <c:when test="${vo.getLike() == 1}">
+                                        <div class="pink-heart project-like"></div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <div class="empty-heart project-like"></div>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <div class="attention-card-body">
                                 <div class="attention-card-company line-cursor">${vo.userVO.getNickname()}</div>
-                                <a style="text-decoration: none" href="project/1">
+                                <a style="text-decoration: none" href="project/${vo.getProjectId()}">
                                     <div class="attention-card-title">${vo.getProjectTitle()}</div>
                                 </a>
                                 <div class="attention-card-progress-rate">979% 달성</div>

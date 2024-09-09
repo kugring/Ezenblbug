@@ -21,6 +21,7 @@ public class ProjectVO {
     private String timeline;
     private String startTimeline;
     private String projectThumbnail;
+    private int like;
 
     private String goalBudget;
     private String projectStatus;
@@ -279,5 +280,13 @@ public class ProjectVO {
 
     public void setTotalDonation(int totalDonation) {
         this.totalDonation = totalDonation;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
     }
 }

@@ -11,13 +11,12 @@ import java.util.List;
 @Mapper
 public interface LikesMapper {
 
-    @Select("SELECT count(*) FROM likes WHERE user_id = #{userId} AND project_id = #{projectId}")
+    @Select("SELECT count(*) FROM like_list WHERE user_id = #{userId} AND project_id = #{projectId}")
     int existedByUserIdANDProjectId(LikesVO vo);
 
-
-    @Insert("INSERT INTO likes(user_id, project_id) VALUES (#{userId}, #{projectId})")
+    @Insert("INSERT INTO like_list(user_id, project_id) VALUES (#{userId}, #{projectId})")
     int insertLike(LikesVO vo);
 
-    @Delete("DELETE FROM likes WHERE user_id=#{userId} AND project_id=#{projectId}")
+    @Delete("DELETE FROM like_list WHERE user_id=#{userId} AND project_id=#{projectId}")
     int deleteByUserIdANDProjectId(LikesVO vo);
 }

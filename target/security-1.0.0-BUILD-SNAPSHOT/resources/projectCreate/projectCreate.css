@@ -2447,7 +2447,7 @@ textarea::placeholder {
 }
 
 .package-custom-title::before {
-    content: "아이템 수정하기";
+    content: "선물 만들기 ";
     font-weight: 700;
     color: rgb(13, 13, 13);
     word-break: break-all;
@@ -3001,6 +3001,12 @@ textarea::placeholder {
     background: rgb(255, 255, 255);
 }
 
+.package-custom-save.disable {
+    color: rgb(158, 158, 158);
+    pointer-events: none;
+    background-color: rgb(228, 228, 228);
+}
+
 .package-custom-save {
     flex: 1;
 
@@ -3206,6 +3212,12 @@ textarea::placeholder {
     color: rgb(61, 61, 61);
     box-sizing: border-box;
     background: rgb(255, 255, 255);
+}
+
+.gift-custom-save.disable {
+    color: rgb(158, 158, 158);
+    pointer-events: none;
+    background-color: rgb(228, 228, 228);
 }
 
 .gift-custom-save {

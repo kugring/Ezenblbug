@@ -51,7 +51,7 @@
                     <svg width="21px" height="14px" viewBox="0 0 48 48">
                         <path d="M13.7 23.9943C13.8 29.506 18.4 34.0342 24 33.935C29.6 34.0342 34.2 29.506 34.3 23.9943C34.2 18.4826 29.6 13.9563 24 14.0545C18.4 13.9563 13.8 18.4826 13.7 23.9943ZM2 23.9943C5.5 15.2355 14.4 9.62552 24 10.0195C33.6 9.62552 42.5 15.2355 46 23.9943C42.5 32.8523 33.6 38.4623 24 37.97C14.4 38.364 5.5 32.7541 2 23.9943ZM30.6 23.9944C30.6 20.4614 27.646 17.5974 24 17.5974C20.355 17.5974 17.4 20.4614 17.4 23.9944C17.4 27.5274 20.355 30.3913 24 30.3913C27.646 30.3913 30.6 27.5274 30.6 23.9944Z"></path>
                     </svg>
-                    <div onclick="ajax_funding_data()">미리 보기</div>
+                    <div onclick="ajax_gift_data()">미리 보기</div>
                 </div>
                 <div class="project-create-save-button disable" onclick="allCounter(); completePercent()">
                 </div>
@@ -959,7 +959,7 @@
                 <div class="funding-goal-amount-title">목표금액</div>
                 <div class="funding-goal-amount-input-padding">
                     <%-- 포맷된 금액을 변수로 저장 --%>
-                    <input class="funding-goal-amount-input" type="text" placeholder="목표 금액을 입력해주세요" oninput="onGoalAmountChange(this)" value="${formattedGoalBudget}">원
+                    <input class="funding-goal-amount-input" type="text" placeholder="목표 금액을 입력해주세요" value="${formattedGoalBudget}">원
                 </div>
                 <div class="funding-goal-amount-message"></div>
                 <div class="funding-gaol-fee-box">
@@ -1240,6 +1240,7 @@
                 </div>
                 <c:forEach var="packageVO" items="${projectVO.getBackersPackageVOList()}">
                     <div class="package-make-result-card">
+                        <input type="hidden" name="package-id" value="${packageVO.getPackageId()}">
                         <div class="package-make-result-card-title">
                             <c:choose>
                                 <c:when test="${not empty packageVO.getPackagePrice() and packageVO.getPackagePrice() != ''}">
@@ -1261,7 +1262,8 @@
                         </div>
                         <div class="package-make-result-card-name">${packageVO.getPackageTitle()}</div>
                         <c:forEach var="productVO" items="${packageVO.getProductVOList()}">
-                            <div class="package-make-result-item-name">· ${productVO.getProductName()} (x${productVO.getProductQuantity()})</div>
+                            <div class="package-make-result-item-name">· ${productVO.getProductName()} (x${productVO.getProductQuantity()})
+                                <input type="hidden" name="product-id" value="${productVO.getProductId()}"></div>
                         </c:forEach>
                         <div class="package-make-result-information-box">
                             <div class="package-make-result-pick-counter">
@@ -1269,7 +1271,11 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6 8L18.9 30.8L6.2 19L2 23.5L19.1 39.4L46 12.4L41.6 8Z"></path>
                                 </svg>
                             </div>
-                            <div class="package-make-result-stock-counter">${packageVO.getMaxProductAmount()}개 남음</div>
+                            <c:choose>
+                                <c:when test="${packageVO.getMaxProductAmount() > 0}">
+                                    <div class="package-make-result-stock-counter">${packageVO.getMaxProductAmount()}개 남음</div>
+                                </c:when>
+                            </c:choose>
                         </div>
                     </div>
                 </c:forEach>
@@ -1324,9 +1330,9 @@
                                                     </svg>
                                                 </div>
                                                 <div class="gift-item-name">${productVO.getProductName()}</div>
+                                                <input type="hidden" name="product-id" value="${productVO.getProductId()}">
                                             </div>
                                             <div class="gift-item-use-count">${productVO.getProductExplain()}</div>
-                                            <input type="hidden" name="product-id" value="1">
                                         </div>
                                     </c:forEach>
                                 </div>
@@ -1360,7 +1366,7 @@
                     <div class="gift-name-input-box">
                         <div class="input-one-box">
                             <div class="input-one-padding" style="height: 40px">
-                                <input type="text" class="input-one" placeholder="타로카드 A세트 / [얼리버드]향수 + 엽서">
+                                <input type="text" class="input-one package-name" placeholder="타로카드 A세트 / [얼리버드]향수 + 엽서">
                             </div>
                             <div class="input-one-information">
                                 <div class="input-one-message"></div>
@@ -1395,7 +1401,7 @@
                                     <div class="radio-text">있음</div>
                                 </div>
                                 <div class="radio-count-box">
-                                    <input class="radio-count-input" type="number" value="1">
+                                    <input class="radio-count-input max-quantity" type="number" value="1">
                                     <div class="radio-count-unit">개</div>
                                 </div>
                             </div>
@@ -1431,7 +1437,7 @@
                                     <div class="radio-text">있음</div>
                                 </div>
                                 <div class="radio-count-box">
-                                    <input class="radio-count-input" type="number" value="1">
+                                    <input class="radio-count-input max-person-quantity" type="number" value="1">
                                     <div class="radio-count-unit">개</div>
                                 </div>
                             </div>
@@ -1474,7 +1480,7 @@
                 </div>
                 <div class="package-custom-item-save-box">
                     <div class="package-custom-reset">초기화</div>
-                    <div class="package-custom-save">저장</div>
+                    <div class="package-custom-save disable">저장</div>
                 </div>
             </div>
         </div>
@@ -1485,6 +1491,7 @@
                 </div>
                 <c:forEach var="productVO" items="${projectVO.getProductVOList()}">
                     <div class="gift-make-result-card">
+                        <input type="hidden" name="product-id" value="${productVO.getProductId()}">
                         <div class="gift-make-result-card-title">
                             <div class="gift-make-result-card-name">${productVO.getProductName()}</div>
                             <div class="gift-make-result-card-delete">
@@ -1525,13 +1532,13 @@
                     <div class="gift-name-input-box">
                         <div class="input-one-box">
                             <div class="input-one-padding" style="height: 40px">
-                                <input type="text" class="input-one" placeholder="아이템 이름을 입력해주세요">
+                                <input type="text" class="input-one product-name" placeholder="아이템 이름을 입력해주세요">
                             </div>
                             <div class="input-one-information">
                                 <div class="input-one-message"></div>
                                 <div class="input-one-count-box">
                                     <div class="charCount">0/</div>
-                                    <div class="charMax">50</div>
+                                    <div class="charMax">15</div>
                                 </div>
                             </div>
                         </div>
@@ -1561,13 +1568,13 @@
                         </div>
                         <div class="input-one-box">
                             <div class="input-one-padding">
-                                <textarea type="text" class="input-one" placeholder="간단한 설명과 주의점을 써주세요"></textarea>
+                                <input type="text" class="input-one product-explain" placeholder="간단한 설명과 주의점을 써주세요">
                             </div>
                             <div class="input-one-information">
                                 <div class="input-one-message"></div>
                                 <div class="input-one-count-box">
                                     <div class="charCount">0/</div>
-                                    <div class="charMax">100</div>
+                                    <div class="charMax">15</div>
                                 </div>
                             </div>
                         </div>
@@ -1575,7 +1582,7 @@
                 </div>
                 <div class="gift-custom-item-save-box">
                     <div class="gift-custom-reset">초기화</div>
-                    <div class="gift-custom-save">저장</div>
+                    <div class="gift-custom-save disable">저장</div>
                 </div>
             </div>
         </div>
@@ -1939,5 +1946,7 @@
     <script src="${path}/resources/projectCreate/ready_save_button.js"></script>
     <script src="${path}/resources/projectCreate/ajax_info_data.js"></script>
     <script src="${path}/resources/projectCreate/ajax_funding_data.js"></script>
+    <script src="${path}/resources/projectCreate/ajax_gift_data.js"></script>
+    <script src="${path}/resources/projectCreate/ajax_package_data.js"></script>
 </body>
 </html>

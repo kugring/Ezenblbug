@@ -4,6 +4,7 @@ public class ProductVO {
 
     private  int productId;
     private int projectId;
+    private int packageId;
     private String productName;
     private String productStatus;
     private String productCategory;
@@ -74,5 +75,13 @@ public class ProductVO {
 
     public void setProductExplain(String productExplain) {
         this.productExplain = productExplain;
+    }
+
+    public int getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(int packageId) {
+        this.packageId = packageId;
     }
 }

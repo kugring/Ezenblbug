@@ -1,5 +1,10 @@
 
+$(".funding-goal-amount-input").on("click input", function (){
+    onGoalAmountChange(this)
+})
 
+// 로딩시 한번은 클릭되도록 하기 위한 코드
+$(".funding-goal-amount-input").trigger("click");
 
 function onGoalAmountChange(input) {
 // 공백과 쉼표를 제거한 숫자 값 가져오기

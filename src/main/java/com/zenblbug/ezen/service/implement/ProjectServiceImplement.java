@@ -153,6 +153,47 @@ public class ProjectServiceImplement implements ProjectService {
         return projectMapper.saveFunding(vo);
     }
 
+    @Override // 프로젝트의 제품을 등록하는 코드
+    public int saveGift(ProductVO vo){
+        productMapper.createProduct(vo);
+        return vo.getProductId();
+    }
+
+    @Override // 패키지의 제품을 삭제하는 코드
+    public int deleteGift(ProductVO vo){
+        int deleteVirtualResult = virtualPackageMapper.deleteByProductId(vo);
+
+        if(deleteVirtualResult == 1){
+            return productMapper.deleteByProductId(vo);
+        } else {
+            return deleteVirtualResult;
+        }
+    }
+
+    @Override // 프로젝트의 패키지를 등록하는 코드
+    public int savePackage(BackersPackageVO vo){
+        packageMapper.createPackage(vo);
+        int packageId = vo.getPackageId();
+        for(ProductVO productVO : vo.getProductVOList()){
+            productVO.setPackageId(packageId);
+            virtualPackageMapper.createVirtualPackage(productVO);
+        }
+        return packageId;
+    }
+
+    @Override // 프로젝트 패키지를 삭제하는 코드
+    public int deletePackage(BackersPackageVO vo){
+
+        int result = virtualPackageMapper.deleteByPackageId(vo);
+
+        if(result == 1){
+            return packageMapper.deleteByPackageId(vo);
+        } else {
+            return 0;
+        }
+    }
+
+
     @Override // 좋아요
     public int putFavorite(LikesVO likesVO) {
         ProjectVO projectVO = new ProjectVO();
@@ -193,7 +234,15 @@ public class ProjectServiceImplement implements ProjectService {
     }
 
     @Override // 조회수 8개
-    public List<ProjectVO> mainGetViewProject() {
+    public List<ProjectVO> mainGetViewProject(String userId) {
+        for(ProjectVO projectVO :  projectMapper.mainGetViewProject()){
+            // 좋아요를 확인해서 주입함
+            LikesVO likesVO = new LikesVO();
+            likesVO.setProjectId(projectVO.getProjectId());
+            likesVO.setUserId(userId);
+            int existedLike = likesMapper.existedByUserIdANDProjectId(likesVO);
+            projectVO.setLike(existedLike);
+        }
         return projectMapper.mainGetViewProject();
     }
 

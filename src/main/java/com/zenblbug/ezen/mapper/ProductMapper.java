@@ -3,10 +3,7 @@ package com.zenblbug.ezen.mapper;
 import com.zenblbug.ezen.vo.BackersPackageVO;
 import com.zenblbug.ezen.vo.ProductVO;
 import com.zenblbug.ezen.vo.ProjectVO;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -33,4 +30,11 @@ public interface ProductMapper {
     })
     @Select("select * from product WHERE project_id = #{projectId}")
     List<ProductVO> findByProjectId(ProjectVO vo);
+
+    @Options(useGeneratedKeys = true, keyProperty = "productId")
+    @Insert("INSERT INTO product(project_id, product_name, product_explain) VALUES (#{projectId}, #{productName}, #{productExplain})")
+    int createProduct(ProductVO vo);
+
+    @Delete("DELETE FROM product WHERE product_id=#{productId}")
+    int deleteByProductId(ProductVO vo);
 }

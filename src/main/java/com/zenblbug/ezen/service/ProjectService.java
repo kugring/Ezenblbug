@@ -22,17 +22,19 @@ public interface ProjectService {
 
     int saveFunding(ProjectVO vo);
 
+    int saveGift(ProductVO vo);
 
+    int deleteGift(ProductVO vo);
 
+    int savePackage(BackersPackageVO vo);
 
-
-
+    int deletePackage(BackersPackageVO vo);
 
 
 
     int putFavorite(LikesVO vo); // 좋아요
     int increaseViewCount(ProjectVO vo); // 조회수
-    List<ProjectVO> mainGetViewProject(); // 조회수 8개
+    List<ProjectVO> mainGetViewProject(String userId); // 조회수 8개
     List<ProjectVO> mainGetFavoriteProject(); // 좋아요 8개
     int createProject(ProjectVO vo); // 새롭게 프로젝트를 생성함
     List<ProjectVO> progressProject(ProjectVO vo); // 작성중인 프로젝트 불러옴

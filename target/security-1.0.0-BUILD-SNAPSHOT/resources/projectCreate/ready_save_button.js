@@ -1,9 +1,31 @@
-
 function readySaveButton() {
     $(".project-create-save-button").removeClass("disable")
     $(".project-create-save-button").text('')
 }
 
+// 제품 생성의 저장 버튼 활성화
+function readyProductSaveButton() {
+    productNameCheck() && productExplainCheck() ? $(".gift-custom-save").removeClass("disable") : $(".gift-custom-save").addClass("disable")
+}
+
+// 제품 생성 저장버튼 활성화를 일으키는 이벤트
+$(".input-one.product-name, .gift-explain-button, .input-one.product-explain").on("input click", function () {
+    readyProductSaveButton();
+});
+
+// 패키지 생성의 저장 버튼 활성화
+function readPackageSaveButton() {
+    console.log("이것은 패키지 저장버튼: "+packageTitleCheck() && maxQuantityCheck() && maxPersonQuantityCheck() && packagePriceInputCheck() && productSelectorCheck())
+    if(packageTitleCheck() && maxQuantityCheck() && maxPersonQuantityCheck() && packagePriceInputCheck() && productSelectorCheck()){
+        $(".package-custom-save").removeClass("disable")
+    } else  {
+        $(".package-custom-save").addClass("disable")
+    }
+}
+// 패키지 생성 저장버튼 활성화를 일으키는 이벤트
+$(".gift-item-selector-box, .input-one.package-name, .radio-item-box, .radio-count-input , .price-input.gift").on("input click", function () {
+    readPackageSaveButton();
+});
 
 ///////////////////////////////////////       기본 정보       //////////////////////////////////////////////////////////
 
@@ -50,23 +72,23 @@ $(".package-custom-save").on("click", function () {
 ///////////////////////////////////////       프로젝트 계획       //////////////////////////////////////////////////////////
 
 // 프로젝트 소개 변경시
-$(".editor-container.project-introduction").on("click",function (){
+$(".editor-container.project-introduction").on("click", function () {
     introductionCheck() && readySaveButton()
 })
 // 프로젝트 예산 변경시
-$(".editor-container.project-budget").on("click",function (){
+$(".editor-container.project-budget").on("click", function () {
     budgetCheck() && readySaveButton()
 })
 // 프로젝트 일정 변경시
-$(".editor-container.project-schedule").on("click",function (){
+$(".editor-container.project-schedule").on("click", function () {
     scheduleCheck() && readySaveButton()
 })
 // 팀 소개 변경시
-$(".editor-container.team-introduction").on("click",function (){
+$(".editor-container.team-introduction").on("click", function () {
     teamIntroductionCheck() && readySaveButton()
 })
 // 선물 설명 변경시
-$(".editor-container.project-gift").on("click",function (){
+$(".editor-container.project-gift").on("click", function () {
     giftCheck() && readySaveButton()
 })
 

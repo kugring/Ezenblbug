@@ -31,19 +31,6 @@ function ajax_funding_data(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function convertToMySQLDatetime(dateString) {
     // 날짜 문자열이 'yy/MM/dd' 형식이라고 가정
     const [year, month, day] = dateString.split('/').map(Number);

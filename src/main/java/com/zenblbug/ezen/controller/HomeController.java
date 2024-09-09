@@ -48,7 +48,7 @@ public class HomeController {
 
         model.addAttribute("serverTime", formattedDate);
 
-        List<ProjectVO> mainGetViewProject = projectService.mainGetViewProject();
+        List<ProjectVO> mainGetViewProject = projectService.mainGetViewProject(user.getUsername());
         List<ProjectVO> mainGetFavoriteProject = projectService.mainGetFavoriteProject();
         System.out.println("mainView: "+ mainGetViewProject);
         System.out.println("mainFavorite: "+ mainGetFavoriteProject);
