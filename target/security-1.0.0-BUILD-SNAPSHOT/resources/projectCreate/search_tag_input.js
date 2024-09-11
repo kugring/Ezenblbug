@@ -13,12 +13,14 @@ $(document).ready(function () {
         if (e.which === 13) { // Enter key의 keyCode는 13
             e.preventDefault(); // 기본 Enter 키 동작(폼 제출)을 막음
             putSearchTagBox(this); // 엔터 키가 눌렸을 때
+            readySaveButton()
         }
     });
 
     // 이벤트 핸들러 등록
     $(".info-search-tag-badge-delete-button").on("click", function () {
         deleteSearchTag(this);
+        readySaveButton()
     });
 });
 

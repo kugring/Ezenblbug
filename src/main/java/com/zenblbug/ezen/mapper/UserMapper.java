@@ -1,5 +1,6 @@
 package com.zenblbug.ezen.mapper;
 
+import com.zenblbug.ezen.vo.ProjectVO;
 import org.apache.ibatis.annotations.*;
 
 import com.zenblbug.ezen.vo.UserVO;
@@ -29,4 +30,10 @@ public interface UserMapper {
 
 	@Select("SELECT COUNT(*) FROM user WHERE nickname=#{nickname}")
 	int existsByNickname(String nickname);
+
+
+	@Update("UPDATE user SET nickname = #{nickname}, profile_image = #{profileImage}, self_intro = #{selfIntro}, activity_area = #{activityArea}, activity_sub_area = #{activitySubArea} " +
+			"WHERE user_id = #{userId}")
+	int saveCreator(UserVO vo);
+
 }

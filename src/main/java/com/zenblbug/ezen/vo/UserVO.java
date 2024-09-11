@@ -1,6 +1,7 @@
 package com.zenblbug.ezen.vo;
 
 public class UserVO {
+	private int projectId;
 	private String userId;
 	private String password;
 	private String email;
@@ -12,6 +13,9 @@ public class UserVO {
 	private String phoneNumber;
 	private int agreeCheck;
 	private String role;
+	private String account;
+	private String activityArea;
+	private String activitySubArea;
 
 
 
@@ -91,5 +95,37 @@ public class UserVO {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public int getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
+	}
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public String getActivityArea() {
+		return activityArea;
+	}
+
+	public void setActivityArea(String activityArea) {
+		this.activityArea = activityArea;
+	}
+
+	public String getActivitySubArea() {
+		return activitySubArea;
+	}
+
+	public void setActivitySubArea(String activitySubArea) {
+		this.activitySubArea = activitySubArea;
 	}
 }

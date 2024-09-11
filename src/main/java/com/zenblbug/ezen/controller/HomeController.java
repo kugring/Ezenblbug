@@ -1,11 +1,13 @@
 package com.zenblbug.ezen.controller;
 
 import java.text.DateFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
-import com.zenblbug.ezen.mapper.ProjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,16 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.zenblbug.ezen.mapper.ProjectMapper;
 import com.zenblbug.ezen.mapper.UserMapper;
 import com.zenblbug.ezen.service.ProjectService;
+import com.zenblbug.ezen.vo.DonationVO;
 import com.zenblbug.ezen.vo.ProjectVO;
 import com.zenblbug.ezen.vo.UserVO;
 
@@ -38,7 +46,7 @@ public class HomeController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String home(Locale locale, Model model,
-                       @AuthenticationPrincipal UserDetails user) {
+                       @AuthenticationPrincipal UserDetails user,UserVO userVO) {
         logger.info("Welcome home! The client locale is {}.", locale);
 
         Date date = new Date();
@@ -48,10 +56,22 @@ public class HomeController {
 
         model.addAttribute("serverTime", formattedDate);
 
-        List<ProjectVO> mainGetViewProject = projectService.mainGetViewProject(user.getUsername());
         List<ProjectVO> mainGetFavoriteProject = projectService.mainGetFavoriteProject();
-        System.out.println("mainView: "+ mainGetViewProject);
-        System.out.println("mainFavorite: "+ mainGetFavoriteProject);
+        // backersId 사용 예제
+        for (ProjectVO project : mainGetFavoriteProject) {
+            int backersId = project.getBackersId();
+            System.out.println(backersId);
+            // backersId를 사용하는 로직 추가
+        }
+
+        List<ProjectVO> mainGetViewProject = projectService.mainGetViewProject(user.getUsername());
+        DonationVO donationVO = new DonationVO();
+        donationVO.setUserId(userVO.getUserId());
+        System.out.println(userVO.getUserId());
+
+
+
+
         model.addAttribute("mainGetViewProject", mainGetViewProject);
         model.addAttribute("mainGetFavoriteProject", mainGetFavoriteProject);
 
@@ -64,6 +84,20 @@ public class HomeController {
     }
 
 
+    //인기 페이지
+
+    @ResponseBody
+    @RequestMapping(value="/user-info", method=RequestMethod.POST)
+    public Map<String, String> getUserInfo(@AuthenticationPrincipal UserDetails user) {
+        UserVO userVO = usermapper.findByUserId(user.getUsername());
+
+        // Create a map to store the user information
+        Map<String, String> userInfo = new HashMap<String, String>();
+        userInfo.put("nickname", userVO.getNickname());
+        userInfo.put("profileImage", userVO.getProfileImage());
+
+        return userInfo;  // Spring automatically converts this to JSON
+    }
 
     @GetMapping("/admin/a")
     public void adminA() {

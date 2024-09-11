@@ -11,10 +11,14 @@ function giftSelector(element){
 
 // 아이템 선택시 체크박스 변화
 $(".gift-item-box").on("click", function () {
-    $(this).toggleClass("select")
+    giftItemSelect(this)
+})
+
+function giftItemSelect(item){
+    $(item).toggleClass("select")
     // 선택 갯수를 표기함
     $(".gift-item-total-pick-count").text($(".gift-item-box.select").length)
-})
+}
 
 // 체크박스 체크하고 선택완료 버튼 클릭시 아이템을 박스에 담음
 $(".gift-item-pick-complete-button").on("click", function(){

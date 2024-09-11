@@ -1,4 +1,8 @@
 function ajax_funding_data(){
+    if(!fundingCheck()){
+        return;
+    }
+
     let projectId = $("#project-id").val()
 
     let goalBudget = parseInt(($(".funding-goal-amount-input").val().trim()).replace(/,/g, ''))
@@ -11,7 +15,7 @@ function ajax_funding_data(){
     console.log("timeline :" + timeline)
 
     $.ajax({
-        url: '/project/create/funding', // 요청을 보낼 URL
+        url: realPath+'/project/create/funding', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({
@@ -21,7 +25,6 @@ function ajax_funding_data(){
             timeline:timeline
         }),
         success: function (result) {
-            alert(result)
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error('Error:', jqXHR, textStatus, errorThrown);

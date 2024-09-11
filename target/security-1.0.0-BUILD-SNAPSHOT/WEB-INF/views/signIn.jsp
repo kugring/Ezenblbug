@@ -10,6 +10,9 @@
 <link href="${path}/resources/signIn/style.css" type="text/css" rel="stylesheet" />
 <link href="${path}/resources/app.css" type="text/css" rel="stylesheet" />
 </head>
+<script>
+    let realPath = "${path}"
+</script>
 <body>
         <div id="sign-in-wrapper">
             <div class='sign-in-image'></div>
@@ -68,7 +71,7 @@
         document.getElementById("sign-in-button").click();
     });
     document.getElementById("sign-up-page-move").addEventListener("click", function() {
-        window.location.href = "sign-up"; // '/'를 붙이면 경로가 'auth'가 붙인 채로 전송되기 떄문에 /를 붙이면 안된다.
+        window.location.href = realPath+"/auth/sign-up"; // '/'를 붙이면 경로가 'auth'가 붙인 채로 전송되기 떄문에 /를 붙이면 안된다.
     });
 
     function getQueryParameter(name) {

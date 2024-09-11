@@ -7,8 +7,10 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/zenblbug_project"></property>
-        <property name="username" value="root"></property>
+        <property name="url" value="jdbc:mysql://jjezen.cafe24.com:3307/javaspring_0408_a_schema"></property>
+        <property name="username" value="javaspring_0408_a_user"></property>
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/zenblbug_project"></property>-->
+<!--        <property name="username" value="root"></property>-->
         <property name="password" value="ezen"></property>
     </bean>
 

@@ -1,12 +1,7 @@
 package com.zenblbug.ezen.controller;
 
 import com.zenblbug.ezen.service.ProjectService;
-import com.zenblbug.ezen.vo.BackersPackageVO;
-import com.zenblbug.ezen.vo.LikesVO;
-import com.zenblbug.ezen.vo.ProductVO;
-import com.zenblbug.ezen.vo.ProjectPlanVO;
-import com.zenblbug.ezen.vo.ProjectVO;
-import com.zenblbug.ezen.vo.SearchTagVO;
+import com.zenblbug.ezen.vo.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -28,12 +23,15 @@ public class ProjectController {
 
 
     @GetMapping("{projectId}") // 디테일 프로젝트
-    public String projectDetail(@PathVariable("projectId") int projectId, Model model) {
+    public String projectDetail(@AuthenticationPrincipal UserDetails user, @PathVariable("projectId") int projectId, Model model) {
         ProjectVO vo = new ProjectVO();
         vo.setProjectId(projectId);
 
         ProjectVO projectVO = projectService.getProjectDetails(vo);
         model.addAttribute("projectVO", projectVO);
+
+        UserVO userInfoVO = projectService.getUserInfo(user.getUsername());
+        model.addAttribute("userInfoVO", userInfoVO);
         return "projectDetail";
     }
 
@@ -98,22 +96,6 @@ public class ProjectController {
     }
 
     @ResponseBody
-    @PostMapping("/delete/gift")
-    public int deleteGift(@AuthenticationPrincipal UserDetails user,@RequestBody ProductVO vo){
-
-        ProjectVO projectVO = new ProjectVO();
-        // 해당 프로젝트 생성자가 본인지 확인하는 코드
-        projectVO.setUserId(user.getUsername());
-        projectVO.setProjectId(vo.getProjectId());
-        int hasPermission = projectService.hasPermission(projectVO);
-        // 권한이 없는 경우 리다이렉트 처리
-        if (hasPermission == 0) {return -1;}
-
-        return projectService.deleteGift(vo);
-    }
-
-
-    @ResponseBody
     @PostMapping("/create/package")
     public int savePackage(@AuthenticationPrincipal UserDetails user,@RequestBody BackersPackageVO vo){
 
@@ -126,6 +108,93 @@ public class ProjectController {
         if (hasPermission == 0) {return -1;}
 
         return projectService.savePackage(vo);
+    }
+
+    @ResponseBody
+    @PostMapping("/create/plan")
+    public int savePlan(@AuthenticationPrincipal UserDetails user,@RequestBody ProjectPlanVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.savePlan(vo);
+    }
+
+    @ResponseBody
+    @PostMapping("/create/creator")
+    public int saveCreator(@AuthenticationPrincipal UserDetails user,@RequestBody UserVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        // 세션에 있는 userId를 넣어줌
+        vo.setUserId(user.getUsername());
+        return projectService.saveCreator(vo);
+    }
+
+
+    @ResponseBody
+    @PostMapping("/create/trust")
+    public int saveTrust(@AuthenticationPrincipal UserDetails user,@RequestBody ProjectPlanVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.saveTrust(vo);
+    }
+
+
+    @ResponseBody
+    @PostMapping("/create/donation")
+    public int saveDonation(@AuthenticationPrincipal UserDetails user, @RequestBody DonationVO vo){
+
+        vo.setUserId(user.getUsername());
+
+        return projectService.saveDonation(vo);
+    }
+
+
+    @ResponseBody
+    @PostMapping("/update/donation")
+    public int updateDonation(@RequestBody DonationVO vo){
+
+
+        return projectService.updateDonation(vo);
+    }
+
+
+
+
+
+
+    @ResponseBody
+    @PostMapping("/delete/gift")
+    public int deleteGift(@AuthenticationPrincipal UserDetails user,@RequestBody ProductVO vo){
+
+        ProjectVO projectVO = new ProjectVO();
+        // 해당 프로젝트 생성자가 본인지 확인하는 코드
+        projectVO.setUserId(user.getUsername());
+        projectVO.setProjectId(vo.getProjectId());
+        int hasPermission = projectService.hasPermission(projectVO);
+        // 권한이 없는 경우 리다이렉트 처리
+        if (hasPermission == 0) {return -1;}
+
+        return projectService.deleteGift(vo);
     }
 
     @ResponseBody
@@ -199,7 +268,12 @@ public class ProjectController {
     }
 
     @GetMapping("/upload") // 안내 jsp
-    public String projectUpload() {
+    public String projectUpload(Model model) {
+
+        List<ProjectVO> projectVOList = projectService.getAllProject();
+
+        model.addAttribute("projectVOList", projectVOList);
+
         return "projectUpload";
     }
 

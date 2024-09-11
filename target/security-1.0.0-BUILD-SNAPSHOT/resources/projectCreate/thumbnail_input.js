@@ -5,25 +5,38 @@ $('.info-upload-select').on('click', function () {
 });
 
 let imageUrls = []
-let boardImageFileList = []
-let boardImageList = [];
 
 // 이미지 인풋값이 변화가 생길때 발생할 이벤트
 $('#project-thumbnail-input').on("change", function(e){
     if(!e.target.files || !e.target.files.length) return;
     const file = e.target.files[0];
-    // URL객체를 사용하면 임시로 URL 이미지의 링크를 뽑아올 수 있다!
-    const imageUrl = URL.createObjectURL(file);
-    const newImageUrls = imageUrls.map(item => item);
-    newImageUrls.push(imageUrl);
-    imageUrls = newImageUrls
 
-    const newBoardImageFileList = boardImageFileList.map(item => item);
-    newBoardImageFileList.push(file);
-    boardImageFileList = newBoardImageFileList;
+    const data = new FormData();
+    data.append('file', file);
 
-    //미리보기 이미지 넣기
-    appendThumbnail()
+    $.ajax({
+        url: realPath+'/file/upload', // 요청을 보낼 URL
+        type: 'POST', // 요청의 타입
+        processData: false, // FormData 전송을 위한 설정
+        contentType: false, // FormData 전송을 위한 설정
+        data: data,
+        success: function (url) {
+            console.log(url)
+            // 반환 받은 url을 리스트에 담는다.
+            imageUrls.push(url);
+
+            //미리보기 이미지 넣기
+            appendThumbnail()
+
+            readySaveButton()
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error:', jqXHR, textStatus, errorThrown);
+        }
+    });
+
+
+
 })
 
 // 화면에 미리보기를 보여주는 함수
@@ -90,50 +103,7 @@ function itemSort(){
 // 이미지 삭제 버튼 클릭시
 const onImageCloseButtonClickHandler = (deleteIndex) => {
     imageUrls = imageUrls.filter((url, index) => index !== deleteIndex);
-    boardImageFileList = boardImageFileList.filter((file, index) => index !== deleteIndex)
     //미리보기 이미지 넣기
     appendThumbnail()
-}
-
-
-// 저장 버튼 클릭시
-const saveThumbnail = async () =>{
-
-    boardImageList = []
-
-    for (const file of boardImageFileList) {
-        const data = new FormData();
-        data.append('file', file);
-
-        const url = await fileUploadRequest(data);
-        if (url) boardImageList.push(url);
-    }
-    // boardImageList를 활용해 추가 작업 수행
-    console.log(boardImageList);
-
-
-
-}
-
-
-
-function fileUploadRequest(data) {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url: '/file/upload', // 요청을 보낼 URL
-            type: 'POST', // 요청의 타입
-            processData: false, // FormData 전송을 위한 설정
-            contentType: false, // FormData 전송을 위한 설정
-            data: data,
-            success: function (url) {
-                console.log(url)
-                resolve(url); // 성공 시 반환할 값을 resolve로 처리
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error('Error:', jqXHR, textStatus, errorThrown);
-                reject(errorThrown); // 실패 시 오류를 reject로 처리
-            }
-        });
-    });
 }
 

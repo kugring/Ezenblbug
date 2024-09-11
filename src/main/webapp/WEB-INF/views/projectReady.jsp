@@ -12,7 +12,9 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp"/>
-
+<script>
+    let realPath = "${path}"
+</script>
 <div class="container">
     <div class="img-box">
         <div class="editor-badge-image"></div>
@@ -31,7 +33,7 @@
                     <div class="progress-project-card">
                         <div class="progress-project-card-img" style="background-image: url('${projectVo.getProjectThumbnail()}')"></div>
                         <div class="progress-project-card-title">${projectVo.getProjectSummary()}</div>
-                        <div class="progress-project-card-button" onclick="window.location.href = '/project/create/${projectVo.getProjectId()}'">이어서 작성
+                        <div class="progress-project-card-button" onclick="window.location.href = realPath+'/project/create/${projectVo.getProjectId()}'">이어서 작성
                             <svg viewBox="0 0 48 48">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M4.29858 26.2811L37.8779 26.2811L22.7872 40.9312C21.8888 41.8405 21.7878 43.3561 22.6873 44.2654C23.5867 45.1747 25.0858 45.2757 25.9852 44.3664L45.2734 25.5738C46.1728 24.6645 46.2728 23.25 45.3733 22.2396H45.2734L25.9852 3.54807C25.0858 2.73979 23.5867 2.84082 22.7872 3.75014C21.9877 4.65946 21.9877 6.07396 22.8881 6.98328L37.9779 21.5324L4.29858 21.5324C2.99938 21.5324 2 22.5428 2 23.8562C2 25.1697 2.99938 26.2811 4.29858 26.2811Z"></path>
@@ -169,7 +171,7 @@
         let category = $(".badge.select").text()
         let projectSummary = $(".input-one").val()
         $.ajax({
-            url: '/project/ready', // 요청을 보낼 URL
+            url: realPath+'/project/ready', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -177,7 +179,7 @@
                 projectSummary: projectSummary
             }),
             success: function (data) {
-                window.location.href = '/project/create/' + data
+                window.location.href = realPath +'/project/create/' + data
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.error('Error:', jqXHR, textStatus, errorThrown);

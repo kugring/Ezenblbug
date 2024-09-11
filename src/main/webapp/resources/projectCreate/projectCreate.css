@@ -17,6 +17,9 @@ textarea::placeholder {
 #project-create-page {
 }
 
+
+
+
 .header-container {
     display: flex;
     justify-content: center;
@@ -63,7 +66,7 @@ textarea::placeholder {
     width: 252px;
     height: 64px;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     gap: 12px;
 }
 

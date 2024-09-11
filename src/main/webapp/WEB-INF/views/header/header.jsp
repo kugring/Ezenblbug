@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${path}/resources/header/header.js"></script>
 </head>
+
+<script>
+    let realPath = "${path}"
+</script>
 <body>
 
 <jsp:include page="/WEB-INF/views/search.jsp"/>
@@ -26,28 +30,32 @@
 
                     <div class="header-items project-item" onclick="location.href='project/upload'">프로젝트 올리기</div>
 
-                    <div class="header-items path-item">
-                        <div class="empty-heart icon-28"></div>
-                    </div>
 
-                    <div class="header-items bell-item">
+                    <div class="header-items bell-item" onclick="userInfo()">
                         <div class="black-bell icon-24"></div>
                     </div>
 
-                    <div class="header-items profile-item change-switch">
-                        <div class="profile-button">
-                            <div class="profile-img fox icon-35"></div>
-                            <div class="user-nick">별빛눈물</div>
+                    <div class="login-items">
+                        <div class="header-items profile-item">
+                            <div class="profile-button">
+                                <div class="profile-img icon-35"></div>
+                                <div class="user-nick"></div>
+                            </div>
+                        </div>
+
+                        <div class="header-items profile-button logout-box">
+                            <div><a href="${path}/logout"  class="logout-text">로그아웃</a></div>
                         </div>
                     </div>
-
-                    <div class="header-items login-item change-switch">
-                        <div class="login-button">
-                            <div class="profile-img white-default-profile icon-24"></div>
-                            <div class="user-nick">로그인/회원가입</div>
-                        </div>
-                    </div>
-
+                    <!-- 로그인/회원가입 박스 -->
+                    <!--
+                         <div class="header-items login-item change-switch">
+                             <div class="login-button">
+                                 <div class="profile-img white-default-profile icon-24"></div>
+                                 <div class="user-nick">로그인/회원가입</div>
+                             </div>
+                         </div>
+                        -->
                 </div>
             </div>
 

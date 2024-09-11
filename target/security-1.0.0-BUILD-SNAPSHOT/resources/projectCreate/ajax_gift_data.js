@@ -3,6 +3,8 @@ $(".gift-custom-save").on("click", function(){
     ajax_gift_data()
 })
 
+console.log("경로: "+realPath)
+
 function ajax_gift_data(){
     let projectId = $("#project-id").val()
 
@@ -14,7 +16,7 @@ function ajax_gift_data(){
     console.log("productExplain :" + productExplain)
 
     $.ajax({
-        url: '/project/create/gift', // 요청을 보낼 URL
+        url:  realPath +'/project/create/gift', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({
@@ -54,15 +56,17 @@ function ajax_gift_data(){
 
 
             let giftItemBox = `
-                        <div class="gift-item-box">
+                        <div class="gift-item-box" onclick="giftItemSelect(this)">
                             <div class="gift-item-label select">
                                 <div class="gift-item-checkbox">
                                     <svg viewBox="0 0 48 48">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6 8L18.9 30.8L6.2 19L2 23.5L19.1 39.4L46 12.4L41.6 8Z"></path>
                                     </svg>
                                 </div>
-                                <div class="gift-item-name">` + productName + `</div>
-                                <input type="hidden" name="product-id" value="` + productId + `">
+                                <div class="gift-item-name">` + productName + `
+                                    <input type="hidden" name="product-id" value="\` + productId + \`">
+                                </div>
+                                
                             </div>
                             <div class="gift-item-use-count">` + productExplain + `</div>
                         </div>
@@ -87,7 +91,7 @@ function ajax_gift_delete(button){
     let productId = $cardBox.find("input[name='product-id']").val().trim();
 
     $.ajax({
-        url: '/project/delete/gift', // 요청을 보낼 URL
+        url: realPath +'/project/delete/gift', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({
@@ -98,7 +102,7 @@ function ajax_gift_delete(button){
             alert("삭제 성공: " + result)
             $cardBox.remove()
 
-            let $item = $(".gift-item-box").find("input[name='product-id']")
+            let $item = $(".gift-item-box")
             for(let i=0; i<$item.length; i++){
                 if($item.eq(i).find("input[name='product-id']").val() == productId){
                     $item.eq(i).remove()

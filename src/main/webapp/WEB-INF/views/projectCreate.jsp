@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,29 +34,23 @@
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker@3.1/daterangepicker.min.js"></script>
 
 
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 </head>
-
+<script>
+        let realPath = "${path}"
+</script>
 <body>
 <div id="project-create-page">
 
     <div class="preview-wrapper">
         <div class="preview-box">
-            <svg viewBox="0 0 48 48" onclick="window.location.href='/project/upload'">
+            <svg viewBox="0 0 48 48" onclick="window.location.href= realPath +'/project/upload'">
                 <path fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M43.7014 21.7189L10.1221 21.7189L25.2128 7.06878C26.1112 6.15946 26.2122 4.64393 25.3127 3.73461C24.4133 2.82529 22.9142 2.72425 22.0148 3.63357L2.72663 22.4262C1.82719 23.3355 1.72725 24.75 2.62669 25.7604H2.72663L22.0148 44.4519C22.9142 45.2602 24.4133 45.1592 25.2128 44.2499C26.0123 43.3405 26.0123 41.926 25.1119 41.0167L10.0221 26.4676L43.7014 26.4676C45.0006 26.4676 46 25.4572 46 24.1438C46 22.8303 45.0006 21.7189 43.7014 21.7189Z"></path>
             </svg>
             <div class="preview-button-box">
-                <div class="preview-button">
-                    <svg width="21px" height="14px" viewBox="0 0 48 48">
-                        <path d="M13.7 23.9943C13.8 29.506 18.4 34.0342 24 33.935C29.6 34.0342 34.2 29.506 34.3 23.9943C34.2 18.4826 29.6 13.9563 24 14.0545C18.4 13.9563 13.8 18.4826 13.7 23.9943ZM2 23.9943C5.5 15.2355 14.4 9.62552 24 10.0195C33.6 9.62552 42.5 15.2355 46 23.9943C42.5 32.8523 33.6 38.4623 24 37.97C14.4 38.364 5.5 32.7541 2 23.9943ZM30.6 23.9944C30.6 20.4614 27.646 17.5974 24 17.5974C20.355 17.5974 17.4 20.4614 17.4 23.9944C17.4 27.5274 20.355 30.3913 24 30.3913C27.646 30.3913 30.6 27.5274 30.6 23.9944Z"></path>
-                    </svg>
-                    <div onclick="ajax_gift_data()">미리 보기</div>
-                </div>
-                <div class="project-create-save-button disable" onclick="allCounter(); completePercent()">
+                <div class="project-create-save-button disable" onclick="allCounter();">
                 </div>
                 <input id="project-id" type="hidden" value="${projectVO.getProjectId()}">
             </div>
@@ -690,7 +687,7 @@
             <div class="info-representative-image-box">
                 <div class="info-representative-image-item">
                     <div class="info-subject">
-                        <div class="info-subject-content" onclick="saveThumbnail()">
+                        <div class="info-subject-content">
                             프로젝트 대표 이미지
                             <svg class="info-svg-star" viewBox="0 0 48 48">
                                 <path
@@ -817,19 +814,19 @@
                     <input id="project-thumbnail-input" type="file" accept="image/*" multiple style="display: none;">
                     <div id="info-thumbnail-screen-box">
                         <%--자바스크립트에서 들어가는 구간--%>
-                        <c:forEach var="image" items="${proejctVO.getProjectThumbnail()}">
+                        <c:forEach var="thumbnailVO" items="${projectVO.getThumbnailVOList()}">
                             <div class="info-thumbnail-screen-item" draggable="true" onclick="moveScreenItem()">
                                 <div class="info-thumbnail-move-btn-box">
                                     <svg viewBox="0 0 48 48">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M24 11L2 38H46.001L24 11Z"></path>
                                     </svg>
-                                    <div class="screen-item-count">1</div>
+                                    <div class="screen-item-count">${thumbnailVO.getSequence()}</div>
                                     <svg viewBox="0 0 48 48">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10L24 37L46 10H2Z"></path>
                                     </svg>
                                 </div>
                                 <div class="info-thumbnail-content">
-                                    <div class="info-thumbnail-img" style="background-image: url('${projectVO.getProjectThumbnail()}')"></div>
+                                    <div class="info-thumbnail-img" style="background-image: url('${thumbnailVO.getPath()}')"></div>
                                     <div class="info-thumbnail-edit-button-box">
                                         <div class="info-thumbnail-change-button">
                                             <svg viewBox="0 0 48 48">
@@ -1329,8 +1326,9 @@
                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6 8L18.9 30.8L6.2 19L2 23.5L19.1 39.4L46 12.4L41.6 8Z"></path>
                                                     </svg>
                                                 </div>
-                                                <div class="gift-item-name">${productVO.getProductName()}</div>
-                                                <input type="hidden" name="product-id" value="${productVO.getProductId()}">
+                                                <div class="gift-item-name">${productVO.getProductName()}
+                                                    <input type="hidden" name="product-id" value="${productVO.getProductId()}">
+                                                </div>
                                             </div>
                                             <div class="gift-item-use-count">${productVO.getProductExplain()}</div>
                                         </div>
@@ -1948,5 +1946,8 @@
     <script src="${path}/resources/projectCreate/ajax_funding_data.js"></script>
     <script src="${path}/resources/projectCreate/ajax_gift_data.js"></script>
     <script src="${path}/resources/projectCreate/ajax_package_data.js"></script>
+    <script src="${path}/resources/projectCreate/ajax_plan_data.js"></script>
+    <script src="${path}/resources/projectCreate/ajax_creator_data.js"></script>
+    <script src="${path}/resources/projectCreate/ajax_trust_data.js"></script>
 </body>
 </html>

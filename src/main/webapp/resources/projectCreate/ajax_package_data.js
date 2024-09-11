@@ -34,7 +34,7 @@ function ajax_package_create() {
     console.log("productVOList :" + productVOList)
 
     $.ajax({
-        url: '/project/create/package', // 요청을 보낼 URL
+        url: realPath+'/project/create/package', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({
@@ -46,7 +46,6 @@ function ajax_package_create() {
             productVOList: productVOList
         }),
         success: function (packageId) {
-            alert("이것은 패키지 ID번호" + packageId)
 
             let productBox = "";  // 빈 문자열로 초기화
 
@@ -117,7 +116,7 @@ function ajax_package_delete(button) {
 
 
     $.ajax({
-        url: '/project/delete/package', // 요청을 보낼 URL
+        url: realPath+'/project/delete/package', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({
@@ -125,7 +124,6 @@ function ajax_package_delete(button) {
             packageId: packageId
         }),
         success: function (result) {
-            alert("삭제 성공: " + result)
             $cardBox.remove()
         },
         error: function (jqXHR, textStatus, errorThrown) {

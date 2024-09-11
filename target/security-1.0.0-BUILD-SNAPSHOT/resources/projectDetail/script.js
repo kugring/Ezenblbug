@@ -25,7 +25,7 @@ function loadingViewCount(){
 
 function increaseViewCount(projectId){
     $.ajax({
-        url: `/project/${projectId}/increase-view-count`, // 요청을 보낼 URL
+        url: `/zenblbug/project/${projectId}/increase-view-count`, // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({}),

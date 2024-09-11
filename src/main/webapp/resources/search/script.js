@@ -54,10 +54,10 @@ function getSearchList(){
         if (existingSearch.trim() === 'resources' || existingSearch.trim() === 'app') return;
 
         // 이전 검색어를 버리고 새로운 검색어 + 이전 검색어 순서로 URL 생성
-        formAction = '/search/' + encodeURIComponent(inputValue) + '/' + encodeURIComponent(existingSearch);
+        formAction = realPath+ '/search/' + encodeURIComponent(inputValue) + '/' + encodeURIComponent(existingSearch);
     } else {
         // 기존 검색어가 없는 경우: 새로운 검색어만 추가
-        formAction = '/search/' + encodeURIComponent(inputValue);
+        formAction = realPath+ '/search/' + encodeURIComponent(inputValue);
     }
 
     // URL로 이동
@@ -66,7 +66,7 @@ function getSearchList(){
 
 function getPopularList() {
     $.ajax({
-        url: '/search/popular-list', // 요청을 보낼 URL
+        url: realPath+'/search/popular-list', // 요청을 보낼 URL
         type: 'POST', // 요청의 타입
         contentType: 'application/json', // 요청 본문의 미디어 타입
         data: JSON.stringify({}),

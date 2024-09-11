@@ -12,6 +12,10 @@
     <link href="${path}/resources/app.css" type="text/css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
+<script>
+    let realPath = "${path}"
+</script>
 <body>
 
 <div id="sign-up-wrapper">
@@ -142,7 +146,7 @@
                     </div>
                     <div class='sign-up-content-button-box'>
                         <div class="primary-button-lg full-width" onClick="signUp()">회원가입</div>
-                        <div class='text-link-lg full-width' onClick="window.location.href = 'sign-in'">로그인</div>
+                        <div class='text-link-lg full-width' onClick="window.location.href = realPath+'/auth/sign-in'">로그인</div>
                     </div>
                 </div>
             </div>
@@ -334,7 +338,7 @@
         console.log(idValue);
 
         $.ajax({
-            url: 'id-check', // 요청을 보낼 URL
+            url: realPath+'/auth/id-check', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -363,7 +367,7 @@
         console.log(nicknameValue);
 
         $.ajax({
-            url: 'nickname-check', // 요청을 보낼 URL
+            url: realPath+'/auth/nickname-check', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -410,7 +414,7 @@
         console.log(emailValue);
 
         $.ajax({
-            url: 'certification-email-send', // 요청을 보낼 URL
+            url: realPath+'/auth/certification-email-send', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -468,7 +472,7 @@
         console.log(certificationValue);
 
         $.ajax({
-            url: 'certification-email-check', // 요청을 보낼 URL
+            url: realPath+'/auth/certification-email-check', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -620,7 +624,7 @@
 
 
         $.ajax({
-            url: 'sign-up', // 요청을 보낼 URL
+            url: realPath+'/auth/sign-up', // 요청을 보낼 URL
             type: 'POST', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({
@@ -638,7 +642,7 @@
                 if (result === 1) {
                     alert("회원가입에 성공하였습니다.")
                     // 예를 들어, 페이지 이동
-                    window.location.href = 'sign-in'
+                    window.location.href = realPath+'/auth/sign-in'
                 } else {
                     alert("회원가입에 실패하였습니다.")
                 }

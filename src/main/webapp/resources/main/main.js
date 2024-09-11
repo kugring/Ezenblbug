@@ -32,13 +32,14 @@ $(function() {
         let projectId = $card.find("input[name='project-id']").val();
 
         $.ajax({
-            url: `project/${projectId}/favorite`, // 요청을 보낼 URL
+            url: realPath+`/project/${projectId}/favorite`, // 요청을 보낼 URL
             type: 'PUT', // 요청의 타입
             contentType: 'application/json', // 요청 본문의 미디어 타입
             data: JSON.stringify({}),
             success: function (result) {
                 console.log(result)
                 // 좋아요를 등록하는 경우
+                console.log(result);
                 $(element).toggleClass("pink-heart", result === 0);
                 // 좋아요를 제거하는 경우
                 $(element).toggleClass("empty-heart", result !== 0);

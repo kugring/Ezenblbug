@@ -9,7 +9,9 @@
           type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
+<script>
+    let realPath = "${path}"
+</script>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp"/>
 <div class="container">

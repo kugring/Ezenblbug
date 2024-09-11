@@ -2,8 +2,11 @@ package com.zenblbug.ezen.vo;
 
 
 import javax.xml.datatype.Duration;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,6 +40,17 @@ public class ProjectVO {
     private List<SearchTagVO> searchTagVOList;
     private List<ProductVO> productVOList;
     private List<ThumbnailVO> thumbnailVOList;
+    //private List<BackersVO> backersVOList;
+    private int backersId;
+
+
+    public int getBackersId() {
+        return backersId;
+    }
+
+    public void setBackersId(int backersId) {
+        this.backersId = backersId;
+    }
 
     private ProjectPlanVO projectPlanVO;
 
@@ -49,27 +63,30 @@ public class ProjectVO {
         return this.timeline.split(" ")[0];
     }
 
-
-
     public int getGoalBudgetNum() {
         return Integer.parseInt(this.goalBudget);
     }
 
     public long getDaysDifference() {
-        // 날짜 형식 정의 (예: "yyyy-MM-dd HH:mm:ss")
+        // 날짜 포맷 정의
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
             // String을 Date로 변환
             Date timelineDate = formatter.parse(timeline);
-            Date startTimelineDate = formatter.parse(startTimeline);
 
-            // 두 날짜 간의 차이를 계산 (밀리초 단위로 계산 후 일 단위로 변환)
-            long diffInMillies = timelineDate.getTime() - startTimelineDate.getTime();
-            return diffInMillies / (1000 * 60 * 60 * 24);  // 밀리초를 일로 변환
+            // 현재 날짜와 시간
+            Date now = new Date();
+
+            // 타임라인 날짜와 현재 날짜 차이 계산 (밀리초 단위)
+            long diffInMillis = timelineDate.getTime() - now.getTime();
+
+            // 밀리초를 일 단위로 변환
+            long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
+            return diffInDays;
         } catch (ParseException e) {
             e.printStackTrace();
-            return 0; // 예외 발생 시 기본값 반환
+            return 0;
         }
     }
 

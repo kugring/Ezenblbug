@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>[ 프로젝트 올리기 ]- Ezenblbug</title>
@@ -13,6 +14,9 @@
     <script src="${path}/resources/projectUpload/script.js"></script>
 
 </head>
+<script>
+    let realPath = "${path}"
+</script>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp"/>
 
@@ -25,25 +29,25 @@
         </div>
         <div class="main-intro-sub-text">취향이 모여 세상을 바꾸는 텀블벅에서</div>
         <div class="main-button-box">
-            <button class="main-button now-start" onclick="window.location.href='ready'">지금 시작하기</button>
-            <button class="main-button guide" onclick="window.location.href='https://creator.tumblbug.com/'">창작자 가이드</button>
+            <button class="main-button now-start" onclick="window.location.href=realPath+'/project/ready'">지금 시작하기</button>
+            <button class="main-button guide" onclick="window.location.href=realPath+'https://creator.tumblbug.com/'">창작자 가이드</button>
         </div>
     </div>
 
     <div class="swiper-container">
         <div class="swiper-card-list">
-            <c:set var="cards" value="${fn:split('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15', ',')}"/>
 
-            <c:forEach var="item" items="${cards}">
-                <div class="swiper-card-box ${item}  ${item == 8 ? "active" : ""}">
+            <c:forEach var="projectVO" items="${projectVOList}" varStatus="status">
+                <div class="swiper-card-box ${status.index} ${status.index == 8 ? "active" : ""}">
                     <div class="swiper-card-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqT5fyQiu6B2CbfK6oR49HHIvnRQKWGijSVQ&s">
+                        <img src="${projectVO.projectThumbnail}">
                     </div>
                     <div class="swiper-card-content">
-                        <div class="swiper-card-tag">고먐고먐미</div>
-                        <div class="swiper-card-title">네모네모빔믈 맞믄 고먐미를 즐겨보세묘</div>
-                        <div class="swiper-card-text">지금까지 미런 고먐미는 멊멌다 지금까지 미런 고먐미는 멊멌다 지금까지 미런 고먐미는 멊멌다</div>
-                        <div class="swiper-card-completion">${item} 달성</div>
+                        <div class="swiper-card-tag">${projectVO.category}</div>
+                        <div class="swiper-card-title">${projectVO.projectTitle}</div>
+                        <div class="swiper-card-text">${projectVO.projectSummary}</div>
+                        <div class="swiper-card-completion"><fmt:formatNumber value="${projectVO.goalBudget}" type="number" groupingUsed="true"/>원</div>
+
                     </div>
                 </div>
             </c:forEach>

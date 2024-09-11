@@ -300,7 +300,9 @@ body {
 
 @charset "UTF-8";
 
-
+.black-minus{
+    background-image: url("./assets/minus.png");
+}
 .left-arrow{
     background-image: url("./assets/left_arrow.png");
 }

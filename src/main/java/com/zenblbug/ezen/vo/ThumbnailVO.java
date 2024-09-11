@@ -8,6 +8,7 @@ public class ThumbnailVO {
     private String size;
     private String attachType;
     private String createDate;
+    private int sequence;
 
     public int getAttachId() {
         return attachId;
@@ -63,5 +64,13 @@ public class ThumbnailVO {
 
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
+    }
+
+    public int getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(int sequence) {
+        this.sequence = sequence;
     }
 }

@@ -1,13 +1,14 @@
 @charset "UTF-8";
 body {
     position: relative;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
+    height: 100vh;
 }
 
-p{
+p {
     text-align: center;
 }
 
@@ -26,6 +27,9 @@ strong {
     color: #3d3d3d;
     font-family: sans-serif;
 }
+strong img{
+    width: 100%;
+}
 
 .black-check {
     opacity: 0.5;
@@ -37,7 +41,7 @@ strong {
     background: center center / cover no-repeat;
 }
 
-.project-main-left-contents svg{
+.project-main-left-contents svg {
     width: 12px;
     height: 12px;
 
@@ -45,6 +49,515 @@ strong {
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+
+
+.pay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-self: center;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.pay-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1160px;
+    margin: 0 auto;
+    height: 58px;
+
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+}
+
+.pay-header-title{
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pay-project-close-box{
+    flex: 1;
+    text-align: end;
+}
+
+.pay-project-info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 32px 0 24px 0;
+    border-top: 1px solid rgb(230, 230, 230);;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.pay-project-info-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 24px;
+    width: 1160px;
+}
+
+.pay-project-thumbnail-img {
+    width: 120px;
+    height: 120px;
+
+    background-size: 100%;
+    background-position: 50%;
+}
+
+.pay-project-info {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pay-project-category {
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    font-weight: bold;
+    color: rgb(158, 158, 158);
+}
+
+.pay-project-title {
+    color: rgb(61, 61, 61);
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.025em;
+    font-weight: bold;
+}
+
+.pay-project-num {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pay-project-current-donation {
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+}
+
+.pay-project-current-percent {
+    color: rgb(255, 87, 87);
+    word-break: break-all;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+}
+
+.pay-project-current-countdown {
+    padding-left: 12px;
+    word-break: break-all;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+
+.pay-project-bottom {
+    display: flex;
+    flex-direction: row;
+    width: 1160px;
+    margin: 0 auto;
+    gap: 32px;
+
+}
+
+.pay-project-content {
+    display: flex;
+    flex-direction: column;
+    width: 670px;
+    gap: 12px;
+}
+
+.pay-package-info-title {
+    height: 30px;
+    font-weight: bold;
+    line-height: 1.7em;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.pay-package-info-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 20px;
+    gap: 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.pay-package-content-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 64px;
+}
+
+.pay-package-content-title {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.pay-package-content-item-box{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pay-package-content-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #3d3d3d;
+    letter-spacing: -0.015em;
+}
+
+.pay-package-total-price-box {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.pay-package-total-price-title {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.pay-package-total-price {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #3d3d3d;
+    letter-spacing: -0.015em;
+}
+
+.pay-project-backer-info-title {
+    font-weight: bold;
+    line-height: 1.7em;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 16px;
+}
+
+.pay-project-backer-info-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.pay-project-backers-phone-number-box {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.pay-project-backers-phone-number-title {
+
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pay-project-backers-phone-number {
+    color: rgb(109, 109, 109) !important;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+.pay-project-backers-email-box {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.pay-project-backers-email-title {
+    font: 500 14px / 22px "Noto Sans KR", sans-serif;
+}
+
+.pay-project-backers-email {
+    color: rgb(109, 109, 109) !important;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+.pay-project-backers-info-explain {
+    font-size: 13px;
+    color: rgb(109, 109, 109);
+    line-height: 15px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    padding-top: 24px
+}
+
+.pay-project-delivery-address-info-title {
+    padding-top: 16px;
+    font-weight: bold;
+    line-height: 1.7em;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.pay-project-delivery-address-info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.pay-project-delivery-backer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pay-project-delivery-backer-name {
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    word-break: break-all;
+    color: #3d3d3d;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pay-project-delivery-backer-address {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+    word-break: break-all;
+    font-weight: 400;
+}
+
+.pay-project-delivery-backer-phone-number {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    color: #3d3d3d;
+    word-break: break-all;
+    font-weight: 400;
+}
+
+.pay-project-delivery-info-change-button {
+    user-select: none;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    min-width: 50px;
+    padding: 4px 10px;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 20px;
+    font-size: 13px;
+    min-height: 26px;
+    outline: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 34px;
+    box-sizing: border-box;
+}
+
+.pay-project-donation-box {
+    display: flex;
+    flex-direction: column;
+    width: 456px;
+    padding-top: 40px;
+}
+.final-donation-price-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    color: #3d3d3d;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+.final-donation-price-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 87, 87);
+    line-height: 27px;
+    letter-spacing: -0.015em;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.final-donation-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+    line-height: 27px;
+    letter-spacing: -0.015em;
+}
+.pay-project-donation-agree-item-box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 8px;
+}
+.pay-project-donation-agree-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.pay-project-donation-agree-box.select{
+    .pay-project-donation-agree-checkbox{
+        background-color: rgb(255, 87, 87);
+        border:none;
+    }
+}
+.pay-project-donation-agree-box svg{
+    width: 14px;
+    height: 14px;
+    fill: #ffffff;
+}
+
+
+.pay-project-donation-agree-checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 2px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(189, 189, 189);
+    background: rgb(255, 255, 255);
+}
+
+.pay-project-donation-agree-content{
+    color: rgb(61, 61, 61);
+    line-height: 1.7em;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+.pay-project-donation-explain-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 42px;
+    gap: 8px;
+}
+.pay-project-donation-explain{
+    position: relative;
+    color: rgb(109, 109, 109);
+    word-break: break-all;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+.pay-project-donation-explain::before {
+    position: absolute;
+    left: -18px;
+    top: 6px;
+    content: "";
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.pay-project-donation-push-button{
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    white-space: nowrap;
+    border-radius: 1px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    background-color: rgb(255, 87, 87);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    margin-top: 18px;
+    font-weight: bold;
+    min-height: 50px;
+}
+
+
+
+
+
+
 
 
 
@@ -159,7 +672,7 @@ strong {
     list-style: none;
 }
 
-.img-items{
+.img-items {
     width: 594px;
     height: 594px;
 }
@@ -282,7 +795,7 @@ strong {
     gap: 20px;
 }
 
-.goal-price{
+.goal-price {
     display: flex;
     align-items: baseline;
     margin: 0px;
@@ -435,7 +948,7 @@ strong {
 .project-nav-container {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .project-nav-bundle {
@@ -486,17 +999,19 @@ strong {
     cursor: pointer;
 }
 
+
+.project-nav-item.select {
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
+    padding-bottom: calc(-3px + 0.5rem);
+}
+
 .update-count {
     font-size: 0.8rem;
     font-weight: bold;
     margin: -0.5rem -0.1rem 0px 0.2rem;
 }
 
-.select {
-    color: rgb(0, 0, 0);
-    border-bottom: 3px solid rgb(0, 0, 0);
-    padding-bottom: calc(-3px + 0.5rem);
-}
 
 
 .project-main-container {
@@ -818,7 +1333,7 @@ strong {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: scroll;
     background: transparent;
     /* padding: 24px 0px 0px; */
@@ -908,7 +1423,7 @@ strong {
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .project-main-right-funding-package-current-amount-box {
@@ -973,7 +1488,7 @@ strong {
 /*                                   선물선택 hidden                                    */
 
 
-.project-main-right-funding{
+.project-main-right-funding {
     display: none;
     flex-direction: column;
     border-radius: 4px;
@@ -983,14 +1498,14 @@ strong {
     gap: 20px;
 }
 
-.content-box{
+.content-box {
     display: flex;
     flex-direction: column;
     gap: 12px;
     flex-shrink: 0;
 }
 
-.content-items{
+.content-items {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -1001,33 +1516,36 @@ strong {
     white-space: normal;
     gap: 10px;
 }
+.content-item.package-title{
+    width: 250px;
+}
 
-.package-content{
+.package-content {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 15px;
 }
 
-.package-content-text{
+.package-content-text {
     font: 400 13px / 20px "Noto Sans KR", sans-serif;
     color: rgb(61, 61, 61);
 }
 
-.package-content-ul{
+.package-content-ul {
     position: relative;
     list-style: none;
     padding-left: 0px;
     margin: 0px;
 }
 
-.package-content-li-text{
+.package-content-li-text {
     position: relative;
     padding-left: 14px;
     padding-right: 48px;
 }
 
-.package-content-li-dot{
+.package-content-li-dot {
     position: absolute;
     left: 0px;
     top: -2px;
@@ -1036,14 +1554,14 @@ strong {
     margin-right: 2px;
 }
 
-.package-content-count-price{
+.package-content-count-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 75px;
 }
 
-.package-content-count{
+.package-content-count {
     display: inline-flex;
     height: 40px;
     flex-wrap: wrap;
@@ -1054,7 +1572,7 @@ strong {
     box-sizing: border-box;
 }
 
-.select-count-number{
+.select-count-number {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1063,11 +1581,11 @@ strong {
     outline: none;
     background: transparent;
     border: 0px;
-    font-weight:600;
+    font-weight: 600;
     padding: 0px;
 }
 
-.count-button{
+.count-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1080,21 +1598,21 @@ strong {
 
 }
 
-.minus{
+.minus {
     cursor: pointer;
     opacity: 0.2;
 }
 
-.plus{
+.plus {
     cursor: pointer;
 }
 
-.package-content-price{
+.package-content-price {
     font: 700 19px / 24px "Noto Sans KR", sans-serif;
     color: rgb(248, 100, 83);
 }
 
-.select-cancle{
+.select-cancle {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -1111,15 +1629,14 @@ strong {
 }
 
 
-
-.select-button-box{
+.select-button-box {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 
-.gift-select{
+.gift-select {
     width: 100%;
     cursor: pointer;
     display: inline-flex;
@@ -1139,12 +1656,12 @@ strong {
     margin: 0px;
 }
 
-.gift-select:hover{
+.gift-select:hover {
     background-color: rgb(255 247 247);
 }
 
 
-.funding-select{
+.funding-select {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1163,16 +1680,16 @@ strong {
     cursor: pointer;
 }
 
-.funding-select:hover{
+.funding-select:hover {
     color: rgb(255 173 173);
 }
 
 
-.bold{
+.bold {
     font: 700 16px / 24px "Noto Sans KR", sans-serif;
 }
 
-.black-bold-plus{
+.black-bold-plus {
     cursor: pointer;
 }
 

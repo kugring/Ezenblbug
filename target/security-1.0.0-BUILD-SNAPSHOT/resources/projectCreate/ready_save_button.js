@@ -95,11 +95,15 @@ $(".editor-container.project-gift").on("click", function () {
 ///////////////////////////////////////       창작자 정보       //////////////////////////////////////////////////////////
 
 // 창작자 이름 변경시 진행
-$(".input-one.creator-name").on("click", function () {
+$(".input-one.creator-name").on("input", function () {
     creatorNameCheck() && readySaveButton()
 })
 // 프로필 사진 변경시 진행
 // profile_image_input.js로 직접 넣음
+// 창작자 소개 변경시 진행
+$(".input-one.creator-introduce").on("input", function () {
+    creatorIntroductionCheck() && readySaveButton()
+})
 // 창작자 활동구역 변경시 진행
 $(".sigungu.selector-input").on("input", function () {
     localActiveSelectorCheck() && readySaveButton()

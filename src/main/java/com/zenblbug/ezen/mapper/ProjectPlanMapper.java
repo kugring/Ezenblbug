@@ -10,7 +10,7 @@ public interface ProjectPlanMapper {
     int existsProjectPlan(ProjectPlanVO vo);
 
     @Insert("INSERT INTO project_plan(project_id)values(#{projectId})")
-    int createPlan(ProjectPlanVO vo);
+    int createPlan(ProjectVO vo);
 
     @Results({
             @Result(property = "projectPlanId", column = "project_plan_id"),
@@ -24,4 +24,13 @@ public interface ProjectPlanMapper {
     })
     @Select("SELECT * from project_plan where project_id = #{projectId}")
     ProjectPlanVO findByProjectId(ProjectVO vo);
+
+    @Update("UPDATE project_plan SET project_introduction = #{projectIntroduction}, project_budget = #{projectBudget}, " +
+            "project_schedule = #{projectSchedule}, team_introduction = #{teamIntroduction}, project_gift_explain = #{projectGiftExplain}, project_exchange_policy = #{projectExchangePolicy} " +
+            "WHERE project_id = #{projectId}")
+    int savePlan(ProjectPlanVO vo);
+
+    @Update("UPDATE project_plan SET project_exchange_policy = #{projectExchangePolicy} " +
+            "WHERE project_id = #{projectId}")
+    int saveTrust(ProjectPlanVO vo);
 }
