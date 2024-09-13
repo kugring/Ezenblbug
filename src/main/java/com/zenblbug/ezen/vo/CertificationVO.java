@@ -10,7 +10,7 @@ public class CertificationVO {
     public String getUserId() {return userId;}
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.userId = userId; // 설명
     }
 
     public String getEmail() {
@@ -28,4 +28,5 @@ public class CertificationVO {
     public void setCertificationNumber(String certificationNumber) {
         this.certificationNumber = certificationNumber;
     }
+    float add(float a, int b){return a+b;}
 }

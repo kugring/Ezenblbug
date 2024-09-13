@@ -41,7 +41,7 @@ function ajax_package_create() {
             projectId: projectId,
             packageTitle: packageTitle,
             packagePrice: packagePrice,
-            maxProductAmount: maxProductAmount,
+            maxProductAmount: maxProductAmount ,
             personMaxAmount: personMaxAmount,
             productVOList: productVOList
         }),
@@ -57,6 +57,10 @@ function ajax_package_create() {
                 let productItem = `<div class="package-make-result-item-name">· ` + productName + ` (x ` + productQuantity + `)</div>`;
                 productBox += productItem;  // productBox에 추가
             }
+
+
+            let a;
+            a += 2;
 
             let packageBox = `
                     <div class="package-make-result-card">
