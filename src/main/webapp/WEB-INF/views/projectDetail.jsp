@@ -13,15 +13,12 @@
           type="text/css"/>
     <link href="${path}/resources/app.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${path}/resources/projectDetail/script.js"></script>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 </head>
-<script>
-    let realPath = "${path}"
-</script>
 <body>
+<jsp:include page="/WEB-INF/views/header/header.jsp"/>
 
 <div class="pay-container">
     <div class="pay-header">
@@ -154,7 +151,6 @@
     </div>
 </div>
 
-<jsp:include page="/WEB-INF/views/header/header.jsp"/>
 
 <div class="project-page">
 
@@ -184,9 +180,15 @@
                         </div>
                     </div>
                     <div class="project-title-img-box-mark">
-                        <div class="img-box-mark-items img-mark"></div>
-                        <c:forEach var="i" begin="0" end="${projectVO.getThumbnailVOList().size()}">
-                            <div class="img-box-mark-items"></div>
+                        <c:forEach var="i" begin="0" end="${projectVO.getThumbnailVOList().size()-1}">
+                            <c:choose>
+                                <c:when test="${i == 0}">
+                                    <div class="img-box-mark-items img-mark"></div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="img-box-mark-items"></div>
+                                </c:otherwise>
+                            </c:choose>
                         </c:forEach>
                     </div>
                 </div>
@@ -623,6 +625,7 @@
 <script src="${path}/resources/projectDetail/detail_pay.js"></script>
 <script src="${path}/resources/projectDetail/checkbox.js"></script>
 <script src="${path}/resources/projectDetail/daum_input.js"></script>
+<script src="${path}/resources/projectDetail/script.js"></script>
 
 </body>
 </html>

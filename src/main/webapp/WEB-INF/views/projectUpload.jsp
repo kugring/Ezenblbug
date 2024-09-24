@@ -14,9 +14,6 @@
     <script src="${path}/resources/projectUpload/script.js"></script>
 
 </head>
-<script>
-    let realPath = "${path}"
-</script>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp"/>
 

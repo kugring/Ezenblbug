@@ -12,9 +12,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp"/>
-<script>
-    let realPath = "${path}"
-</script>
 <div class="container">
     <div class="img-box">
         <div class="editor-badge-image"></div>

@@ -61,6 +61,11 @@ textarea::placeholder {
     width: 1080px;
 }
 
+.preview-box svg:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
+
 .preview-button-box {
     display: flex;
     width: 252px;

@@ -678,9 +678,7 @@ strong img{
 }
 
 .project-title-img {
-    background-position: 100%;
-    background-size: 100%;
-    /*background-repeat: round; */
+    object-fit: cover;
     width: 594px;
     height: 594px;
     margin: 0px;

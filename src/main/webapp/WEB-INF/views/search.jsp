@@ -12,9 +12,6 @@
     <script src="${path}/resources/search/script.js"></script>
     <title>Insert title here</title>
 </head>
-<script>
-    let realPath = "${path}"
-</script>
 <body>
 <div class="search-container">
     <div class="search-wrap">

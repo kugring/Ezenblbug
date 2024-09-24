@@ -14,7 +14,7 @@ import com.zenblbug.ezen.CustomUserDetail;
 import com.zenblbug.ezen.mapper.UserMapper;
 import com.zenblbug.ezen.vo.UserVO;
 
-// 스프링 시큐리티가 인증처리를 하는 클래스를 재정의 하려면 UserDetailsService인터페이스를 구현하영야 한다.
+// 스프링 시큐리티가 인증처리를 하는 클래스를 재정의 하려면 UserDetailsService인터페이스를 구현해야 한다.
 @Service
 public class UserDetailService implements UserDetailsService{
 

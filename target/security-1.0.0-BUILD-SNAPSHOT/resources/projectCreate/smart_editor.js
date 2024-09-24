@@ -29,18 +29,24 @@ editorIds.forEach(function (editorId) {
                         input.click();
                         input.onchange = function () {
                             var file = input.files[0];
-                            var formData = new FormData();
-                            formData.append('image', file);
-                            fetch('/smart-editor/uploadImage', {
-                                method: 'POST',
-                                body: formData
-                            })
-                                .then(response => response.json())
-                                .then(result => {
-                                    var url = result.url;
-                                    quill.insertEmbed(range.index, 'image', contextPath + "/" + url);
-                                })
-                                .catch(error => console.error('Error:', error));
+                            const data = new FormData();
+                            data.append('file', file);
+
+                            $.ajax({
+                                url: realPath+'/file/upload', // 요청을 보낼 URL
+                                type: 'POST', // 요청의 타입
+                                processData: false, // FormData 전송을 위한 설정
+                                contentType: false, // FormData 전송을 위한 설정
+                                data: data,
+                                success: function (url) {
+                                    console.log(url)
+                                    quill.insertEmbed(range.index, 'image',  url);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.error('Error:', jqXHR, textStatus, errorThrown);
+                                }
+                            });
+
                         };
                     }
                 }

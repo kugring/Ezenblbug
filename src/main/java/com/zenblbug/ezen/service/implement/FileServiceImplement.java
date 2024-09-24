@@ -21,7 +21,7 @@ public class FileServiceImplement implements FileService {
     private ServletContext servletContext;
 
     private String filePath;
-    private final String fileUrl = "http://localhost:8080/file/";
+    private final String fileUrl = "/file/";
 
     @PostConstruct
     public void init() {

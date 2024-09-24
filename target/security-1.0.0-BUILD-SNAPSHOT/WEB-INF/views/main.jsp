@@ -18,8 +18,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header/header.jsp" />
-
-
 <div class="container">
 
     <div class="main-container">
