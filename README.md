@@ -49,6 +49,14 @@
 - **DataBase** : MySQL
 
 <br>
+<br>
+
+![48f5bb68245861834b0c1efdc80ac272](https://github.com/user-attachments/assets/1aa1ab00-d2a4-4267-99da-17565e1715f8)
+
+<br>
+<br>
+
+
 
 ## 📌 주요 기능
 ### 회원가입
